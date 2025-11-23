@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Bhushan Choudhary - Aspiring Software Engineer with expertise in .NET, Java, React, and full-stack development. View my portfolio, projects, and experience.">
+    <meta name="keywords"
+        content="Software Engineer, Full Stack Developer, .NET, Java, React, Portfolio, Bhushan Choudhary">
+    <meta name="author" content="Bhushan Choudhary">
+    <title>Bhushan Choudhary | Full Stack Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="logo">BC<span class="dot">.</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Bhushan Choudhary</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Full Stack Software Engineer</h2>
+                    <p class="hero-description">
+                        Aspiring software engineer passionate about building high-quality, scalable applications.
+                        Experienced in .NET, Java, React, and modern web technologies.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Projects</span>
+                            <i class="fas fa-code"></i>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/74927bhushan" target="_blank" rel="noopener noreferrer"
+                            class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bhushan-choudhary-738109151/" target="_blank"
+                            rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:choudhary.bhushan31@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="profile.png" alt="Bhushan Choudhary Profile Picture">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        I'm a passionate software engineer with hands-on experience in building enterprise applications
+                        and modern web solutions.
+                    </p>
+                    <p>
+                        Proficient in object-oriented programming, C#, ASP.NET MVC, Java, and full-stack JavaScript
+                        frameworks like React and Node.js. I excel in Agile/Scrum environments and have a proven track
+                        record of delivering clean, efficient, and well-documented code.
+                    </p>
+                    <p>
+                        With experience in both .NET-based enterprise applications and modern JavaScript frameworks,
+                        I bring a versatile skill set to any development team. I'm enthusiastic about building
+                        high-quality software for complex, cutting-edge solutions.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <section id="contact" class="contact">
+                                <div class="container">
+                                    <h2 class="section-title">Get In Touch</h2>
+                                    <p class="contact-subtitle">
+                                        I'm always open to discussing new projects, creative ideas, or opportunities to
+                                        be part of your vision.
+                                    </p>
+                                    <div class="contact-content">
+                                        <div class="contact-info">
+                                            <div class="contact-card">
+                                                <div class="contact-icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                                <h3>Email</h3>
+                                                <a href="mailto:choudhary.bhushan31@gmail.com"
+                                                    class="contact-email">choudhary.bhushan31@gmail.com</a>
+                                            </div>
+
+                                            <div class="contact-card">
+                                                <div class="contact-icon">
+                                                    <i class="fas fa-phone"></i>
+                                                </div>
+                                                <h3>Phone</h3>
+                                                <a href="tel:+919359240149">+91 9359240149</a>
+                                            </div>
+
+                                            <div class="contact-card">
+                                                <div class="contact-icon">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                </div>
+                                                <h3>Location</h3>
+                                                <p>Pune, Maharashtra, India</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact-links">
+                                            <h3>Connect With Me</h3>
+                                            <div class="social-buttons">
+                                                <a href="https://github.com/74927bhushan" target="_blank"
+                                                    rel="noopener noreferrer" class="social-button">
+                                                    <i class="fab fa-github"></i>
+                                                    <span>GitHub</span>
+                                                </a>
+                                                <a href="https://www.linkedin.com/in/bhushan-choudhary-738109151/"
+                                                    target="_blank" rel="noopener noreferrer" class="social-button">
+                                                    <i class="fab fa-linkedin"></i>
+                                                    <span>LinkedIn</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Footer -->
+                            <footer class="footer">
+                                <div class="container">
+                                    <p>&copy; 2024 Bhushan Choudhary. All rights reserved.</p>
+                                    <p class="footer-subtitle">Built with passion and modern web technologies</p>
+                                </div>
+                            </footer>
+
+                            <script src="script.js"></script>
+</body>
+
+</html>
