@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bhushan Choudhary - Full Stack Software Engineer Resume">
+    <title>Resume | Bhushan Choudhary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-dark: #5a52e0;
+            --accent: #00d4aa;
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-sidebar: #0e0e16;
+            --text-primary: #f0f0ff;
+            --text-secondary: #a0a0c0;
+            --text-muted: #6060a0;
+            --border: rgba(108, 99, 255, 0.2);
+            --glow: rgba(108, 99, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar-left a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-left a:hover { color: var(--primary); }
+
+        .top-bar-right {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-print {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-print:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ── RESUME WRAPPER ── */
+        .resume-wrapper {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+
+        .resume-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(108, 99, 255, 0.08);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            padding: 40px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 0 30px rgba(108, 99, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .profile-role {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            border-radius: 20px;
+            padding: 4px 12px;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        .sidebar-section-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Contact */
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-list li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            word-break: break-all;
+        }
+
+        .contact-list li a:hover { color: var(--primary); }
+
+        .contact-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: rgba(108, 99, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* Skills */
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-group-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.25);
+            color: var(--text-primary);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(108, 99, 255, 0.25);
+            border-color: var(--primary);
+        }
+
+        .skill-tag.accent {
+            background: rgba(0, 212, 170, 0.1);
+            border-color: rgba(0, 212, 170, 0.3);
+            color: var(--accent);
+        }
+
+        /* Langs */
+        .lang-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .lang-name {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            width: 80px;
+        }
+
+        .lang-bar {
+            flex: 1;
+            height: 4px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .lang-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        /* ── MAIN CONTENT ── */
+        .main-content {
+            padding: 40px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        /* Header */
+        .main-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 28px;
+        }
+
+        .main-name {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f0f0ff 30%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .main-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .main-title span {
+            color: var(--accent);
+        }
+
+        .summary-text {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 620px;
+        }
+
+        .summary-text strong { color: var(--text-primary); }
+
+        /* Section */
+        .section-heading {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 12px 1fr;
+            gap: 18px;
+        }
+
+        .timeline-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 6px;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+        }
+
+        .timeline-connector {
+            width: 2px;
+            flex: 1;
+            background: var(--border);
+            margin-top: 6px;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .timeline-content:hover {
+            border-color: rgba(108, 99, 255, 0.4);
+            background: rgba(108, 99, 255, 0.04);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .job-date {
+            font-size: 0.75rem;
+            color: var(--primary);
+            background: rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            border-radius: 20px;
+            padding: 3px 10px;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .job-company {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 2px;
+        }
+
+        .job-location {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .job-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .job-bullets li {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .job-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 0.75rem;
+        }
+
+        .job-bullets li strong { color: var(--text-primary); }
+
+        .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        .tech-pill {
+            background: rgba(0, 212, 170, 0.08);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            color: var(--accent);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: rgba(108, 99, 255, 0.4);
+            background: rgba(108, 99, 255, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .project-card.featured {
+            border-color: rgba(0, 212, 170, 0.3);
+            background: rgba(0, 212, 170, 0.03);
+        }
+
+        .project-card.featured:hover {
+            border-color: var(--accent);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .project-name {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .project-link {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover { color: var(--primary); }
+
+        .project-link.live { color: var(--accent); }
+        .project-link.live:hover { color: #00ffcc; }
+
+        .project-desc {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .project-tech span {
+            font-size: 0.68rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+
+        /* Education */
+        .edu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .edu-item {
+            display: flex;
+            gap: 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            align-items: flex-start;
+        }
+
+        .edu-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(108,99,255,0.2), rgba(0,212,170,0.1));
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .edu-degree {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .edu-school {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .edu-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Certifications */
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .cert-badge {
+            font-size: 1.1rem;
+        }
+
+        .cert-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .cert-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .cert-issuer {
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+
+        /* ── PRINT STYLES ── */
+        @media print {
+            body { background: white; }
+            .top-bar { display: none; }
+            .resume-wrapper { margin: 0; padding: 0; max-width: 100%; }
+            .resume-card {
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                grid-template-columns: 240px 1fr;
+            }
+            .sidebar { background: #f8f8ff; border-right: 2px solid #e0e0ff; }
+            .main-content { padding: 30px; }
+            :root {
+                --bg-dark: white;
+                --bg-card: white;
+                --bg-sidebar: #f8f8ff;
+                --text-primary: #111;
+                --text-secondary: #444;
+                --text-muted: #777;
+                --border: #ddd;
+            }
+            .main-name { -webkit-text-fill-color: #111 !important; }
+            .skill-tag { border-color: #aaa; }
+            .timeline-content, .project-card, .edu-item, .cert-item { background: #fafafa; border-color: #ddd; }
+        }
+
+        @media (max-width: 768px) {
+            .resume-card { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .main-content { padding: 24px 20px; }
+            .top-bar { padding: 12px 20px; }
+            .main-name { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+        </div>
+        <div class="top-bar-right">
+            <button class="btn-print" onclick="window.print()">
+                <i class="fas fa-print"></i> Print / Save PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Resume -->
+    <div class="resume-wrapper">
+        <div class="resume-card">
+
+            <!-- ── SIDEBAR ── -->
+            <aside class="sidebar">
+
+                <!-- Profile -->
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <img src="Bhusan.png" alt="Bhushan Choudhary" onerror="this.style.display='none'; this.parentElement.innerHTML='BC'">
+                    </div>
+                    <div class="profile-name">Bhushan Choudhary</div>
+                    <div class="profile-role">Full Stack Engineer</div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <div class="sidebar-section-title">Contact</div>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <a href="mailto:choudhary.bhushan31@gmail.com">choudhary.bhushan31@gmail.com</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <span>+91 9359240149</span>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <span>Pune, Maharashtra, India</span>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                            <a href="https://bhushan.xyz" target="_blank">bhushan.xyz</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                            <a href="https://www.linkedin.com/in/bhushan-choudhary-738109151/" target="_blank">LinkedIn Profile</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <a href="https://github.com/74927bhushan" target="_blank">github.com/74927bhushan</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Skills -->
+                <div>
+                    <div class="sidebar-section-title">Tech Stack</div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Languages</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Frontend</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Storybook</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Backend</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">ASP.NET MVC</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">REST API</span>
+                            <span class="skill-tag">Node-RED</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Database</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Oracle</span>
+                            <span class="skill-tag">SQL Server</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">Cloud & DevOps</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS EC2</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Vercel</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-label">AI Tools</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag accent">GitHub Copilot</span>
+                            <span class="skill-tag accent">ChatGPT</span>
+                            <span class="skill-tag accent">AI-Augmented Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div>
+                    <div class="sidebar-section-title">Languages</div>
+                    <div class="lang-item">
+                        <span class="lang-name">English</span>
+                        <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Hindi</span>
+                        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Marathi</span>
+                        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- ── MAIN CONTENT ── -->
+            <main class="main-content">
+
+                <!-- Header -->
+                <div class="main-header">
+                    <div class="main-name">Bhushan Choudhary</div>
+                    <div class="main-title">
+                        <span>></span> Full Stack Software Engineer &nbsp;·&nbsp; AI-Augmented Developer
+                    </div>
+                    <p class="summary-text">
+                        Results-driven <strong>Full Stack Software Engineer</strong> with 2+ years of experience building scalable, production-grade applications across enterprise and startup environments. Proficient in <strong>Java, Spring Boot, React.js, C#, and ASP.NET MVC</strong> with hands-on exposure to <strong>cloud deployment, microservices, and CI/CD pipelines</strong>. Passionate about leveraging <strong>AI tools</strong> to accelerate development and deliver clean, maintainable code in fast-paced <strong>Agile teams</strong>.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div>
+                    <div class="section-heading">Work Experience</div>
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-line">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-connector"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="job-header">
+                                    <div class="job-title">Fullstack Software Intern</div>
+                                    <div class="job-date">Oct 2024 – Present</div>
+                                </div>
+                                <div class="job-company">Info Origin Technologies Pvt Ltd</div>
+                                <div class="job-location"><i class="fas fa-map-marker-alt"></i> Gondia, India</div>
+                                <ul class="job-bullets">
+                                    <li>Engineered features for <strong>InfoQA</strong>, an in-house low-code platform using <strong>JavaScript, Node-RED, and React.js</strong>, boosting developer productivity</li>
+                                    <li>Built full-stack modules with <strong>Angular, Spring Boot, and MySQL</strong>, owning end-to-end feature delivery</li>
+                                    <li>Integrated <strong>Storybook</strong> for component-driven UI development, enabling faster visual iteration</li>
+                                    <li>Led <strong>code reviews</strong> enforcing best practices and improving overall team code quality</li>
+                                    <li>Authored technical documentation and user guides, reducing new developer onboarding time</li>
+                                    <li>Participated in <strong>Agile/Scrum</strong> ceremonies — sprint planning, standups, retrospectives</li>
+                                </ul>
+                                <div class="tech-pills">
+                                    <span class="tech-pill">JavaScript</span>
+                                    <span class="tech-pill">React.js</span>
+                                    <span class="tech-pill">Angular</span>
+                                    <span class="tech-pill">Node-RED</span>
+                                    <span class="tech-pill">Spring Boot</span>
+                                    <span class="tech-pill">MySQL</span>
+                                    <span class="tech-pill">Storybook</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-line">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="job-header">
+                                    <div class="job-title">Apprentice Software Engineer</div>
+                                    <div class="job-date">May 2024 – Oct 2024</div>
+                                </div>
+                                <div class="job-company">Thinkbridge Software Private Limited</div>
+                                <div class="job-location"><i class="fas fa-map-marker-alt"></i> Pune, India</div>
+                                <ul class="job-bullets">
+                                    <li>Developed and maintained <strong>PSG Compass</strong>, a high-volume .NET enterprise application using <strong>C# and ASP.NET MVC</strong></li>
+                                    <li>Optimized memory usage and refined algorithms, resulting in measurable improvements in <strong>application performance</strong></li>
+                                    <li>Designed and integrated <strong>RESTful APIs</strong> following <strong>SOA principles</strong> for modular, scalable services</li>
+                                    <li>Managed sprint tasks via <strong>Azure DevOps</strong>, coordinating deliverables across cross-functional teams</li>
+                                    <li>Wrote clean, documented code adhering to <strong>SOLID principles</strong> and SDLC best practices</li>
+                                </ul>
+                                <div class="tech-pills">
+                                    <span class="tech-pill">C#</span>
+                                    <span class="tech-pill">.NET</span>
+                                    <span class="tech-pill">ASP.NET MVC</span>
+                                    <span class="tech-pill">SQL Server</span>
+                                    <span class="tech-pill">Azure DevOps</span>
+                                    <span class="tech-pill">REST API</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div>
+                    <div class="section-heading">Featured Projects</div>
+                    <div class="projects-grid">
+
+                        <div class="project-card featured">
+                            <div class="project-top">
+                                <div class="project-name">⚡ E-Bill App <span style="font-size:0.65rem;color:var(--accent);font-weight:500;margin-left:6px;">LIVE</span></div>
+                                <div class="project-links">
+                                    <a href="https://e-bill-app.vercel.app/" target="_blank" class="project-link live"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="https://github.com/74927bhushan/ebill-app" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <div class="project-desc">Full-featured electricity billing system with automated bill generation, payment tracking, and consumption analytics. Deployed live on Vercel.</div>
+                            <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>REST API</span></div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-top">
+                                <div class="project-name">🎓 Student Management System</div>
+                            </div>
+                            <div class="project-desc">Full-stack platform for IACSD institute with JWT-based authentication, role-based access control, and comprehensive RESTful APIs.</div>
+                            <div class="project-tech"><span>React.js</span><span>Spring Boot</span><span>MySQL</span><span>JWT</span></div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-top">
+                                <div class="project-name">🗳️ Voter Application</div>
+                                <div class="project-links">
+                                    <a href="https://github.com/74927bhushan/Voter_Application" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <div class="project-desc">Secure digital voting system with voter registration, ballot management, and real-time result tracking with data integrity controls.</div>
+                            <div class="project-tech"><span>Angular</span><span>Spring Boot</span><span>TypeScript</span><span>REST API</span></div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-top">
+                                <div class="project-name">✅ Task Manager</div>
+                                <div class="project-links">
+                                    <a href="https://github.com/74927bhushan/TaskManager" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                            <div class="project-desc">Full-stack productivity app with task creation, priority management, deadline tracking, and a RESTful Node.js backend.</div>
+                            <div class="project-tech"><span>Node.js</span><span>JavaScript</span><span>MongoDB</span><span>REST API</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <div class="section-heading">Education</div>
+                    <div class="edu-grid">
+                        <div class="edu-item">
+                            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
+                                <div class="edu-school">Sardar Patel College of Engineering</div>
+                                <div class="edu-date">Graduated: March 2023</div>
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+                            <div>
+                                <div class="edu-degree">PG Diploma – Advanced Computing (CDAC)</div>
+                                <div class="edu-school">IACSD, Pune</div>
+                                <div class="edu-date">Sep 2023 – Mar 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <div class="section-heading">Certifications</div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-badge">🏆</div>
+                            <div>
+                                <div class="cert-name">CDAC – Software Development</div>
+                                <div class="cert-issuer">Institute of Advanced Computing & Software Development</div>
+                                <div class="cert-date">2024</div>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">☕</div>
+                            <div>
+                                <div class="cert-name">Java Certification</div>
+                                <div class="cert-issuer">Java Programming</div>
+                                <div class="cert-date">April – May 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1147,3 +1147,42 @@ section {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* ==========================================
+   RESUME BUTTON & NAV STYLES
+   ========================================== */
+.nav-resume {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(0, 212, 170, 0.1)) !important;
+    border: 1px solid rgba(99, 102, 241, 0.35) !important;
+    color: #a5b4fc !important;
+    border-radius: 20px !important;
+    padding: 6px 16px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-resume:hover {
+    background: linear-gradient(135deg, var(--accent-primary), #00d4aa) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4) !important;
+    transform: translateY(-1px) !important;
+}
+
+.nav-resume::before {
+    display: none !important;
+}
+
+.btn-resume {
+    background: linear-gradient(135deg, #00d4aa, #06b6d4);
+    color: #0a0a0f;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(0, 212, 170, 0.3);
+    border: none;
+}
+
+.btn-resume:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 212, 170, 0.45);
+    color: #0a0a0f;
+}
