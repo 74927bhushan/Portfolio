@@ -34,10 +34,11 @@ navLinks.forEach(link => {
 // ==========================================
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        // Only intercept anchor links (starting with #), not page links like resume.html
+        if (!href || !href.startsWith('#')) return;
         e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
+        const targetSection = document.querySelector(href);
         if (targetSection) {
             const offsetTop = targetSection.offsetTop - 70;
             window.scrollTo({
