@@ -1,210 +1,153 @@
 /**
  * ============================================================================
- * BHUSHAN CHOUDHARY — APPLE FLUID ENGINE & INTERACTION LOGIC
- * Liquid Water Ripples | 3D Specular Tilt | Smooth Spring Physics
+ * BHUSHAN CHOUDHARY — TRANSLATE-WF SCROLL ANIMATION ENGINE
+ * Segmented Progress Bar Fill | Timeline Tracer | Interactive Scene Prompts
  * ============================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initFluidWaterCanvas();
-    initNavbar();
-    initCardTiltAndSpecular();
-    initActiveNavHighlight();
-    initScrollAnimations();
+    initSegmentedProgressBar();
+    initTimelineTracer();
+    initNavbarAndSmoothScroll();
+    initScrollObserverReveals();
 });
 
 /* ==========================================================================
-   1. INTERACTIVE LIQUID WATER CANVAS SIMULATION
-   Creates silky water ripples and fluid light trails that react to mouse/touch.
+   1. SEGMENTED SCROLL PROGRESS BAR (translate-wf.com signature)
+   Fills each progress segment line proportionally and pulses ping nodes.
    ========================================================================== */
-function initFluidWaterCanvas() {
-    const canvas = document.getElementById('fluid-canvas');
-    if (!canvas) return;
+function initSegmentedProgressBar() {
+    const scenes = [
+        { id: '#imagine', ping: document.getElementById('ping-1'), fill: document.getElementById('fill-1') },
+        { id: '#impact', ping: document.getElementById('ping-2'), fill: document.getElementById('fill-2') },
+        { id: '#architecture', ping: document.getElementById('ping-3'), fill: document.getElementById('fill-3') },
+        { id: '#experience', ping: document.getElementById('ping-4'), fill: document.getElementById('fill-4') },
+        { id: '#work', ping: document.getElementById('ping-5'), fill: document.getElementById('fill-5') },
+        { id: '#connect', ping: document.getElementById('ping-6'), fill: null }
+    ];
 
-    const ctx = canvas.getContext('2d');
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    function updateProgress() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
 
-    // Ripple collection
-    const ripples = [];
-    const MAX_RIPPLES = 45;
+        scenes.forEach((scene, index) => {
+            const el = document.querySelector(scene.id);
+            if (!el) return;
 
-    // Pointer state with velocity
-    let lastX = width / 2;
-    let lastY = height / 2;
-    let isMoving = false;
-    let moveTimeout;
+            const rect = el.getBoundingClientRect();
+            const top = rect.top + scrollY;
+            const height = el.offsetHeight;
 
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize, { passive: true });
+            // Calculate progress through this section
+            let progress = (scrollY + windowHeight * 0.35 - top) / height;
+            progress = Math.max(0, Math.min(1, progress));
 
-    class Ripple {
-        constructor(x, y, strength = 1) {
-            this.x = x;
-            this.y = y;
-            this.radius = 2;
-            this.maxRadius = Math.min(140 * strength, 260);
-            this.alpha = 0.45 * Math.min(strength, 1.2);
-            this.growth = 2.4 + strength * 1.8;
-            this.decay = 0.007 + (1 - Math.min(strength, 1)) * 0.005;
-            this.hue = 195 + Math.random() * 30; // Cyan to soft sapphire (195-225)
-        }
-
-        update() {
-            this.radius += this.growth;
-            this.growth *= 0.985; // Natural fluid wave damping
-            this.alpha -= this.decay;
-        }
-
-        draw(ctx) {
-            if (this.alpha <= 0.01) return;
-
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-
-            // Water ripple refraction gradient
-            const grad = ctx.createRadialGradient(
-                this.x, this.y, Math.max(0, this.radius - 12),
-                this.x, this.y, this.radius
-            );
-            grad.addColorStop(0, 'rgba(56, 189, 248, 0)');
-            grad.addColorStop(0.7, `hsla(${this.hue}, 90%, 65%, ${this.alpha * 0.6})`);
-            grad.addColorStop(1, `hsla(${this.hue + 10}, 100%, 75%, ${this.alpha})`);
-
-            ctx.strokeStyle = grad;
-            ctx.lineWidth = Math.max(1.2, (1 - this.radius / this.maxRadius) * 2.8);
-            ctx.stroke();
-
-            // Inner subtle specular fluid core
-            if (this.radius < 50) {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius * 0.5, 0, Math.PI * 2);
-                ctx.fillStyle = `hsla(${this.hue}, 90%, 80%, ${this.alpha * 0.12})`;
-                ctx.fill();
+            // Fill line if present
+            if (scene.fill) {
+                scene.fill.style.width = `${(progress * 100).toFixed(1)}%`;
             }
 
-            ctx.restore();
-        }
-    }
-
-    function addRipple(x, y, strength = 1) {
-        if (ripples.length >= MAX_RIPPLES) {
-            ripples.shift();
-        }
-        ripples.push(new Ripple(x, y, strength));
-    }
-
-    // Pointer move listener (Desktop & Mobile)
-    function onPointerMove(e) {
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-        const dx = clientX - lastX;
-        const dy = clientY - lastY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        // Emit ripple if distance threshold reached
-        if (dist > 14) {
-            const velocity = Math.min(dist / 14, 2.2);
-            addRipple(clientX, clientY, velocity);
-            lastX = clientX;
-            lastY = clientY;
-        }
-
-        isMoving = true;
-        clearTimeout(moveTimeout);
-        moveTimeout = setTimeout(() => {
-            isMoving = false;
-        }, 120);
-    }
-
-    window.addEventListener('mousemove', onPointerMove, { passive: true });
-    window.addEventListener('touchmove', onPointerMove, { passive: true });
-    window.addEventListener('click', (e) => {
-        addRipple(e.clientX, e.clientY, 2.0);
-    }, { passive: true });
-
-    // Ambient background liquid wave generator (gentle periodic fluid drop)
-    let ambientCounter = 0;
-    function triggerAmbientRipple() {
-        ambientCounter++;
-        if (ambientCounter % 140 === 0 && !isMoving && ripples.length < 8) {
-            const rx = Math.random() * width;
-            const ry = Math.random() * height * 0.8 + height * 0.1;
-            addRipple(rx, ry, 0.8 + Math.random() * 0.5);
-        }
-    }
-
-    // Main 60fps render loop
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-
-        triggerAmbientRipple();
-
-        for (let i = ripples.length - 1; i >= 0; i--) {
-            const r = ripples[i];
-            r.update();
-            r.draw(ctx);
-            if (r.alpha <= 0.01 || r.radius >= r.maxRadius) {
-                ripples.splice(i, 1);
+            // Activate ping dot
+            if (scene.ping) {
+                if (progress > 0.05 || (index === 0 && scrollY < height * 0.5)) {
+                    scene.ping.classList.add('active');
+                } else {
+                    scene.ping.classList.remove('active');
+                }
             }
-        }
-
-        requestAnimationFrame(animate);
+        });
     }
 
-    animate();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    // Clicking progress bar segment scrolls to that chapter
+    const progressParts = document.querySelectorAll('.progress-bar-part');
+    progressParts.forEach(part => {
+        part.addEventListener('click', () => {
+            const targetId = part.getAttribute('data-target');
+            if (targetId) {
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    const offset = targetId === '#imagine' ? 0 : targetEl.offsetTop - 85;
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
 }
 
 /* ==========================================================================
-   2. NAVBAR & MOBILE DRAWER LOGIC
+   2. TIMELINE SCROLL TRACER FILL
+   Fills the vertical timeline glowing line based on scroll progress.
    ========================================================================== */
-function initNavbar() {
-    const navbar = document.getElementById('navbar');
-    const hamburger = document.getElementById('hamburger');
-    const mobileDrawer = document.getElementById('mobile-drawer');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    const navLinks = document.querySelectorAll('.nav-link');
+function initTimelineTracer() {
+    const timeline = document.querySelector('.tracer-timeline');
+    const fill = document.getElementById('timelineTracerFill');
+    if (!timeline || !fill) return;
 
-    // Scroll state with threshold
+    function updateTracer() {
+        const rect = timeline.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+            const progress = (windowHeight * 0.6 - rect.top) / rect.height;
+            const clamped = Math.max(0, Math.min(1, progress));
+            fill.style.height = `${(clamped * 100).toFixed(1)}%`;
+        }
+    }
+
+    window.addEventListener('scroll', updateTracer, { passive: true });
+    updateTracer();
+}
+
+/* ==========================================================================
+   3. NAVIGATION, MOBILE DRAWER & SMOOTH SCROLLING
+   ========================================================================== */
+function initNavbarAndSmoothScroll() {
+    const nav = document.getElementById('mainNav');
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-item');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    // Scrolled state
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            navbar.classList.add('scrolled');
+        if (window.scrollY > 30) {
+            nav.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            nav.classList.remove('scrolled');
         }
     }, { passive: true });
 
-    // Hamburger toggle
-    if (hamburger && mobileDrawer) {
+    // Mobile menu toggle
+    if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
-            mobileDrawer.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
         });
 
-        // Close mobile drawer on link click
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
-                mobileDrawer.classList.remove('open');
+                mobileMenu.classList.remove('open');
             });
         });
     }
 
-    // Smooth scroll for nav links (avoid intercepting resume.html)
-    const allLinks = document.querySelectorAll('a[href^="#"]');
-    allLinks.forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            const targetId = anchor.getAttribute('href');
-            if (targetId === '#') return;
-            const targetEl = document.querySelector(targetId);
+    // Intercept internal anchor links (ignore resume.html)
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href === '#') return;
+            const targetEl = document.querySelector(href);
             if (targetEl) {
                 e.preventDefault();
-                const offset = targetId === '#home' ? 0 : targetEl.offsetTop - 85;
+                const offset = href === '#imagine' ? 0 : targetEl.offsetTop - 85;
                 window.scrollTo({
                     top: offset,
                     behavior: 'smooth'
@@ -212,85 +155,22 @@ function initNavbar() {
             }
         });
     });
-}
 
-/* ==========================================================================
-   3. 3D CARD PARALLAX TILT & SPECULAR CURSOR TRACKING
-   Tracks cursor coordinates across Apple cards for specular light highlight.
-   ========================================================================== */
-function initCardTiltAndSpecular() {
-    // 3D Tilt for Hero Console Card
-    const heroCard = document.getElementById('hero-tilt-card');
-    if (heroCard && window.matchMedia('(min-width: 992px)').matches) {
-        const wrapper = heroCard.closest('.hero-visual-col');
-
-        if (wrapper) {
-            let targetRotX = 0;
-            let targetRotY = 0;
-            let currentRotX = 0;
-            let currentRotY = 0;
-
-            wrapper.addEventListener('mousemove', (e) => {
-                const rect = wrapper.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-
-                // Subtle Apple spring angle (max ±9 degrees)
-                targetRotY = (x / (rect.width / 2)) * 8;
-                targetRotX = -(y / (rect.height / 2)) * 8;
-            });
-
-            wrapper.addEventListener('mouseleave', () => {
-                targetRotX = 0;
-                targetRotY = 0;
-            });
-
-            function smoothTiltLoop() {
-                currentRotX += (targetRotX - currentRotX) * 0.08;
-                currentRotY += (targetRotY - currentRotY) * 0.08;
-
-                heroCard.style.transform = `perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
-                requestAnimationFrame(smoothTiltLoop);
-            }
-            smoothTiltLoop();
-        }
-    }
-
-    // Specular Cursor Tracking on Glass Panels
-    const glassPanels = document.querySelectorAll('.glass-panel');
-    glassPanels.forEach(panel => {
-        panel.addEventListener('mousemove', (e) => {
-            const rect = panel.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            panel.style.setProperty('--mouse-x', `${x}px`);
-            panel.style.setProperty('--mouse-y', `${y}px`);
-        });
-    });
-}
-
-/* ==========================================================================
-   4. ACTIVE NAV LINK HIGHLIGHTING ON SCROLL
-   ========================================================================== */
-function initActiveNavHighlight() {
+    // Active nav item highlighting on scroll
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-
-    if (!sections.length || !navLinks.length) return;
-
     window.addEventListener('scroll', () => {
-        const scrollPos = window.scrollY + 140;
+        const scrollY = window.pageYOffset + 140;
 
         sections.forEach(sec => {
             const top = sec.offsetTop;
             const height = sec.offsetHeight;
             const id = sec.getAttribute('id');
 
-            if (scrollPos >= top && scrollPos < top + height) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
+            if (scrollY >= top && scrollY < top + height) {
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${id}`) {
+                        item.classList.add('active');
                     }
                 });
             }
@@ -299,11 +179,11 @@ function initActiveNavHighlight() {
 }
 
 /* ==========================================================================
-   5. INTERSECTION OBSERVER FOR FLUID REVEALS
+   4. SCROLL OBSERVER REVEALS (Cinematic entrance)
    ========================================================================== */
-function initScrollAnimations() {
-    const revealElements = document.querySelectorAll(
-        '.bento-card, .skill-bento-card, .timeline-entry, .showcase-card, .edu-card, .contact-bento'
+function initScrollObserverReveals() {
+    const animatedElements = document.querySelectorAll(
+        '.stat-card, .wf-card, .tracer-entry, .project-showcase-card, .connect-box'
     );
 
     if (!('IntersectionObserver' in window)) return;
@@ -317,13 +197,13 @@ function initScrollAnimations() {
             }
         });
     }, {
-        threshold: 0.08,
+        threshold: 0.1,
         rootMargin: '0px 0px -40px 0px'
     });
 
-    revealElements.forEach(el => {
+    animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(24px)';
+        el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
         observer.observe(el);
     });

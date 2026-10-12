@@ -5,813 +5,788 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Bhushan Choudhary - Full Stack Software Engineer specializing in .NET, Java Spring Boot, React, and high-performance cloud architectures.">
+        content="Bhushan Choudhary — Full Stack Software Engineer crafting resilient, high-throughput systems with .NET, Java Spring Boot, and React.">
     <meta name="keywords"
-        content="Bhushan Choudhary, Full Stack Developer, Software Engineer, .NET, Java, Spring Boot, React, Microservices, Portfolio">
+        content="Bhushan Choudhary, Software Engineer, Full Stack Developer, .NET, Java, Spring Boot, React, Microservices, Portfolio">
     <meta name="author" content="Bhushan Choudhary">
     <title>Bhushan Choudhary — Full Stack Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="apple-dark">
-    <!-- Interactive Liquid Water Canvas -->
-    <canvas id="fluid-canvas"></canvas>
+<body class="wf-dark">
 
-    <!-- Ambient Liquid Light Glows -->
-    <div class="ambient-fluid-container">
-        <div class="fluid-orb orb-1"></div>
-        <div class="fluid-orb orb-2"></div>
-        <div class="fluid-orb orb-3"></div>
-    </div>
+    <!-- ── SEGMENTED SCROLL PROGRESS BAR (like translate-wf.com) ── -->
+    <div class="progress-bar-wrapper" id="progressBarWrapper">
+        <div class="progress-bar">
+            <!-- Part 1: Imagine / Overview -->
+            <div class="progress-bar-part" data-target="#imagine">
+                <div class="progress-ping">
+                    <div class="progress-ping-inner active" id="ping-1"></div>
+                </div>
+                <div class="progress-bar-line">
+                    <div class="progress-bar-fill" id="fill-1"></div>
+                </div>
+            </div>
 
-    <!-- Apple-style Floating Frosted Pill Navbar -->
-    <header class="navbar-wrapper">
-        <nav class="navbar" id="navbar">
-            <div class="nav-content">
-                <a href="#home" class="logo" aria-label="Bhushan Choudhary Home">
-                    <span class="logo-symbol">
-                        <span class="logo-symbol-inner"></span>
-                    </span>
-                    <span class="logo-text">Bhushan<span class="brand-dot">.</span></span>
+            <!-- Part 2: Impact -->
+            <div class="progress-bar-part" data-target="#impact">
+                <div class="progress-ping">
+                    <div class="progress-ping-inner" id="ping-2"></div>
+                </div>
+                <div class="progress-bar-line">
+                    <div class="progress-bar-fill" id="fill-2"></div>
+                </div>
+            </div>
+
+            <!-- Part 3: Architecture -->
+            <div class="progress-bar-part" data-target="#architecture">
+                <div class="progress-ping">
+                    <div class="progress-ping-inner" id="ping-3"></div>
+                </div>
+                <div class="progress-bar-line">
+                    <div class="progress-bar-fill" id="fill-3"></div>
+                </div>
+            </div>
+
+            <!-- Part 4: Experience -->
+            <div class="progress-bar-part" data-target="#experience">
+                <div class="progress-ping">
+                    <div class="progress-ping-inner" id="ping-4"></div>
+                </div>
+                <div class="progress-bar-line">
+                    <div class="progress-bar-fill" id="fill-4"></div>
+                </div>
+            </div>
+
+            <!-- Part 5: Featured Work -->
+            <div class="progress-bar-part" data-target="#work">
+                <div class="progress-ping">
+                    <div class="progress-ping-inner" id="ping-5"></div>
+                </div>
+                <div class="progress-bar-line">
+                    <div class="progress-bar-fill" id="fill-5"></div>
+                </div>
+            </div>
+
+            <!-- Part 6: Connect / Final -->
+            <div class="progress-bar-part" data-target="#connect">
+                <div class="progress-ping">
+                    <div class="progress-ping-inner" id="ping-6"></div>
+                </div>
+            </div>
+
+            <!-- Label Badge -->
+            <div class="progress-last">
+                <a href="#connect" class="progress-wf">
+                    <span class="progress-wf-dot"></span>
+                    <span>Bhushan Choudhary</span>
                 </a>
-
-                <div class="nav-pill">
-                    <ul class="nav-menu" id="nav-menu">
-                        <li><a href="#home" class="nav-link active">Overview</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#skills" class="nav-link">Architecture</a></li>
-                        <li><a href="#experience" class="nav-link">Experience</a></li>
-                        <li><a href="#projects" class="nav-link">Work</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-actions">
-                    <a href="resume.html" class="pill-btn nav-resume-btn">
-                        <span>Resume</span>
-                        <i class="fas fa-arrow-up-right-from-square"></i>
-                    </a>
-                    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <ul class="mobile-nav-links">
-            <li><a href="#home" class="mobile-link">Overview</a></li>
-            <li><a href="#about" class="mobile-link">About</a></li>
-            <li><a href="#skills" class="mobile-link">Architecture & Skills</a></li>
-            <li><a href="#experience" class="mobile-link">Experience</a></li>
-            <li><a href="#projects" class="mobile-link">Featured Work</a></li>
-            <li><a href="#contact" class="mobile-link">Contact</a></li>
-            <li><a href="resume.html" class="mobile-link mobile-resume-link">View Resume <i class="fas fa-file-alt"></i></a></li>
-        </ul>
+        </div>
     </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-grid">
-                    
-                    <!-- Left: Hero Headline & CTA -->
-                    <div class="hero-text-col">
-                        <div class="apple-status-pill">
-                            <span class="radar-ping">
-                                <span class="ping-wave"></span>
-                                <span class="ping-dot"></span>
-                            </span>
-                            <span class="status-label">Available for Engineering Roles · Pune, India</span>
-                        </div>
-
-                        <h1 class="hero-headline">
-                            Engineering <span class="liquid-gradient-text">fluid, scalable</span> systems with precision.
-                        </h1>
-
-                        <p class="hero-lead">
-                            I'm <strong>Bhushan Choudhary</strong> — a Full Stack Software Engineer crafting resilient enterprise platforms with <strong>.NET</strong>, <strong>Java Spring Boot</strong>, and <strong>React</strong>. Designed for high throughput and silky user experience.
-                        </p>
-
-                        <div class="hero-cta-group">
-                            <a href="#projects" class="apple-btn apple-btn-primary">
-                                <span>Explore Work</span>
-                                <i class="fas fa-arrow-down"></i>
-                            </a>
-                            <a href="resume.html" class="apple-btn apple-btn-glass">
-                                <i class="fas fa-file-lines"></i>
-                                <span>Curriculum Vitae</span>
-                            </a>
-                            <a href="#contact" class="apple-btn apple-btn-ghost">
-                                <span>Get in Touch</span>
-                            </a>
-                        </div>
-
-                        <div class="hero-social-strip">
-                            <span class="strip-label">Direct Connect</span>
-                            <div class="strip-links">
-                                <a href="https://github.com/74927bhushan" target="_blank" rel="noopener noreferrer"
-                                    class="social-pill" aria-label="GitHub Profile">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="https://www.linkedin.com/in/bhushan-choudhary-738109151/" target="_blank"
-                                    rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn Profile">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a href="mailto:choudhary.bhushan31@gmail.com" class="social-pill"
-                                    aria-label="Email Bhushan">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Apple Glassmorphic Interactive Console (Replacing AI Photo) -->
-                    <div class="hero-visual-col">
-                        <div class="glass-console-wrapper" id="hero-tilt-card">
-                            <div class="glass-console">
-                                <!-- Top macOS Jewel Controls -->
-                                <div class="console-header">
-                                    <div class="mac-controls">
-                                        <span class="mac-dot mac-red"></span>
-                                        <span class="mac-dot mac-yellow"></span>
-                                        <span class="mac-dot mac-green"></span>
-                                    </div>
-                                    <div class="console-tab">
-                                        <i class="fas fa-terminal"></i>
-                                        <span>bhushan.core.sys</span>
-                                    </div>
-                                    <div class="console-perf">
-                                        <span class="perf-metric">60 FPS</span>
-                                        <span class="perf-badge">OPTIMAL</span>
-                                    </div>
-                                </div>
-
-                                <!-- Code & Live Architecture Stream -->
-                                <div class="console-body">
-                                    <div class="code-editor">
-                                        <div class="code-row dim-comment"><span class="c-comment">// Enterprise System Architecture & Core Stack</span></div>
-                                        <div class="code-row">
-                                            <span class="c-keyword">const</span> <span class="c-variable">engineerProfile</span> = {
-                                        </div>
-                                        <div class="code-row c-indent">
-                                            <span class="c-property">name:</span> <span class="c-string">"Bhushan Choudhary"</span>,
-                                        </div>
-                                        <div class="code-row c-indent">
-                                            <span class="c-property">discipline:</span> <span class="c-string">"Full Stack Software Engineer"</span>,
-                                        </div>
-                                        <div class="code-row c-indent">
-                                            <span class="c-property">enterpriseCore:</span> [<span class="c-string">".NET C#"</span>, <span class="c-string">"Java Spring"</span>],
-                                        </div>
-                                        <div class="code-row c-indent">
-                                            <span class="c-property">clientLayer:</span> [<span class="c-string">"React.js"</span>, <span class="c-string">"Angular"</span>, <span class="c-string">"TypeScript"</span>],
-                                        </div>
-                                        <div class="code-row c-indent">
-                                            <span class="c-property">designParadigm:</span> <span class="c-accent">"Microservices & REST SOA"</span>,
-                                        </div>
-                                        <div class="code-row c-indent">
-                                            <span class="c-property">delivery:</span> <span class="c-keyword">"Agile / CI-CD / Azure DevOps"</span>
-                                        </div>
-                                        <div class="code-row">};</div>
-                                    </div>
-
-                                    <!-- Liquid Metrics Tray -->
-                                    <div class="console-tray">
-                                        <div class="tray-card">
-                                            <div class="tray-icon"><i class="fas fa-layer-group"></i></div>
-                                            <div class="tray-info">
-                                                <div class="tray-number">Enterprise</div>
-                                                <div class="tray-title">Distributed .NET & Java</div>
-                                            </div>
-                                        </div>
-                                        <div class="tray-card">
-                                            <div class="tray-icon"><i class="fas fa-bolt"></i></div>
-                                            <div class="tray-info">
-                                                <div class="tray-number">Low Latency</div>
-                                                <div class="tray-title">High-Throughput APIs</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Floating Glass Badges with Light Reflections -->
-                                <div class="floating-sheen-badge badge-top-right">
-                                    <div class="sheen-icon dotnet-icon"><i class="fab fa-microsoft"></i></div>
-                                    <div class="sheen-text">
-                                        <strong>.NET 8 & C#</strong>
-                                        <span>Enterprise Architecture</span>
-                                    </div>
-                                </div>
-
-                                <div class="floating-sheen-badge badge-bottom-left">
-                                    <div class="sheen-icon react-icon"><i class="fab fa-react"></i></div>
-                                    <div class="sheen-text">
-                                        <strong>React & Modern UI</strong>
-                                        <span>Fluid Interactivity</span>
-                                    </div>
-                                </div>
-
-                                <!-- Ambient Specular Overlay -->
-                                <div class="console-specular-light"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Apple-style Subtle Scroll Cue -->
-            <a href="#about" class="fluid-scroll-indicator" aria-label="Scroll to about section">
-                <span class="mouse-chassis">
-                    <span class="mouse-wheel"></span>
-                </span>
-                <span class="scroll-caption">SCROLL</span>
+    <!-- ── NAVIGATION BAR ── -->
+    <nav class="nav" id="mainNav">
+        <div class="container nav-container">
+            <a href="#imagine" class="logo-wrapper">
+                <span class="logo-circle">BC</span>
+                <span class="logo-brand">Bhushan<span class="brand-period">.</span></span>
             </a>
-        </section>
 
-        <!-- About Section (Apple Bento Grid) -->
-        <section id="about" class="section bento-section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="apple-tag">Philosophy & Craft</span>
-                    <h2 class="section-heading">Designed with intent. Built to scale.</h2>
-                    <p class="section-subheading">
-                        Combining enterprise backend rigor with refined front-end interfaces to ship high-impact digital products.
-                    </p>
+            <div class="nav-links-desktop">
+                <a href="#imagine" class="nav-item active">Overview</a>
+                <a href="#impact" class="nav-item">Impact</a>
+                <a href="#architecture" class="nav-item">Architecture</a>
+                <a href="#experience" class="nav-item">Experience</a>
+                <a href="#work" class="nav-item">Work</a>
+                <a href="#connect" class="nav-item">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="resume.html" class="btn-wf btn-primary">
+                    <span>Curriculum Vitae</span>
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#imagine" class="mobile-item">Overview</a>
+        <a href="#impact" class="mobile-item">Impact</a>
+        <a href="#architecture" class="mobile-item">Architecture</a>
+        <a href="#experience" class="mobile-item">Experience</a>
+        <a href="#work" class="mobile-item">Work</a>
+        <a href="#connect" class="mobile-item">Contact</a>
+        <a href="resume.html" class="mobile-item mobile-highlight">View Resume <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <main class="main-content">
+
+        <!-- ════════════════════════════════════════════════════════════════
+             SCENE 1: IMAGINE / HERO SCENE (Translate-WF Style)
+             ════════════════════════════════════════════════════════════════ -->
+        <section id="imagine" class="scene scene-1">
+            <div class="container scene-container">
+
+                <div class="hero-top-badge">
+                    <span class="badge-dot-ping"></span>
+                    <span>Available for Full Stack & Software Engineering Roles · Pune, India</span>
                 </div>
 
-                <div class="bento-grid">
-                    <!-- Bento Box 1: Core Narrative (Wide) -->
-                    <div class="bento-card bento-wide glass-panel" data-tilt>
-                        <div class="bento-content">
-                            <span class="card-eyebrow">The Background</span>
-                            <h3 class="card-title">From foundational algorithms to robust enterprise systems.</h3>
-                            <p class="card-text">
-                                With a Bachelor of Technology from <strong>Sardar Patel College of Engineering</strong> and rigorous advanced software training at <strong>IACSD (CDAC)</strong>, I have engineered scalable software for high-volume enterprise production at <strong>Thinkbridge</strong> and low-code orchestration platforms at <strong>Info Origin</strong>.
-                            </p>
-                            <p class="card-text">
-                                My philosophy is grounded in clean architecture, strong typing, maintainable design patterns, and continuous integration that scales seamlessly with user demand.
-                            </p>
-                        </div>
-                        <div class="bento-glow-border"></div>
+                <!-- Giant Oversized Typography (like IMAGINE on translate-wf) -->
+                <div class="intro-text-wrapper">
+                    <div class="intro-title-wrapper">
+                        <div class="h-oversized intro-1 p-gradient-1">IMAGINE</div>
+                        <div class="h-oversized intro-2">ENGINEER</div>
+                        <div class="h-oversized intro-3 p-gradient-2">SCALE</div>
                     </div>
-
-                    <!-- Bento Box 2: Numerical Impact -->
-                    <div class="bento-card bento-stat-card glass-panel" data-tilt>
-                        <div class="stat-highlight">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-suffix">Years</span>
-                        </div>
-                        <h4 class="stat-title">Industry & Hands-on Experience</h4>
-                        <p class="stat-desc">Production codebases, agile scrums, and enterprise delivery.</p>
-                        <div class="bento-glow-border"></div>
-                    </div>
-
-                    <!-- Bento Box 3: Technologies -->
-                    <div class="bento-card bento-stat-card glass-panel" data-tilt>
-                        <div class="stat-highlight">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-suffix">Tech</span>
-                        </div>
-                        <h4 class="stat-title">Mastered Frameworks & Stacks</h4>
-                        <p class="stat-desc">.NET, Spring Boot, React, Angular, Node.js, SQL, and AWS.</p>
-                        <div class="bento-glow-border"></div>
-                    </div>
-
-                    <!-- Bento Box 4: Architecture Principles -->
-                    <div class="bento-card bento-full glass-panel" data-tilt>
-                        <div class="principles-grid">
-                            <div class="principle-item">
-                                <div class="principle-icon"><i class="fas fa-cubes"></i></div>
-                                <h4>Modular Microservices</h4>
-                                <p>Decoupled services, event-driven design, and clean RESTful interfaces.</p>
-                            </div>
-                            <div class="principle-item">
-                                <div class="principle-icon"><i class="fas fa-gauge-high"></i></div>
-                                <h4>Performance-First</h4>
-                                <p>Optimized database queries, algorithmic efficiency, and memory profiling.</p>
-                            </div>
-                            <div class="principle-item">
-                                <div class="principle-icon"><i class="fas fa-lock"></i></div>
-                                <h4>Enterprise Security</h4>
-                                <p>JWT token auth, role-based access control (RBAC), and protected endpoints.</p>
-                            </div>
-                            <div class="principle-item">
-                                <div class="principle-icon"><i class="fas fa-sync-alt"></i></div>
-                                <h4>Agile Iteration</h4>
-                                <p>Continuous deployment, test-driven validation, and seamless sprint cycles.</p>
-                            </div>
-                        </div>
-                        <div class="bento-glow-border"></div>
+                    <div class="intro-subtitle-wrapper">
+                        <p class="p-huge p-bold">
+                            High-throughput enterprise systems, built with precision & speed.
+                        </p>
+                        <p class="intro-caption">
+                            Hi, I'm <strong>Bhushan Choudhary</strong> — a Full Stack Software Engineer specializing in <strong>.NET</strong>, <strong>Java Spring Boot</strong>, and <strong>React</strong>. Crafting resilient enterprise backends and fluid digital experiences.
+                        </p>
                     </div>
                 </div>
+
+                <!-- Interactive Browser / Architecture Window (Translate-WF style) -->
+                <div class="browser-globe-scene-wrapper">
+                    <div class="browser-window">
+                        <!-- macOS Window Controls -->
+                        <div class="browser-btns-wrapper">
+                            <div class="browser-btn red"></div>
+                            <div class="browser-btn yellow"></div>
+                            <div class="browser-btn green"></div>
+                            <span class="browser-url-bar">bhushan://core-architecture.dev</span>
+                        </div>
+
+                        <!-- Browser Content / Interactive Architecture Nodes -->
+                        <div class="browser-body">
+                            <div class="arch-node-grid">
+                                <div class="arch-node-item">
+                                    <div class="node-ping-indicator">
+                                        <div class="stat-ping ping-cyan"></div>
+                                        <div class="stat-dot dot-cyan"></div>
+                                    </div>
+                                    <div class="node-info">
+                                        <div class="node-title">.NET & C# Enterprise Core</div>
+                                        <div class="node-metric">+450% Query Efficiency</div>
+                                        <div class="node-desc">ASP.NET MVC, Entity Framework, High-Volume SOA</div>
+                                    </div>
+                                </div>
+
+                                <div class="arch-node-item">
+                                    <div class="node-ping-indicator">
+                                        <div class="stat-ping ping-purple"></div>
+                                        <div class="stat-dot dot-purple"></div>
+                                    </div>
+                                    <div class="node-info">
+                                        <div class="node-title">Java Spring Boot</div>
+                                        <div class="node-metric">Sub-50ms Microservices</div>
+                                        <div class="node-desc">REST APIs, JWT Authentication, JPA & MySQL</div>
+                                    </div>
+                                </div>
+
+                                <div class="arch-node-item">
+                                    <div class="node-ping-indicator">
+                                        <div class="stat-ping ping-coral"></div>
+                                        <div class="stat-dot dot-coral"></div>
+                                    </div>
+                                    <div class="node-info">
+                                        <div class="node-title">React & Modern UI</div>
+                                        <div class="node-metric">60 FPS Fluid Motion</div>
+                                        <div class="node-desc">TypeScript, Node.js, Angular, Reactive State</div>
+                                    </div>
+                                </div>
+
+                                <div class="arch-node-item">
+                                    <div class="node-ping-indicator">
+                                        <div class="stat-ping ping-gold"></div>
+                                        <div class="stat-dot dot-gold"></div>
+                                    </div>
+                                    <div class="node-info">
+                                        <div class="node-title">Cloud & DevOps</div>
+                                        <div class="node-metric">CI/CD Automated Pipelines</div>
+                                        <div class="node-desc">Azure DevOps, AWS EC2, Git Version Control</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Prompt 1 (Translate-WF style) -->
+                <div class="scroll-prompt-wrapper">
+                    <div class="scroll-prompt-intro">
+                        <div class="scroll-prompt-undercircle"></div>
+                        <a href="#impact" class="scroll-prompt-btn">
+                            <div class="p-scroll">Why does this matter? Explore Impact</div>
+                            <div class="scroll-prompt-ico">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.37 10.72a1 1 0 0 1 0-1.36l4-4.08a.94.94 0 0 1 1.33 0 1 1 0 0 1 0 1.36l-4 4.08a1 1 0 0 1-1.33 0z" />
+                                    <path fill="currentColor"
+                                        d="M3.28 5.28a.94.94 0 0 1 1.33 0l4.1 4.08a1 1 0 0 1 0 1.36 1 1 0 0 1-1.34 0L3.28 6.64a1 1 0 0 1 0-1.36z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Skills / Architecture Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="apple-tag">Technical Depth</span>
-                    <h2 class="section-heading">Architectural Stacks & Tools</h2>
-                    <p class="section-subheading">
-                        A curated toolkit spanning backend systems, cloud infra, and fluid reactive client interfaces.
+        <!-- ════════════════════════════════════════════════════════════════
+             SCENE 2: THE IMPACT & NUMBERS (Translate-WF Style)
+             ════════════════════════════════════════════════════════════════ -->
+        <section id="impact" class="scene scene-2">
+            <div class="container scene-container">
+
+                <div class="scene-header">
+                    <div class="scene-eyebrow p-gradient-1">MEASURABLE VALUE</div>
+                    <h2 class="scene-title">Proven in production. Built for scale.</h2>
+                    <p class="scene-subtitle">
+                        Delivering high-performance software systems across enterprise engineering environments and modern web platforms.
                     </p>
                 </div>
 
-                <div class="skills-bento-grid">
+                <!-- Giant Stats Row (Translate-WF globe stat style) -->
+                <div class="stats-showcase-row">
+                    <div class="stat-card">
+                        <div class="stat-number p-gradient-1" data-count="2">2+</div>
+                        <div class="stat-label">Years Hands-On Delivery</div>
+                        <p class="stat-sub">
+                            Production engineering at <strong>Thinkbridge</strong> (C# .NET Enterprise) and <strong>Info Origin</strong> (Fullstack React & Node-RED).
+                        </p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number p-gradient-2" data-count="10">10+</div>
+                        <div class="stat-label">Technologies Mastered</div>
+                        <p class="stat-sub">
+                            From core backend runtimes (.NET, Java, Spring) to reactive web clients (React, Angular) and SQL/NoSQL databases.
+                        </p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number p-gradient-1" data-count="4">4</div>
+                        <div class="stat-label">Engineering Credentials</div>
+                        <p class="stat-sub">
+                            B.Tech from <strong>SPCE</strong>, Advanced Computing Diploma from <strong>IACSD (CDAC)</strong>, and Java Enterprise Certifications.
+                        </p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number p-gradient-2" data-count="100">100%</div>
+                        <div class="stat-label">Production Reliability</div>
+                        <p class="stat-sub">
+                            Adhering to strict SDLC best practices, Agile scrum delivery, and modular microservices architectures.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Scroll Prompt 2 -->
+                <div class="scroll-prompt-wrapper">
+                    <div class="scroll-prompt-intro">
+                        <div class="scroll-prompt-undercircle"></div>
+                        <a href="#architecture" class="scroll-prompt-btn">
+                            <div class="p-scroll">Deep dive: Technical Architecture</div>
+                            <div class="scroll-prompt-ico">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.37 10.72a1 1 0 0 1 0-1.36l4-4.08a.94.94 0 0 1 1.33 0 1 1 0 0 1 0 1.36l-4 4.08a1 1 0 0 1-1.33 0z" />
+                                    <path fill="currentColor"
+                                        d="M3.28 5.28a.94.94 0 0 1 1.33 0l4.1 4.08a1 1 0 0 1 0 1.36 1 1 0 0 1-1.34 0L3.28 6.64a1 1 0 0 1 0-1.36z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════════════════
+             SCENE 3: ARCHITECTURE & SKILLS
+             ════════════════════════════════════════════════════════════════ -->
+        <section id="architecture" class="scene scene-3">
+            <div class="container scene-container">
+
+                <div class="scene-header">
+                    <div class="scene-eyebrow p-gradient-2">CORE TOOLKIT</div>
+                    <h2 class="scene-title">Decoupled. Type-Safe. Cloud-Ready.</h2>
+                    <p class="scene-subtitle">
+                        Architecting reliable systems from low-level algorithms to cloud deployment pipelines.
+                    </p>
+                </div>
+
+                <div class="wf-cards-grid">
                     <!-- Languages -->
-                    <div class="skill-bento-card glass-panel" data-tilt>
-                        <div class="skill-card-top">
-                            <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                    <div class="wf-card">
+                        <div class="wf-card-header">
+                            <div class="card-icon"><i class="fas fa-code"></i></div>
                             <h3>Programming Languages</h3>
                         </div>
-                        <div class="skill-pill-cloud">
-                            <span class="skill-pill highlight-pill">C#</span>
-                            <span class="skill-pill highlight-pill">Java</span>
-                            <span class="skill-pill highlight-pill">JavaScript</span>
-                            <span class="skill-pill">TypeScript</span>
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">HTML5</span>
-                            <span class="skill-pill">CSS3</span>
+                        <div class="badge-cluster">
+                            <span class="pill primary">C#</span>
+                            <span class="pill primary">Java</span>
+                            <span class="pill primary">JavaScript</span>
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">Python</span>
+                            <span class="pill">HTML5 & CSS3</span>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
 
                     <!-- Frameworks -->
-                    <div class="skill-bento-card glass-panel" data-tilt>
-                        <div class="skill-card-top">
-                            <div class="skill-category-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="wf-card">
+                        <div class="wf-card-header">
+                            <div class="card-icon"><i class="fas fa-layer-group"></i></div>
                             <h3>Frameworks & Runtimes</h3>
                         </div>
-                        <div class="skill-pill-cloud">
-                            <span class="skill-pill highlight-pill">.NET 8</span>
-                            <span class="skill-pill highlight-pill">ASP.NET MVC</span>
-                            <span class="skill-pill highlight-pill">Spring Boot</span>
-                            <span class="skill-pill highlight-pill">React.js</span>
-                            <span class="skill-pill">Node.js</span>
-                            <span class="skill-pill">Angular</span>
-                            <span class="skill-pill">Express</span>
+                        <div class="badge-cluster">
+                            <span class="pill primary">.NET 8</span>
+                            <span class="pill primary">ASP.NET MVC</span>
+                            <span class="pill primary">Spring Boot</span>
+                            <span class="pill primary">React.js</span>
+                            <span class="pill">Node.js</span>
+                            <span class="pill">Angular</span>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
 
                     <!-- Databases -->
-                    <div class="skill-bento-card glass-panel" data-tilt>
-                        <div class="skill-card-top">
-                            <div class="skill-category-icon"><i class="fas fa-database"></i></div>
+                    <div class="wf-card">
+                        <div class="wf-card-header">
+                            <div class="card-icon"><i class="fas fa-database"></i></div>
                             <h3>Data & Persistence</h3>
                         </div>
-                        <div class="skill-pill-cloud">
-                            <span class="skill-pill highlight-pill">MySQL</span>
-                            <span class="skill-pill highlight-pill">Oracle SQL</span>
-                            <span class="skill-pill">MongoDB</span>
-                            <span class="skill-pill">PostgreSQL</span>
-                            <span class="skill-pill">JPA / Hibernate</span>
-                            <span class="skill-pill">Entity Framework</span>
+                        <div class="badge-cluster">
+                            <span class="pill primary">MySQL</span>
+                            <span class="pill primary">Oracle SQL</span>
+                            <span class="pill">MongoDB</span>
+                            <span class="pill">Entity Framework</span>
+                            <span class="pill">Hibernate / JPA</span>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
 
                     <!-- Cloud & DevOps -->
-                    <div class="skill-bento-card glass-panel" data-tilt>
-                        <div class="skill-card-top">
-                            <div class="skill-category-icon"><i class="fas fa-cloud"></i></div>
-                            <h3>Cloud, DevOps & Tooling</h3>
+                    <div class="wf-card">
+                        <div class="wf-card-header">
+                            <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                            <h3>Cloud & DevOps</h3>
                         </div>
-                        <div class="skill-pill-cloud">
-                            <span class="skill-pill highlight-pill">Azure DevOps</span>
-                            <span class="skill-pill highlight-pill">AWS EC2</span>
-                            <span class="skill-pill highlight-pill">Git & GitHub</span>
-                            <span class="skill-pill">CI/CD Pipelines</span>
-                            <span class="skill-pill">Docker</span>
-                            <span class="skill-pill">Vercel</span>
+                        <div class="badge-cluster">
+                            <span class="pill primary">Azure DevOps</span>
+                            <span class="pill primary">AWS EC2</span>
+                            <span class="pill">Git & GitHub</span>
+                            <span class="pill">CI/CD Automation</span>
+                            <span class="pill">Vercel</span>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
 
-                    <!-- Testing & Quality -->
-                    <div class="skill-bento-card glass-panel" data-tilt>
-                        <div class="skill-card-top">
-                            <div class="skill-category-icon"><i class="fas fa-vial-circle-check"></i></div>
-                            <h3>Testing & Verification</h3>
+                    <!-- Testing -->
+                    <div class="wf-card">
+                        <div class="wf-card-header">
+                            <div class="card-icon"><i class="fas fa-vial-circle-check"></i></div>
+                            <h3>Quality & Testing</h3>
                         </div>
-                        <div class="skill-pill-cloud">
-                            <span class="skill-pill highlight-pill">JUnit</span>
-                            <span class="skill-pill">Selenium</span>
-                            <span class="skill-pill">TestNG</span>
-                            <span class="skill-pill">Postman REST</span>
-                            <span class="skill-pill">Mocking</span>
+                        <div class="badge-cluster">
+                            <span class="pill primary">JUnit</span>
+                            <span class="pill">Selenium</span>
+                            <span class="pill">TestNG</span>
+                            <span class="pill">Postman REST</span>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
 
                     <!-- Methodologies -->
-                    <div class="skill-bento-card glass-panel" data-tilt>
-                        <div class="skill-card-top">
-                            <div class="skill-category-icon"><i class="fas fa-diagram-project"></i></div>
+                    <div class="wf-card">
+                        <div class="wf-card-header">
+                            <div class="card-icon"><i class="fas fa-diagram-project"></i></div>
                             <h3>Architecture & Process</h3>
                         </div>
-                        <div class="skill-pill-cloud">
-                            <span class="skill-pill highlight-pill">Agile Scrum</span>
-                            <span class="skill-pill">RESTful APIs</span>
-                            <span class="skill-pill">SOA</span>
-                            <span class="skill-pill">SDLC Standard</span>
-                            <span class="skill-pill">Code Reviews</span>
+                        <div class="badge-cluster">
+                            <span class="pill primary">Agile / Scrum</span>
+                            <span class="pill">RESTful APIs</span>
+                            <span class="pill">SOA Patterns</span>
+                            <span class="pill">Code Reviews</span>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
                 </div>
+
+                <!-- Scroll Prompt 3 -->
+                <div class="scroll-prompt-wrapper">
+                    <div class="scroll-prompt-intro">
+                        <div class="scroll-prompt-undercircle"></div>
+                        <a href="#experience" class="scroll-prompt-btn">
+                            <div class="p-scroll">Production Track Record: View Experience</div>
+                            <div class="scroll-prompt-ico">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.37 10.72a1 1 0 0 1 0-1.36l4-4.08a.94.94 0 0 1 1.33 0 1 1 0 0 1 0 1.36l-4 4.08a1 1 0 0 1-1.33 0z" />
+                                    <path fill="currentColor"
+                                        d="M3.28 5.28a.94.94 0 0 1 1.33 0l4.1 4.08a1 1 0 0 1 0 1.36 1 1 0 0 1-1.34 0L3.28 6.64a1 1 0 0 1 0-1.36z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Experience Section (Apple Timeline) -->
-        <section id="experience" class="section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="apple-tag">Track Record</span>
-                    <h2 class="section-heading">Professional Experience</h2>
-                    <p class="section-subheading">
-                        Delivering production software in enterprise teams and fast-paced agile environments.
+        <!-- ════════════════════════════════════════════════════════════════
+             SCENE 4: EXPERIENCE (Connected Tracer Timeline)
+             ════════════════════════════════════════════════════════════════ -->
+        <section id="experience" class="scene scene-4">
+            <div class="container scene-container">
+
+                <div class="scene-header">
+                    <div class="scene-eyebrow p-gradient-1">CAREER MILESTONES</div>
+                    <h2 class="scene-title">Professional Experience</h2>
+                    <p class="scene-subtitle">
+                        Delivering production code in enterprise engineering scrums and client-facing platforms.
                     </p>
                 </div>
 
-                <div class="apple-timeline">
-                    <!-- Experience 1 -->
-                    <div class="timeline-entry glass-panel" data-tilt>
-                        <div class="timeline-indicator-col">
-                            <div class="timeline-node"></div>
-                            <div class="timeline-line"></div>
+                <!-- Interactive Connected Timeline with Scroll Tracer -->
+                <div class="tracer-timeline">
+                    <div class="timeline-tracer-track">
+                        <div class="timeline-tracer-fill" id="timelineTracerFill"></div>
+                    </div>
+
+                    <!-- Entry 1: Info Origin -->
+                    <div class="tracer-entry">
+                        <div class="entry-node">
+                            <div class="node-glow"></div>
                         </div>
-                        <div class="timeline-card-content">
-                            <div class="entry-header">
-                                <div>
-                                    <span class="entry-period">October 2024 — Present</span>
-                                    <h3 class="entry-role">Fullstack Software Intern</h3>
-                                    <h4 class="entry-company">Info Origin Technologies Pvt Ltd</h4>
-                                </div>
+                        <div class="entry-card">
+                            <div class="entry-meta">
+                                <span class="entry-date p-gradient-1">October 2024 — Present</span>
                                 <span class="entry-location"><i class="fas fa-location-dot"></i> Gondia, India</span>
                             </div>
-                            <ul class="entry-bullets">
-                                <li>Engineered key functionality for in-house low-code orchestration application <strong>InfoQA</strong> using JavaScript, Node-RED, and React.</li>
-                                <li>Implemented reusable UI components with Angular and React, paired with robust Spring Boot RESTful services and MySQL schemas.</li>
-                                <li>Conducted strict peer code reviews to maintain architecture patterns and accelerate sprint delivery.</li>
-                                <li>Documented system design specifications and developer integration guides.</li>
+                            <h3 class="entry-title">Fullstack Software Intern</h3>
+                            <h4 class="entry-company">Info Origin Technologies Pvt Ltd</h4>
+                            <ul class="entry-list">
+                                <li>Developed core features for in-house low-code application <strong>InfoQA</strong> using JavaScript, Node-RED, and React.</li>
+                                <li>Implemented reusable component architectures with Angular, React, and Spring Boot REST microservices paired with MySQL.</li>
+                                <li>Conducted peer code reviews, adhering to team architectural standards to accelerate sprint velocity.</li>
+                                <li>Authored comprehensive technical specifications and developer integration documentation.</li>
                             </ul>
-                            <div class="entry-stack-tags">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Spring Boot</span>
-                                <span class="tech-tag">Node-RED</span>
-                                <span class="tech-tag">Angular</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">JavaScript</span>
+                            <div class="entry-tags">
+                                <span class="pill">React</span>
+                                <span class="pill">Spring Boot</span>
+                                <span class="pill">Node-RED</span>
+                                <span class="pill">Angular</span>
+                                <span class="pill">MySQL</span>
                             </div>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
 
-                    <!-- Experience 2 -->
-                    <div class="timeline-entry glass-panel" data-tilt>
-                        <div class="timeline-indicator-col">
-                            <div class="timeline-node"></div>
+                    <!-- Entry 2: Thinkbridge -->
+                    <div class="tracer-entry">
+                        <div class="entry-node">
+                            <div class="node-glow"></div>
                         </div>
-                        <div class="timeline-card-content">
-                            <div class="entry-header">
-                                <div>
-                                    <span class="entry-period">May 2024 — October 2024</span>
-                                    <h3 class="entry-role">Apprentice Software Engineer</h3>
-                                    <h4 class="entry-company">Thinkbridge Software Private Limited</h4>
-                                </div>
+                        <div class="entry-card">
+                            <div class="entry-meta">
+                                <span class="entry-date p-gradient-2">May 2024 — October 2024</span>
                                 <span class="entry-location"><i class="fas fa-location-dot"></i> Pune, India</span>
                             </div>
-                            <ul class="entry-bullets">
-                                <li>Developed and maintained the core enterprise application for the high-impact <strong>PSG Compass Project</strong>.</li>
-                                <li>Engineered high-volume, low-latency business logic utilizing <strong>C#, ASP.NET MVC</strong>, and relational SQL databases.</li>
-                                <li>Optimized memory allocations and refined search algorithms, significantly reducing query response latencies.</li>
-                                <li>Managed end-to-end task flows within <strong>Azure DevOps</strong> and actively contributed to daily sprint ceremonies and architecture retrospectives.</li>
+                            <h3 class="entry-title">Apprentice Software Engineer</h3>
+                            <h4 class="entry-company">Thinkbridge Software Private Limited</h4>
+                            <ul class="entry-list">
+                                <li>Developed and maintained core business modules for the enterprise <strong>PSG Compass Project</strong>.</li>
+                                <li>Engineered high-volume, low-latency business logic utilizing <strong>C#, ASP.NET MVC</strong>, and relational SQL.</li>
+                                <li>Optimized memory allocations and database querying routines, improving execution speeds.</li>
+                                <li>Coordinated user story lifecycles inside <strong>Azure DevOps</strong> and actively participated in daily standups and retrospectives.</li>
                             </ul>
-                            <div class="entry-stack-tags">
-                                <span class="tech-tag">C#</span>
-                                <span class="tech-tag">.NET Framework</span>
-                                <span class="tech-tag">ASP.NET MVC</span>
-                                <span class="tech-tag">SQL Server</span>
-                                <span class="tech-tag">Azure DevOps</span>
-                                <span class="tech-tag">SOA</span>
+                            <div class="entry-tags">
+                                <span class="pill">C#</span>
+                                <span class="pill">.NET MVC</span>
+                                <span class="pill">SQL Server</span>
+                                <span class="pill">Azure DevOps</span>
+                                <span class="pill">SOA</span>
                             </div>
                         </div>
-                        <div class="card-specular-light"></div>
                     </div>
                 </div>
+
+                <!-- Scroll Prompt 4 -->
+                <div class="scroll-prompt-wrapper">
+                    <div class="scroll-prompt-intro">
+                        <div class="scroll-prompt-undercircle"></div>
+                        <a href="#work" class="scroll-prompt-btn">
+                            <div class="p-scroll">Explore Full-Stack Work</div>
+                            <div class="scroll-prompt-ico">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.37 10.72a1 1 0 0 1 0-1.36l4-4.08a.94.94 0 0 1 1.33 0 1 1 0 0 1 0 1.36l-4 4.08a1 1 0 0 1-1.33 0z" />
+                                    <path fill="currentColor"
+                                        d="M3.28 5.28a.94.94 0 0 1 1.33 0l4.1 4.08a1 1 0 0 1 0 1.36 1 1 0 0 1-1.34 0L3.28 6.64a1 1 0 0 1 0-1.36z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Projects Section (Apple Product Showcase Bento) -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="apple-tag">Featured Engineering</span>
-                    <h2 class="section-heading">Curated Projects & Systems</h2>
-                    <p class="section-subheading">
-                        Full-stack applications designed with enterprise design patterns, responsive UX, and scalable databases.
+        <!-- ════════════════════════════════════════════════════════════════
+             SCENE 5: FEATURED WORK / PROJECTS
+             ════════════════════════════════════════════════════════════════ -->
+        <section id="work" class="scene scene-5">
+            <div class="container scene-container">
+
+                <div class="scene-header">
+                    <div class="scene-eyebrow p-gradient-2">SOFTWARE PORTFOLIO</div>
+                    <h2 class="scene-title">Featured Systems & Applications</h2>
+                    <p class="scene-subtitle">
+                        End-to-end full stack solutions designed with clean code, secure authentication, and responsive design.
                     </p>
                 </div>
 
-                <div class="showcase-grid">
-                    <!-- Project 1: Electricity Bill App (Featured) -->
-                    <div class="showcase-card showcase-featured glass-panel" data-tilt>
-                        <div class="showcase-visual-badge">
-                            <i class="fas fa-bolt-lightning"></i>
+                <div class="projects-showcase-grid">
+
+                    <!-- Project 1: Electricity Bill App (Featured with Live Demo) -->
+                    <div class="project-showcase-card featured-project">
+                        <div class="project-card-top">
+                            <span class="project-type-pill">ENTERPRISE SYSTEM</span>
+                            <span class="live-pill">● Live Demo Online</span>
                         </div>
-                        <div class="showcase-content">
-                            <div class="showcase-eyebrow">
-                                <span class="badge-pill">Enterprise Utility</span>
-                                <span class="badge-status-live">● Live Demo Available</span>
-                            </div>
-                            <h3 class="showcase-title">Electricity Bill Management Application</h3>
-                            <p class="showcase-desc">
-                                A comprehensive utility automation platform that calculates tiered power consumption, automates billing cycles, and tracks payment settlement pipelines in real-time. Built with resilient Spring Boot endpoints and relational persistence.
-                            </p>
-                            <div class="showcase-tags">
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">Spring Boot</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">RESTful API</span>
-                                <span class="tech-tag">Vercel Deploy</span>
-                            </div>
-                            <div class="showcase-links">
-                                <a href="https://e-bill-app.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="apple-btn apple-btn-primary btn-sm">
-                                    <span>Launch Live App</span>
-                                    <i class="fas fa-arrow-up-right-from-square"></i>
-                                </a>
-                                <a href="https://github.com/74927bhushan/ebill-app" target="_blank"
-                                    rel="noopener noreferrer" class="apple-btn apple-btn-glass btn-sm">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Source</span>
-                                </a>
-                            </div>
+                        <h3 class="project-title">Electricity Bill Management Application</h3>
+                        <p class="project-description">
+                            Full-featured utility billing and energy monitoring system. Automates tiered tariff calculations, customer ledger management, and payment processing with secure Spring Boot REST endpoints and relational persistence.
+                        </p>
+                        <div class="project-tech-pills">
+                            <span class="pill">Java</span>
+                            <span class="pill">Spring Boot</span>
+                            <span class="pill">MySQL</span>
+                            <span class="pill">REST API</span>
+                            <span class="pill">Vercel</span>
                         </div>
-                        <div class="card-specular-light"></div>
+                        <div class="project-actions">
+                            <a href="https://e-bill-app.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="btn-wf btn-primary">
+                                <span>Launch Live Application</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/74927bhushan/ebill-app" target="_blank"
+                                rel="noopener noreferrer" class="btn-wf btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Project 2: Voter Application -->
-                    <div class="showcase-card glass-panel" data-tilt>
-                        <div class="showcase-visual-badge">
-                            <i class="fas fa-check-to-slot"></i>
+                    <div class="project-showcase-card">
+                        <div class="project-card-top">
+                            <span class="project-type-pill">GOVERNANCE PLATFORM</span>
                         </div>
-                        <div class="showcase-content">
-                            <div class="showcase-eyebrow">
-                                <span class="badge-pill">Governance & Security</span>
-                            </div>
-                            <h3 class="showcase-title">Secure Voter Application</h3>
-                            <p class="showcase-desc">
-                                Full-stack digital ballot system featuring authenticated voter registration, tamper-resistant ballot processing, and real-time tally tracking with Angular client and Spring Boot core.
-                            </p>
-                            <div class="showcase-tags">
-                                <span class="tech-tag">Angular</span>
-                                <span class="tech-tag">Spring Boot</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">REST API</span>
-                            </div>
-                            <div class="showcase-links">
-                                <a href="https://github.com/74927bhushan/Voter_Application" target="_blank"
-                                    rel="noopener noreferrer" class="apple-btn apple-btn-glass btn-sm">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub Repository</span>
-                                </a>
-                            </div>
+                        <h3 class="project-title">Secure Voter Application</h3>
+                        <p class="project-description">
+                            Digital voting management suite built with Angular and Spring Boot. Handles verified voter registration, ballot integrity, and real-time result tabulation with a clean interface.
+                        </p>
+                        <div class="project-tech-pills">
+                            <span class="pill">Angular</span>
+                            <span class="pill">Spring Boot</span>
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">REST API</span>
                         </div>
-                        <div class="card-specular-light"></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/74927bhushan/Voter_Application" target="_blank"
+                                rel="noopener noreferrer" class="btn-wf btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>View on GitHub</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Project 3: Student Management System -->
-                    <div class="showcase-card glass-panel" data-tilt>
-                        <div class="showcase-visual-badge">
-                            <i class="fas fa-graduation-cap"></i>
+                    <!-- Project 3: Student Management Platform -->
+                    <div class="project-showcase-card">
+                        <div class="project-card-top">
+                            <span class="project-type-pill">CAMPUS ERP</span>
                         </div>
-                        <div class="showcase-content">
-                            <div class="showcase-eyebrow">
-                                <span class="badge-pill">Education & RBAC</span>
-                            </div>
-                            <h3 class="showcase-title">Student Management Platform</h3>
-                            <p class="showcase-desc">
-                                Campus management suite built for IACSD institute streamlining student lifecycle, course registrations, and grade audits with JWT security and responsive React interfaces.
-                            </p>
-                            <div class="showcase-tags">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Spring Boot</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">JWT Auth</span>
-                            </div>
-                            <div class="showcase-links">
-                                <span class="internal-tag"><i class="fas fa-lock"></i> IACSD Core System</span>
-                            </div>
+                        <h3 class="project-title">Student Management Platform</h3>
+                        <p class="project-description">
+                            Campus automation platform engineered for IACSD institute. Features JWT authentication, role-based access control, grade records, and course scheduling.
+                        </p>
+                        <div class="project-tech-pills">
+                            <span class="pill">React</span>
+                            <span class="pill">Spring Boot</span>
+                            <span class="pill">MySQL</span>
+                            <span class="pill">JWT</span>
                         </div>
-                        <div class="card-specular-light"></div>
+                        <div class="project-actions">
+                            <span class="internal-badge"><i class="fas fa-lock"></i> IACSD Core System</span>
+                        </div>
                     </div>
 
-                    <!-- Project 4: Task Manager -->
-                    <div class="showcase-card glass-panel" data-tilt>
-                        <div class="showcase-visual-badge">
-                            <i class="fas fa-list-check"></i>
+                    <!-- Project 4: Cloud Task Manager -->
+                    <div class="project-showcase-card">
+                        <div class="project-card-top">
+                            <span class="project-type-pill">PRODUCTIVITY ENGINE</span>
                         </div>
-                        <div class="showcase-content">
-                            <div class="showcase-eyebrow">
-                                <span class="badge-pill">Productivity Core</span>
-                            </div>
-                            <h3 class="showcase-title">Cloud Task Manager</h3>
-                            <p class="showcase-desc">
-                                High-efficiency task tracking utility with priority classification, deadline reminders, and state synchronization powered by Node.js and MongoDB document persistence.
-                            </p>
-                            <div class="showcase-tags">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">Express</span>
-                                <span class="tech-tag">REST APIs</span>
-                            </div>
-                            <div class="showcase-links">
-                                <a href="https://github.com/74927bhushan/TaskManager" target="_blank"
-                                    rel="noopener noreferrer" class="apple-btn apple-btn-glass btn-sm">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub Repository</span>
-                                </a>
-                            </div>
+                        <h3 class="project-title">Cloud Task Manager</h3>
+                        <p class="project-description">
+                            Collaborative workflow task manager with deadline tracking, priority queues, and document persistence using Node.js, Express, and MongoDB.
+                        </p>
+                        <div class="project-tech-pills">
+                            <span class="pill">JavaScript</span>
+                            <span class="pill">Node.js</span>
+                            <span class="pill">MongoDB</span>
+                            <span class="pill">REST</span>
                         </div>
-                        <div class="card-specular-light"></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/74927bhushan/TaskManager" target="_blank"
+                                rel="noopener noreferrer" class="btn-wf btn-outline">
+                                <i class="fab fa-github"></i>
+                                <span>View on GitHub</span>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Project 5: To-Do App -->
-                    <div class="showcase-card glass-panel" data-tilt>
-                        <div class="showcase-visual-badge">
-                            <i class="fas fa-clipboard-check"></i>
+                    <div class="project-showcase-card">
+                        <div class="project-card-top">
+                            <span class="project-type-pill">CLIENT ENGINE</span>
                         </div>
-                        <div class="showcase-content">
-                            <div class="showcase-eyebrow">
-                                <span class="badge-pill">Client Persistence</span>
-                            </div>
-                            <h3 class="showcase-title">Lightweight To-Do Engine</h3>
-                            <p class="showcase-desc">
-                                Minimalist task checklist with local storage state persistence, drag reordering capability, and instant load time with vanilla web primitives.
-                            </p>
-                            <div class="showcase-tags">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">HTML5</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">Local Storage</span>
-                            </div>
-                            <div class="showcase-links">
-                                <a href="https://github.com/74927bhushan/ToDoListApp" target="_blank"
-                                    rel="noopener noreferrer" class="apple-btn apple-btn-glass btn-sm">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub Repository</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-specular-light"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education & Certifications Section -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="apple-tag">Credentials</span>
-                    <h2 class="section-heading">Education & Certifications</h2>
-                    <p class="section-subheading">
-                        Academic engineering rigor paired with specialized post-graduate software credentials.
-                    </p>
-                </div>
-
-                <div class="education-bento">
-                    <div class="edu-card glass-panel" data-tilt>
-                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="edu-period">Graduated March 2023</span>
-                        <h3>Bachelor of Technology (B.Tech)</h3>
-                        <h4>Sardar Patel College of Engineering</h4>
-                        <p class="edu-meta">Mumbai University Affiliated · Foundation in Engineering Systems</p>
-                        <div class="card-specular-light"></div>
-                    </div>
-
-                    <div class="edu-card glass-panel" data-tilt>
-                        <div class="edu-icon"><i class="fas fa-certificate"></i></div>
-                        <span class="edu-period">Sep 2023 — Mar 2024</span>
-                        <h3>Post-Graduate Diploma: Software Development</h3>
-                        <h4>IACSD (CDAC Authorized Centre)</h4>
-                        <p class="edu-meta">Pune, India · Advanced Algorithms, Enterprise .NET, Java, and Distributed Architectures</p>
-                        <div class="card-specular-light"></div>
-                    </div>
-
-                    <div class="edu-card glass-panel" data-tilt>
-                        <div class="edu-icon"><i class="fas fa-award"></i></div>
-                        <span class="edu-period">Apr 2023 — May 2023</span>
-                        <h3>Certified Java Enterprise Developer</h3>
-                        <h4>Core & Advanced Java Specialization</h4>
-                        <p class="edu-meta">Multi-threading, Memory Model, Collections, and Enterprise Design Patterns</p>
-                        <div class="card-specular-light"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section contact-section">
-            <div class="container">
-                <div class="contact-bento glass-panel" data-tilt>
-                    <div class="contact-header">
-                        <span class="apple-tag">Start a Conversation</span>
-                        <h2 class="contact-headline">Let's build something exceptional together.</h2>
-                        <p class="contact-sub">
-                            I am actively interviewing for Full Stack and Software Engineering opportunities. Reach out directly or connect on social platforms.
+                        <h3 class="project-title">Lightweight To-Do Engine</h3>
+                        <p class="project-description">
+                            Minimalist task checklist featuring local storage persistence, state hydration, and instant response with pure HTML5, CSS3, and JavaScript primitives.
                         </p>
-                    </div>
-
-                    <div class="contact-channels">
-                        <a href="mailto:choudhary.bhushan31@gmail.com" class="channel-card">
-                            <div class="channel-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="channel-meta">
-                                <span class="channel-label">Email</span>
-                                <span class="channel-value">choudhary.bhushan31@gmail.com</span>
-                            </div>
-                            <i class="fas fa-arrow-up-right-from-square channel-arrow"></i>
-                        </a>
-
-                        <a href="tel:+919359240149" class="channel-card">
-                            <div class="channel-icon"><i class="fas fa-phone"></i></div>
-                            <div class="channel-meta">
-                                <span class="channel-label">Direct Phone</span>
-                                <span class="channel-value">+91 9359240149</span>
-                            </div>
-                            <i class="fas fa-arrow-up-right-from-square channel-arrow"></i>
-                        </a>
-
-                        <div class="channel-card no-link">
-                            <div class="channel-icon"><i class="fas fa-location-dot"></i></div>
-                            <div class="channel-meta">
-                                <span class="channel-label">Current Location</span>
-                                <span class="channel-value">Pune, Maharashtra, India</span>
-                            </div>
+                        <div class="project-tech-pills">
+                            <span class="pill">JavaScript</span>
+                            <span class="pill">HTML5</span>
+                            <span class="pill">CSS3</span>
+                            <span class="pill">Storage</span>
                         </div>
-                    </div>
-
-                    <div class="contact-social-footer">
-                        <div class="social-btn-group">
-                            <a href="https://github.com/74927bhushan" target="_blank" rel="noopener noreferrer"
-                                class="apple-btn apple-btn-glass btn-sm">
+                        <div class="project-actions">
+                            <a href="https://github.com/74927bhushan/ToDoListApp" target="_blank"
+                                rel="noopener noreferrer" class="btn-wf btn-outline">
                                 <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/bhushan-choudhary-738109151/" target="_blank"
-                                rel="noopener noreferrer" class="apple-btn apple-btn-glass btn-sm">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://www.instagram.com/bhushan_choudhary9864/" target="_blank"
-                                rel="noopener noreferrer" class="apple-btn apple-btn-glass btn-sm">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="resume.html" class="apple-btn apple-btn-primary btn-sm">
-                                <i class="fas fa-file-arrow-down"></i>
-                                <span>Download Resume</span>
+                                <span>View on GitHub</span>
                             </a>
                         </div>
                     </div>
 
-                    <div class="card-specular-light"></div>
                 </div>
+
+                <!-- Scroll Prompt 5 -->
+                <div class="scroll-prompt-wrapper">
+                    <div class="scroll-prompt-intro">
+                        <div class="scroll-prompt-undercircle"></div>
+                        <a href="#connect" class="scroll-prompt-btn">
+                            <div class="p-scroll">Welcome to the next chapter: Connect</div>
+                            <div class="scroll-prompt-ico">
+                                <svg viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.37 10.72a1 1 0 0 1 0-1.36l4-4.08a.94.94 0 0 1 1.33 0 1 1 0 0 1 0 1.36l-4 4.08a1 1 0 0 1-1.33 0z" />
+                                    <path fill="currentColor"
+                                        d="M3.28 5.28a.94.94 0 0 1 1.33 0l4.1 4.08a1 1 0 0 1 0 1.36 1 1 0 0 1-1.34 0L3.28 6.64a1 1 0 0 1 0-1.36z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+        <!-- ════════════════════════════════════════════════════════════════
+             SCENE 6: CONNECT & LAUNCHPAD (Translate-WF Finale)
+             ════════════════════════════════════════════════════════════════ -->
+        <section id="connect" class="scene scene-6">
+            <div class="container scene-container">
+
+                <div class="connect-box">
+                    <div class="connect-eyebrow p-gradient-1">START A CONVERSATION</div>
+                    <h2 class="connect-title">Let's build something exceptional together.</h2>
+                    <p class="connect-desc">
+                        Whether you are looking to hire a Full Stack Engineer, build a scalable system, or discuss new opportunities — my inbox and lines are always open.
+                    </p>
+
+                    <div class="connect-grid">
+                        <a href="mailto:choudhary.bhushan31@gmail.com" class="connect-tile">
+                            <div class="tile-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="tile-body">
+                                <span class="tile-label">Direct Email</span>
+                                <span class="tile-val">choudhary.bhushan31@gmail.com</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right-from-square tile-arrow"></i>
+                        </a>
+
+                        <a href="tel:+919359240149" class="connect-tile">
+                            <div class="tile-icon"><i class="fas fa-phone"></i></div>
+                            <div class="tile-body">
+                                <span class="tile-label">Direct Phone</span>
+                                <span class="tile-val">+91 9359240149</span>
+                            </div>
+                            <i class="fas fa-arrow-up-right-from-square tile-arrow"></i>
+                        </a>
+
+                        <div class="connect-tile no-hover">
+                            <div class="tile-icon"><i class="fas fa-location-dot"></i></div>
+                            <div class="tile-body">
+                                <span class="tile-label">Location</span>
+                                <span class="tile-val">Pune, Maharashtra, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="connect-socials">
+                        <a href="https://github.com/74927bhushan" target="_blank" rel="noopener noreferrer"
+                            class="social-btn">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/bhushan-choudhary-738109151/" target="_blank"
+                            rel="noopener noreferrer" class="social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.instagram.com/bhushan_choudhary9864/" target="_blank"
+                            rel="noopener noreferrer" class="social-btn">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="resume.html" class="btn-wf btn-primary">
+                            <i class="fas fa-file-arrow-down"></i>
+                            <span>Download Resume (PDF)</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <!-- Apple-style Minimalist Footer -->
-    <footer class="apple-footer">
-        <div class="container footer-content">
+    <!-- Footer -->
+    <footer class="wf-footer">
+        <div class="container footer-container">
             <div class="footer-left">
                 <span class="footer-logo">BC.</span>
-                <p>&copy; 2026 Bhushan Choudhary. Designed with fluid Apple aesthetics.</p>
+                <span>&copy; 2026 Bhushan Choudhary. Built with translate-wf cinematic scroll motion.</span>
             </div>
-            <div class="footer-right">
-                <a href="#home" class="footer-back-to-top">
-                    <span>Back to top</span>
-                    <i class="fas fa-chevron-up"></i>
-                </a>
-            </div>
+            <a href="#imagine" class="footer-back-link">
+                <span>Back to Top</span>
+                <i class="fas fa-chevron-up"></i>
+            </a>
         </div>
     </footer>
 
