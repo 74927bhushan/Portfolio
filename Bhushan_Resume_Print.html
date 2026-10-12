@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhushan Choudhary - Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 16mm 12mm 16mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Calibri', 'Arial', sans-serif;
+    font-size: 10.5pt;
+    color: #222;
+    background: #fff;
+    line-height: 1.45;
+  }
+
+  /* ── PRINT BUTTON (hidden when printing) ── */
+  .print-bar {
+    background: #1a56db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+  }
+  .print-bar button {
+    background: white;
+    color: #1a56db;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 12px;
+  }
+  @media print { .print-bar { display: none; } }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    max-width: 210mm;
+    margin: 48px auto 0;
+    padding: 0;
+    background: white;
+  }
+  @media print { .page { margin: 0; } }
+
+  /* ── HEADER ── */
+  .header { margin-bottom: 10px; }
+
+  .name {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #1a56db;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+
+  .title {
+    font-size: 11pt;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .contact-row {
+    font-size: 9.5pt;
+    color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    margin-top: 3px;
+  }
+
+  .contact-row a { color: #1a56db; text-decoration: none; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 9px; }
+
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a56db;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1.5px solid #1a56db;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary-text {
+    font-size: 10pt;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  /* ── SKILLS ── */
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  .skills-table td {
+    padding: 1.5px 0;
+    vertical-align: top;
+  }
+  .skills-table td:first-child {
+    font-weight: 700;
+    width: 195px;
+    color: #222;
+    white-space: nowrap;
+  }
+  .skills-table td:last-child { color: #333; }
+
+  /* ── EXPERIENCE ── */
+  .exp-item { margin-bottom: 8px; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .company {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #1a1a1a;
+  }
+
+  .exp-date {
+    font-size: 9.5pt;
+    color: #555;
+    white-space: nowrap;
+  }
+
+  .exp-role {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #1a56db;
+    margin-bottom: 4px;
+  }
+
+  .exp-bullets {
+    padding-left: 14px;
+    margin-top: 3px;
+  }
+
+  .exp-bullets li {
+    font-size: 9.8pt;
+    color: #333;
+    margin-bottom: 2.5px;
+    line-height: 1.45;
+  }
+
+  /* ── PROJECTS ── */
+  .project-item { margin-bottom: 6px; }
+
+  .project-name {
+    font-weight: 700;
+    font-size: 10pt;
+    color: #1a1a1a;
+    display: inline;
+  }
+
+  .project-tech {
+    font-size: 9.5pt;
+    color: #555;
+    font-style: italic;
+    display: inline;
+    margin-left: 6px;
+  }
+
+  .project-desc {
+    font-size: 9.5pt;
+    color: #333;
+    margin-top: 1px;
+    line-height: 1.4;
+  }
+
+  .project-link {
+    font-size: 9pt;
+    color: #1a56db;
+    text-decoration: none;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item { margin-bottom: 5px; }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .edu-degree { font-weight: 700; font-size: 10pt; }
+  .edu-school { font-size: 9.8pt; color: #444; }
+  .edu-date { font-size: 9.5pt; color: #555; }
+
+  /* ── CERTS ── */
+  .cert-row {
+    font-size: 9.8pt;
+    color: #333;
+    margin-bottom: 2px;
+  }
+  .cert-row strong { color: #222; }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 0.5px solid #ddd; margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<!-- Print Bar -->
+<div class="print-bar">
+  📄 To save as PDF: Press <strong>Ctrl + P</strong> → Change destination to <strong>"Save as PDF"</strong> → Save
+  <button onclick="window.print()">⬇ Download as PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name">Bhushan Choudhary</div>
+    <div class="title">Full Stack Software Developer</div>
+    <div class="contact-row">
+      <span>📞 +91 9359240149</span>
+      <span>✉ <a href="mailto:choudhary.bhushan31@gmail.com">choudhary.bhushan31@gmail.com</a></span>
+      <span>📍 Pune, Maharashtra</span>
+      <span>🌐 <a href="https://bhushan.xyz">bhushan.xyz</a></span>
+      <span>💼 <a href="https://linkedin.com/in/bhushan-choudhary-738109151">LinkedIn</a></span>
+      <span>🐙 <a href="https://github.com/74927bhushan">GitHub</a></span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">Summary</div>
+    <p class="summary-text">
+      Aspiring Full Stack Software Developer with 2+ years of hands-on experience in building scalable, enterprise-grade web applications. Proficient in object-oriented programming, C#, ASP.NET MVC, Java, Spring Boot, and full-stack JavaScript frameworks including React.js and Angular. Skilled in delivering clean, efficient, and well-documented code while adhering to SDLC best practices. Adept at working in Agile/Scrum environments and contributing to all phases of the Software Development Life Cycle. Enthusiastic about building high-quality software for complex, cutting-edge solutions.
+    </p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <table class="skills-table">
+      <tr>
+        <td>Programming Languages:</td>
+        <td>C#, Java, JavaScript, TypeScript, Python, HTML5, CSS3</td>
+      </tr>
+      <tr>
+        <td>Frameworks/Technologies:</td>
+        <td>.NET, ASP.NET MVC, React.js, Angular, Spring Boot, Node.js, Node-RED, Storybook</td>
+      </tr>
+      <tr>
+        <td>Databases:</td>
+        <td>MySQL, Oracle, MongoDB, SQL Server</td>
+      </tr>
+      <tr>
+        <td>Cloud &amp; DevOps:</td>
+        <td>AWS EC2, Azure DevOps, Git, GitHub, CI/CD, Vercel</td>
+      </tr>
+      <tr>
+        <td>Software Methodologies:</td>
+        <td>Agile, Scrum, SDLC, SOA, OOP, REST API, Microservices</td>
+      </tr>
+      <tr>
+        <td>Testing:</td>
+        <td>Selenium, TestNG, JUnit, Unit Testing, Integration Testing</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="company">Info Origin Technologies Pvt Ltd</span>
+        <span class="exp-date">Oct 2024 – Present</span>
+      </div>
+      <div class="exp-role">Fullstack Software Developer Intern — Gondia, India</div>
+      <ul class="exp-bullets">
+        <li>Developed features for <strong>InfoQA</strong>, an in-house low-code platform using JavaScript, Node-RED, and React.js, improving developer productivity.</li>
+        <li>Built full-stack modules using Angular, React, Spring Boot, and MySQL, contributing to end-to-end feature delivery.</li>
+        <li>Integrated Storybook for component-driven UI development, enabling faster visual iteration and testing.</li>
+        <li>Conducted code reviews to enforce coding standards and improve overall team code quality.</li>
+        <li>Participated in Agile ceremonies (sprint planning, standups, retrospectives) and authored technical documentation.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="company">Thinkbridge Software Private Limited</span>
+        <span class="exp-date">May 2024 – Oct 2024</span>
+      </div>
+      <div class="exp-role">Apprentice Software Engineer — Pune, India</div>
+      <ul class="exp-bullets">
+        <li>Developed and maintained <strong>PSG Compass</strong>, a high-volume .NET enterprise application using C# and ASP.NET MVC.</li>
+        <li>Designed and integrated RESTful APIs following Service-Oriented Architecture (SOA) principles for modular, scalable services.</li>
+        <li>Optimized memory usage and refined algorithms, resulting in measurable improvements in application performance.</li>
+        <li>Managed sprint tasks via Azure DevOps and collaborated with cross-functional teams in daily scrums.</li>
+        <li>Wrote clean, well-documented code adhering to SOLID principles and SDLC best practices.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="project-item">
+      <span class="project-name">Electricity Bill Management System</span>
+      <span class="project-tech">| Java, Spring Boot, MySQL, REST API</span>
+      <a class="project-link" href="https://e-bill-app.vercel.app"> — Live Demo</a>
+      <div class="project-desc">Production-ready utility billing platform with automated bill generation, payment tracking, and consumption analytics. Deployed live on Vercel.</div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-name">Student Management System</span>
+      <span class="project-tech">| React.js, Spring Boot, MySQL, JWT</span>
+      <div class="project-desc">Platform for IACSD institute with JWT-based authentication, role-based access control, and RESTful APIs for student and course management.</div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-name">Voter Application</span>
+      <span class="project-tech">| Angular, Spring Boot, TypeScript, REST API</span>
+      <div class="project-desc">Secure digital voting system with voter registration, ballot management, and real-time result tracking with data validation and session management.</div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-name">Task Manager</span>
+      <span class="project-tech">| Node.js, JavaScript, MongoDB, REST API</span>
+      <div class="project-desc">Full-stack productivity app with task creation, priority management, and deadline tracking via a RESTful Node.js backend.</div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-degree">Bachelor of Technology (B.Tech)</span>
+        <span class="edu-date">Graduated: March 2023</span>
+      </div>
+      <div class="edu-school">Sardar Patel College of Engineering</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-degree">PG Diploma in Advanced Computing — CDAC</span>
+        <span class="edu-date">Sep 2023 – Mar 2024</span>
+      </div>
+      <div class="edu-school">Institute of Advanced Computing and Software Development (IACSD), Pune</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="cert-row">• <strong>CDAC Certification</strong> – Software Development, IACSD Pune (2024)</div>
+    <div class="cert-row">• <strong>Java Certification</strong> – Java Programming (May 2023)</div>
+  </div>
+
+</div>
+</body>
+</html>
