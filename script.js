@@ -1,14 +1,13 @@
 /**
  * ============================================================================
  * BHUSHAN CHOUDHARY — NOIR EDITORIAL ENGINE (JASPREETSINGH.XYZ STYLE)
- * Signature Preloader • Moving Grass Wind Simulation • Cosmic Sky & Stars Parallax
+ * Signature Preloader • Minimalist Kinetic Nebula • Cosmic Sky & Stars Parallax
  * ============================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     initHomeLoader();
-    initLandscapeCanvas();
-    initMovingGrassCanvas();
+    initKineticNebulaCanvas();
     initCosmicSkyCanvas();
     initScrollParallax();
     initCopyActions();
@@ -73,171 +72,22 @@ function initHomeLoader() {
 }
 
 /* ==========================================================================
-   2. PROCEDURAL TWILIGHT MOUNTAIN & HORIZON SCENERY
-   Clean, sharp vector mountains, warm setting sun, and valley lights
+   2. MINIMALIST KINETIC NEBULA CANVAS
+   Floating stardust particles connecting into constellations with cursor gravity
    ========================================================================== */
-function initLandscapeCanvas() {
-    const canvas = document.getElementById('landscapeCanvas');
+function initKineticNebulaCanvas() {
+    const canvas = document.getElementById('nebulaCanvas');
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     let width = 0;
     let height = 0;
     let dpr = window.devicePixelRatio || 1;
-    let valleyLights = [];
+    let particles = [];
 
-    function resize() {
-        const parent = canvas.parentElement;
-        width = parent.offsetWidth;
-        height = parent.offsetHeight;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
-        generateValleyLights();
-    }
-
-    function generateValleyLights() {
-        valleyLights = [];
-        const lightCount = 75;
-        const valleyBaseY = height * 0.72;
-
-        for (let i = 0; i < lightCount; i++) {
-            valleyLights.push({
-                x: width * 0.35 + Math.random() * width * 0.6,
-                y: valleyBaseY + (Math.random() - 0.5) * (height * 0.08),
-                radius: 0.6 + Math.random() * 1.4,
-                alpha: 0.3 + Math.random() * 0.7,
-                twinkleSpeed: 0.8 + Math.random() * 2.5,
-                phase: Math.random() * Math.PI * 2,
-                color: Math.random() > 0.3 ? '#fef08a' : '#fed7aa'
-            });
-        }
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-
-    let startTime = performance.now();
-
-    function render(currentTime) {
-        const time = (currentTime - startTime) * 0.001;
-        ctx.clearRect(0, 0, width, height);
-
-        // 1. Sky Gradient: Deep Midnight Indigo down to Sunset Ember & Apricot
-        const skyGrad = ctx.createLinearGradient(0, 0, 0, height);
-        skyGrad.addColorStop(0.0, '#060713');
-        skyGrad.addColorStop(0.35, '#121124');
-        skyGrad.addColorStop(0.58, '#26182c');
-        skyGrad.addColorStop(0.72, '#50232f');
-        skyGrad.addColorStop(0.84, '#8c3a33');
-        skyGrad.addColorStop(0.92, '#c45e3d');
-        skyGrad.addColorStop(0.97, '#e88950');
-        skyGrad.addColorStop(1.0, '#f9b578');
-
-        ctx.fillStyle = skyGrad;
-        ctx.fillRect(0, 0, width, height);
-
-        // 2. The Setting Sun & Atmospheric Bloom
-        const sunX = width * 0.72;
-        const sunY = height * 0.60;
-        const sunRadius = Math.max(16, width * 0.018);
-
-        // Outer atmospheric bloom
-        const bloomGrad = ctx.createRadialGradient(sunX, sunY, sunRadius * 0.5, sunX, sunY, sunRadius * 9);
-        bloomGrad.addColorStop(0.0, 'rgba(254, 215, 170, 0.45)');
-        bloomGrad.addColorStop(0.3, 'rgba(249, 115, 22, 0.22)');
-        bloomGrad.addColorStop(0.65, 'rgba(225, 29, 72, 0.08)');
-        bloomGrad.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = bloomGrad;
-        ctx.beginPath();
-        ctx.arc(sunX, sunY, sunRadius * 9, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Sun disc
-        const sunDisc = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, sunRadius);
-        sunDisc.addColorStop(0.0, '#fffbeb');
-        sunDisc.addColorStop(0.7, '#fef08a');
-        sunDisc.addColorStop(1.0, '#fdba74');
-        ctx.fillStyle = sunDisc;
-        ctx.beginPath();
-        ctx.arc(sunX, sunY, sunRadius, 0, Math.PI * 2);
-        ctx.fill();
-
-        // 3. Far Mountain Ridge (Soft Hazy Purple Silhouette)
-        ctx.fillStyle = '#1c172a';
-        ctx.beginPath();
-        ctx.moveTo(0, height * 0.68);
-        ctx.bezierCurveTo(width * 0.15, height * 0.62, width * 0.3, height * 0.66, width * 0.45, height * 0.63);
-        ctx.bezierCurveTo(width * 0.6, height * 0.60, width * 0.75, height * 0.65, width * 0.9, height * 0.61);
-        ctx.lineTo(width, height * 0.64);
-        ctx.lineTo(width, height);
-        ctx.lineTo(0, height);
-        ctx.closePath();
-        ctx.fill();
-
-        // 4. Mid Mountain Ridge (Darker Rolling Silhouettes)
-        ctx.fillStyle = '#100f1c';
-        ctx.beginPath();
-        ctx.moveTo(0, height * 0.72);
-        ctx.bezierCurveTo(width * 0.2, height * 0.67, width * 0.35, height * 0.73, width * 0.55, height * 0.69);
-        ctx.bezierCurveTo(width * 0.7, height * 0.66, width * 0.85, height * 0.71, width, height * 0.67);
-        ctx.lineTo(width, height);
-        ctx.lineTo(0, height);
-        ctx.closePath();
-        ctx.fill();
-
-        // 5. Flickering Valley / City Lights at dusk
-        for (let i = 0; i < valleyLights.length; i++) {
-            const l = valleyLights[i];
-            const twinkle = 0.4 + 0.6 * Math.sin(time * l.twinkleSpeed + l.phase);
-            ctx.fillStyle = l.color;
-            ctx.globalAlpha = l.alpha * twinkle;
-            ctx.beginPath();
-            ctx.arc(l.x, l.y, l.radius, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        ctx.globalAlpha = 1.0;
-
-        // 6. Foreground Hilltop Ridge (Deep Silhouette where Grass Roots)
-        ctx.fillStyle = '#05060a';
-        ctx.beginPath();
-        ctx.moveTo(0, height * 0.84);
-        ctx.bezierCurveTo(width * 0.3, height * 0.80, width * 0.65, height * 0.85, width, height * 0.79);
-        ctx.lineTo(width, height);
-        ctx.lineTo(0, height);
-        ctx.closePath();
-        ctx.fill();
-
-        // 7. Radial Vignette for Content Readability
-        const vignette = ctx.createRadialGradient(width * 0.3, height * 0.4, width * 0.1, width * 0.5, height * 0.5, width * 0.75);
-        vignette.addColorStop(0.0, 'rgba(0, 0, 0, 0.45)');
-        vignette.addColorStop(0.65, 'rgba(0, 0, 0, 0.75)');
-        vignette.addColorStop(1.0, 'rgba(0, 0, 0, 0.95)');
-        ctx.fillStyle = vignette;
-        ctx.fillRect(0, 0, width, height);
-
-        requestAnimationFrame(render);
-    }
-
-    requestAnimationFrame(render);
-}
-
-/* ==========================================================================
-   3. PROCEDURAL MOVING GRASS SIMULATION (LIKE LIVE VIDEO)
-   Physics: Multistage harmonic wind oscillation, gust waves, and mouse deflection
-   ========================================================================== */
-function initMovingGrassCanvas() {
-    const canvas = document.getElementById('grassCanvas');
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    let width = 0;
-    let height = 0;
-    let dpr = window.devicePixelRatio || 1;
-    let blades = [];
-
-    // Mouse tracking for interactive blade bending
-    const mouse = { x: -1000, y: -1000, isOver: false };
+    // Interactive mouse coordinates and click pulse
+    const mouse = { x: -1000, y: -1000, isOver: false, radius: 160 };
+    let clickPulse = null;
 
     canvas.addEventListener('mousemove', (e) => {
         const rect = canvas.getBoundingClientRect();
@@ -252,48 +102,53 @@ function initMovingGrassCanvas() {
         mouse.y = -1000;
     });
 
+    canvas.addEventListener('click', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        clickPulse = {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+            radius: 0,
+            maxRadius: 220,
+            alpha: 0.8
+        };
+    });
+
     function resize() {
-        width = canvas.parentElement.offsetWidth;
-        height = canvas.offsetHeight || 190;
+        const parent = canvas.parentElement;
+        width = parent.offsetWidth;
+        height = parent.offsetHeight;
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         ctx.scale(dpr, dpr);
-        generateBlades();
+        generateParticles();
     }
 
-    function generateBlades() {
-        blades = [];
-        const bladeCount = Math.floor(width / 2.8); // High density
+    function generateParticles() {
+        particles = [];
+        // Scale count with screen real estate
+        const count = Math.min(Math.floor((width * height) / 9500), 125);
 
-        // Palette layers: back silhouette, middle sunset grass, front golden rim
-        const layers = [
-            { count: Math.floor(bladeCount * 0.35), minH: 70, maxH: 110, w: 2.2, color: 'rgba(10, 16, 10, 0.95)', speed: 0.8, amp: 14 },
-            { count: Math.floor(bladeCount * 0.40), minH: 95, maxH: 145, w: 3.0, color: 'rgba(20, 32, 18, 0.95)', speed: 1.0, amp: 22 },
-            { count: Math.floor(bladeCount * 0.25), minH: 120, maxH: 175, w: 3.8, color: 'rgba(38, 56, 30, 0.95)', speed: 1.2, amp: 30 }
+        const colors = [
+            '#f5f0eb', // Warm sand
+            '#f5f0eb', // Warm sand (predominant)
+            '#38bdf8', // Starlight cyan
+            '#a855f7', // Nebula violet
+            '#e05344'  // Coral accent
         ];
 
-        layers.forEach((layer) => {
-            for (let i = 0; i < layer.count; i++) {
-                const x = Math.random() * width;
-                const h = layer.minH + Math.random() * (layer.maxH - layer.minH);
-                const naturalCurve = (Math.random() - 0.5) * 15;
-                blades.push({
-                    x: x,
-                    baseY: height,
-                    height: h,
-                    width: layer.w,
-                    color: layer.color,
-                    speed: layer.speed * (0.85 + Math.random() * 0.3),
-                    amplitude: layer.amp * (0.85 + Math.random() * 0.3),
-                    phase: Math.random() * Math.PI * 2,
-                    naturalCurve: naturalCurve,
-                    currentSway: 0
-                });
-            }
-        });
-
-        // Sort so back blades render first
-        blades.sort((a, b) => a.height - b.height);
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.45,
+                vy: (Math.random() - 0.5) * 0.45,
+                radius: 1.2 + Math.random() * 1.8,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                alpha: 0.35 + Math.random() * 0.6,
+                twinkleSpeed: 0.8 + Math.random() * 2,
+                phase: Math.random() * Math.PI * 2
+            });
+        }
     }
 
     window.addEventListener('resize', resize);
@@ -305,46 +160,124 @@ function initMovingGrassCanvas() {
         const time = (currentTime - startTime) * 0.001;
         ctx.clearRect(0, 0, width, height);
 
-        // Global wind wave traveling across screen
-        const globalWave = Math.sin(time * 1.5) * 8 + Math.sin(time * 0.6) * 12;
-        const gust = Math.sin(time * 0.4) > 0.5 ? Math.pow(Math.sin(time * 0.4) - 0.5, 2) * 45 : 0;
+        // 1. Soft Ambient Nebula Light Glows in Background
+        const ambientGrad = ctx.createRadialGradient(width * 0.75, height * 0.45, 10, width * 0.75, height * 0.45, width * 0.65);
+        ambientGrad.addColorStop(0.0, 'rgba(168, 85, 247, 0.08)');
+        ambientGrad.addColorStop(0.4, 'rgba(56, 189, 248, 0.04)');
+        ambientGrad.addColorStop(0.8, 'rgba(224, 83, 68, 0.02)');
+        ambientGrad.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = ambientGrad;
+        ctx.fillRect(0, 0, width, height);
 
-        for (let i = 0; i < blades.length; i++) {
-            const b = blades[i];
+        // Update and Render Click Shockwave Pulse
+        if (clickPulse) {
+            clickPulse.radius += 5;
+            clickPulse.alpha *= 0.95;
 
-            // Harmonic wind calculation
-            const harmonic = Math.sin(time * b.speed * 2 + b.phase + (b.x * 0.008));
-            let targetSway = b.naturalCurve + harmonic * b.amplitude + globalWave * 0.6 + gust;
+            ctx.strokeStyle = `rgba(56, 189, 248, ${clickPulse.alpha * 0.5})`;
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.arc(clickPulse.x, clickPulse.y, clickPulse.radius, 0, Math.PI * 2);
+            ctx.stroke();
 
-            // Interactive mouse repulsion
+            if (clickPulse.radius > clickPulse.maxRadius || clickPulse.alpha < 0.05) {
+                clickPulse = null;
+            }
+        }
+
+        // 2. Update & Move Particles
+        const maxDist = 135;
+        const maxDistSq = maxDist * maxDist;
+
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            // Apply gentle velocity
+            p.x += p.vx;
+            p.y += p.vy;
+
+            // Soft screen boundary bounce
+            if (p.x < 0 || p.x > width) p.vx *= -1;
+            if (p.y < 0 || p.y > height) p.vy *= -1;
+
+            // Interactive Cursor Gravity Well
             if (mouse.isOver) {
-                const dx = b.x - mouse.x;
-                const dy = (height - b.height * 0.8) - mouse.y;
+                const dx = mouse.x - p.x;
+                const dy = mouse.y - p.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 110) {
-                    const force = (1 - dist / 110) * 45;
-                    targetSway += dx > 0 ? force : -force;
+
+                if (dist < mouse.radius) {
+                    const force = (1 - dist / mouse.radius) * 0.035;
+                    p.vx += dx * force;
+                    p.vy += dy * force;
+
+                    // Draw connecting constellation thread to cursor
+                    const cursorAlpha = (1 - dist / mouse.radius) * 0.35;
+                    ctx.strokeStyle = `rgba(245, 240, 235, ${cursorAlpha})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
                 }
             }
 
-            // Smooth spring damping towards target sway
-            b.currentSway += (targetSway - b.currentSway) * 0.12;
+            // Click shockwave push
+            if (clickPulse) {
+                const cdx = p.x - clickPulse.x;
+                const cdy = p.y - clickPulse.y;
+                const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
+                if (Math.abs(cdist - clickPulse.radius) < 35) {
+                    const push = 1.8;
+                    p.vx += (cdx / (cdist || 1)) * push;
+                    p.vy += (cdy / (cdist || 1)) * push;
+                }
+            }
 
-            const tipX = b.x + b.currentSway;
-            const tipY = height - b.height;
-            const ctrlX = b.x + b.currentSway * 0.45;
-            const ctrlY = height - b.height * 0.55;
+            // Velocity damping
+            p.vx *= 0.985;
+            p.vy *= 0.985;
 
-            // Draw tapered blade with quadratic curve
-            ctx.fillStyle = b.color;
+            // 3. Constellation Proximity Links between nodes
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const distSq = dx * dx + dy * dy;
+
+                if (distSq < maxDistSq) {
+                    const dist = Math.sqrt(distSq);
+                    const lineAlpha = (1 - dist / maxDist) * 0.16;
+
+                    ctx.strokeStyle = `rgba(245, 240, 235, ${lineAlpha})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
+
+            // 4. Draw Stardust Node
+            const twinkle = 0.6 + 0.4 * Math.sin(time * p.twinkleSpeed + p.phase);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha * twinkle;
+
             ctx.beginPath();
-            ctx.moveTo(b.x - b.width * 0.5, b.baseY);
-            ctx.quadraticCurveTo(ctrlX, ctrlY, tipX, tipY);
-            ctx.quadraticCurveTo(ctrlX + b.width * 0.3, ctrlY, b.x + b.width * 0.5, b.baseY);
-            ctx.closePath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
             ctx.fill();
+
+            // Subtle glowing halo for larger nodes
+            if (p.radius > 2.0) {
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = (p.alpha * twinkle) * 0.25;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius * 2.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
 
+        ctx.globalAlpha = 1.0;
         requestAnimationFrame(render);
     }
 
@@ -449,15 +382,12 @@ function initCosmicSkyCanvas() {
 
         ctx.clearRect(0, 0, width, height);
 
-        // Background depth: When scroll is 0, sky canvas is transparent to show sunset.
-        // As you scroll down, a deep obsidian nebula fades in to envelope the stars.
-        const skyDarkness = Math.min(scrollY / 400, 1);
-        if (skyDarkness > 0.01) {
-            ctx.fillStyle = `rgba(0, 0, 0, ${skyDarkness * 0.92})`;
-            ctx.fillRect(0, 0, width, height);
-        }
+        // Background depth: Deep obsidian cosmic canvas
+        const skyDarkness = Math.min(scrollY / 300, 1);
+        ctx.fillStyle = `rgba(0, 0, 0, ${0.85 + skyDarkness * 0.15})`;
+        ctx.fillRect(0, 0, width, height);
 
-        // Draw Stars with Parallax (stars shift downwards as user scrolls down = camera ascends into sky)
+        // Draw Stars with Parallax
         for (let i = 0; i < stars.length; i++) {
             const s = stars[i];
 
@@ -525,23 +455,22 @@ function initCosmicSkyCanvas() {
 }
 
 /* ==========================================================================
-   4. SCROLL PARALLAX CAMERA (TRANSITIONING FROM HILLTOP UPWARDS TO HEAVENS)
+   4. SCROLL PARALLAX CAMERA
    ========================================================================== */
 function initScrollParallax() {
-    const heroBackdrop = document.getElementById('heroBackdrop');
-    if (!heroBackdrop) return;
+    const nebulaCanvas = document.getElementById('nebulaCanvas');
+    if (!nebulaCanvas) return;
 
     function handleScroll() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-        // When scrolling down, the hilltop sinks downwards and dissolves into the night sky
-        if (scrollY < 850) {
-            const translateY = scrollY * 0.42;
-            const opacity = Math.max(0, 1 - (scrollY / 550));
-            heroBackdrop.style.transform = `translate3d(0, ${translateY}px, 0)`;
-            heroBackdrop.style.opacity = opacity.toFixed(3);
+        if (scrollY < 900) {
+            const translateY = scrollY * 0.35;
+            const opacity = Math.max(0, 1 - (scrollY / 600));
+            nebulaCanvas.style.transform = `translate3d(0, ${translateY}px, 0)`;
+            nebulaCanvas.style.opacity = opacity.toFixed(3);
         } else {
-            heroBackdrop.style.opacity = '0';
+            nebulaCanvas.style.opacity = '0';
         }
     }
 
