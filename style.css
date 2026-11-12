@@ -404,12 +404,78 @@ body.is-loaded .hero-divider-line {
 }
 
 /* ==========================================================================
-   SECTION 01: HERO GREETING
+   INFINITE COSMIC SKY & STARS CANVAS (PANNING UPWARDS ON SCROLL)
+   ========================================================================== */
+.sky-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background-color: var(--color-black);
+}
+
+.page-main, .site-header {
+    position: relative;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   SECTION 01: HERO GREETING & MOVING GRASS HILLTOP
    ========================================================================== */
 .section-hero {
+    position: relative;
     padding-top: 140px;
     padding-bottom: 80px;
-    min-height: 85vh;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+.hero-scenery-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+.scenery-image-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.scenery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    opacity: 0.65;
+    filter: contrast(1.1) saturate(1.15);
+}
+
+.scenery-overlay-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 90% 70% at 75% 55%, transparent 20%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.95) 100%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, transparent 25%, transparent 55%, rgba(0, 0, 0, 0.98) 100%);
+}
+
+.hero-content-relative {
+    position: relative;
+    z-index: 5;
+}
+
+.grass-canvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 190px;
+    z-index: 4;
+    pointer-events: auto;
 }
 
 .hero-greeting-block {

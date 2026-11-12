@@ -46,6 +46,9 @@
         </div>
     </div>
 
+    <!-- ── INFINITE SKY & STARS CANVAS (PANNING UPWARDS ON SCROLL) ── -->
+    <canvas id="skyCanvas" class="sky-canvas" aria-hidden="true"></canvas>
+
     <!-- ── SITE HEADER ── -->
     <header class="site-header" id="siteHeader">
         <div class="header-container">
@@ -83,10 +86,19 @@
     <main class="page-main">
 
         <!-- ══════════════════════════════════════════════════════════════════
-             HERO SECTION (THE GREETING)
+             HERO SECTION (THE GREETING & MOVING GRASS HILLTOP)
         ══════════════════════════════════════════════════════════════════ -->
         <section id="hero" class="section-hero">
-            <div class="content-wrapper">
+            <!-- Sunset Hilltop Backdrop & Real-Time Moving Grass -->
+            <div class="hero-scenery-backdrop" id="heroBackdrop">
+                <div class="scenery-image-wrap">
+                    <img src="assets/sunset-hilltop.jpg" alt="Hilltop Sunset Landscape" class="scenery-img">
+                    <div class="scenery-overlay-vignette"></div>
+                </div>
+                <canvas id="grassCanvas" class="grass-canvas"></canvas>
+            </div>
+
+            <div class="content-wrapper hero-content-relative">
                 <div class="hero-greeting-block">
                     <h1 class="hero-title font-accent">
                         <span class="hero-pre">Hello, I'm</span>
