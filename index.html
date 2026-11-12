@@ -5,995 +5,603 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Bhushan Choudhary — Senior Full Stack & UI Engineer (.NET 8 + Java Spring Boot + React + Node.js). 10-level craftsmanship building high-scale distributed systems, enterprise APIs, and fluid, glassmorphic interfaces.">
+        content="Bhushan Choudhary — Full Stack Engineer & UI Craftsman (.NET 8, Java Spring Boot, React.js, Node.js, SQL). Designing and building enterprise systems and fluid digital products that make complex things feel simple.">
     <meta name="keywords"
-        content="Bhushan Choudhary, Full Stack Engineer, Senior UI Developer, .NET Core, C#, Java Spring Boot, React.js, Node.js, TypeScript, Pune, Glassmorphism, Microservices, Portfolio">
+        content="Bhushan Choudhary, Full Stack Engineer, .NET 8, Java Spring Boot, React.js, Node.js, Pune, Software Engineer, Portfolio">
     <meta name="author" content="Bhushan Choudhary">
-    <title>Bhushan Choudhary — Full Stack & UI Engineer | .NET • Java • React • Node</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#000000">
+    <title>Bhushan Choudhary | Full Stack Engineer &amp; UI Craftsman</title>
+
+    <!-- Google Fonts: Swanky and Moo Moo (Accent), Inter (Clean Editorial Body), JetBrains Mono (Code/Metrics) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400;500&family=Swanky+and+Moo+Moo&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="architect-dark">
+<body class="js-noir">
 
-    <!-- ── SYSTEM BOOT PRELOADER (CINEMATIC LOADING MECHANISM) ── -->
-    <div id="preloader" class="preloader-overlay" aria-label="System Initialization">
-        <div class="preloader-glass">
-            <div class="preloader-scanlines"></div>
-            <div class="preloader-header">
-                <div class="preloader-badge">
-                    <span class="pulse-dot"></span>
-                    <span class="mono-text">KERNEL_BOOT_V10.4 // DUAL_ENGINE</span>
+    <!-- ── SIGNATURE HOME LOADER (EXACT JASPREETSINGH.XYZ STYLE) ── -->
+    <div id="loading" role="status" aria-label="Loading" class="home-loader">
+        <div class="home-loader__inner">
+            <div class="loader-content">
+                <p class="loader-greeting font-accent">
+                    <span class="greeting-pre">Hello, I'm</span>
+                    <span class="hero-name-emphasis loader-name">Bhushan</span>
+                </p>
+                <div class="loader-bar-wrap">
+                    <span class="loading-line">
+                        <span class="home-loader__fill" id="loaderFill"></span>
+                    </span>
+                    <span class="home-loader__count font-inter" id="loaderCount">0%</span>
                 </div>
-                <div class="preloader-status-code mono-text">SYS_INIT_OK</div>
-            </div>
-
-            <div class="preloader-center">
-                <div class="preloader-counter-wrap">
-                    <div class="preloader-counter" id="preloaderCounter">00</div>
-                    <span class="preloader-unit">%</span>
-                </div>
-                <div class="preloader-progress-track">
-                    <div class="preloader-progress-fill" id="preloaderFill"></div>
-                </div>
-                <div class="preloader-subtext" id="preloaderStatusText">Mounting .NET 8 Enterprise runtime & Java Spring microservices...</div>
-            </div>
-
-            <div class="preloader-terminal mono-text">
-                <div class="terminal-row"><span class="t-dim">[0.001s]</span> <span class="t-cyan">BOOTSTRAP:</span> Initializing hardware acceleration & WebGL compositor...</div>
-                <div class="terminal-row"><span class="t-dim">[0.024s]</span> <span class="t-purple">CORE:</span> Linking .NET 8 C# CLR & Entity Framework Core pipeline...</div>
-                <div class="terminal-row"><span class="t-dim">[0.048s]</span> <span class="t-emerald">SERVICES:</span> Starting Java 21 Spring Boot Microservices & Hibernate JPA...</div>
-                <div class="terminal-row"><span class="t-dim">[0.072s]</span> <span class="t-amber">FRONTEND:</span> Hydrating React 19 concurrent renderer & glassmorphic shaders...</div>
-                <div class="terminal-row"><span class="t-dim">[0.096s]</span> <span class="t-cyan">TELEMETRY:</span> Pune, MH node active • Resume PDF verified • All systems operational.</div>
-            </div>
-
-            <div class="preloader-footer mono-text">
-                <span>CRAFTED BY BHUSHAN CHOUDHARY</span>
-                <span class="preloader-skip-hint">CLICK ANYWHERE TO BYPASS</span>
             </div>
         </div>
     </div>
 
-    <!-- ── FLOATING AMBIENT LIGHT MESH ── -->
-    <div class="ambient-mesh" aria-hidden="true">
-        <div class="ambient-orb orb-cyan"></div>
-        <div class="ambient-orb orb-violet"></div>
-        <div class="ambient-orb orb-emerald"></div>
-        <div class="ambient-grid"></div>
-    </div>
+    <!-- ── SITE HEADER ── -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#hero" class="brand-link">
+                    <span class="brand-name font-accent">Bhushan Choudhary</span>
+                </a>
+                <span class="brand-divider">/</span>
+                <span class="brand-role">Full Stack &amp; UI Craftsman</span>
+            </div>
 
-    <!-- ── TELEMETRY HUD (ABOVE-THE-FOLD QUICK STATUS BAR) ── -->
-    <div class="telemetry-hud">
-        <div class="hud-container">
-            <div class="hud-left">
-                <span class="status-indicator">
-                    <span class="status-dot"></span>
-                    <span class="status-label">OPEN FOR IMPACT // FULL STACK (.NET + JAVA + REACT)</span>
+            <nav class="header-nav" aria-label="Primary Navigation">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#dual-engine" class="nav-link">Architecture</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="resume-pill-btn">
+                    <span>Resume</span>
+                    <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                        <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                    </svg>
+                </a>
+                <span class="status-location-tag">
+                    <span class="status-live-dot"></span> Pune, MH
                 </span>
-                <span class="hud-separator">•</span>
-                <span class="hud-location mono-text"><i class="fa-solid fa-location-dot"></i> PUNE, MH (IST / UTC+5:30)</span>
-            </div>
-            <div class="hud-right">
-                <a href="mailto:bhushanchoudhary7492@gmail.com" class="hud-chip" title="Direct Email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>bhushanchoudhary7492@gmail.com</span>
-                </a>
-                <a href="tel:+917492723321" class="hud-chip" title="Call Direct">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+91 74927 23321</span>
-                </a>
-                <a href="https://linkedin.com/in/bhushan-choudhary-a83a54238" target="_blank" rel="noopener" class="hud-chip" title="LinkedIn Profile">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://github.com/74927bhushan" target="_blank" rel="noopener" class="hud-chip" title="GitHub Codebase">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="hud-chip hud-chip-accent" title="Download Master Resume PDF">
-                    <i class="fa-solid fa-file-arrow-down"></i>
-                    <span>Resume PDF</span>
-                </a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- ── 7-SEGMENT CHAPTER PROGRESS BAR (TRANSLATE-WF FLUID DYNAMICS) ── -->
-    <nav class="chapter-nav-wrapper" id="chapterNav" aria-label="Story Chapters">
-        <div class="chapter-nav-bar">
-            <!-- 01 Genesis -->
-            <a href="#genesis" class="chapter-segment active" data-chapter="1" title="01 Genesis">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">01</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-1"></div>
-                </div>
-                <span class="segment-title">Genesis</span>
-            </a>
-
-            <!-- 02 Dual Engine -->
-            <a href="#dual-engine" class="chapter-segment" data-chapter="2" title="02 Dual Engine">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">02</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-2"></div>
-                </div>
-                <span class="segment-title">Dual Engine</span>
-            </a>
-
-            <!-- 03 Matrix -->
-            <a href="#matrix" class="chapter-segment" data-chapter="3" title="03 Stack Matrix">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">03</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-3"></div>
-                </div>
-                <span class="segment-title">Stack Matrix</span>
-            </a>
-
-            <!-- 04 Chronicles -->
-            <a href="#chronicles" class="chapter-segment" data-chapter="4" title="04 Production Chronicles">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">04</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-4"></div>
-                </div>
-                <span class="segment-title">Chronicles</span>
-            </a>
-
-            <!-- 05 Artifacts -->
-            <a href="#artifacts" class="chapter-segment" data-chapter="5" title="05 Master Artifacts">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">05</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-5"></div>
-                </div>
-                <span class="segment-title">Artifacts</span>
-            </a>
-
-            <!-- 06 AI Protocol -->
-            <a href="#protocol" class="chapter-segment" data-chapter="6" title="06 AI Protocol">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">06</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-6"></div>
-                </div>
-                <span class="segment-title">AI Protocol</span>
-            </a>
-
-            <!-- 07 Transmission -->
-            <a href="#transmission" class="chapter-segment" data-chapter="7" title="07 Transmission">
-                <div class="segment-indicator">
-                    <span class="segment-ping"></span>
-                    <span class="segment-index mono-text">07</span>
-                </div>
-                <div class="segment-track">
-                    <div class="segment-fill" id="fill-7"></div>
-                </div>
-                <span class="segment-title">Transmission</span>
-            </a>
-        </div>
-    </nav>
-
-    <!-- ── MAIN STORY EXPERIENCE ── -->
-    <main class="story-experience">
+    <!-- ── MAIN CONTENT CONTAINER ── -->
+    <main class="page-main">
 
         <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 01 // THE ARCHITECT'S GENESIS (HERO)
+             HERO SECTION (THE GREETING)
         ══════════════════════════════════════════════════════════════════ -->
-        <section id="genesis" class="chapter-section chapter-hero">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 01</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">THE ARCHITECT'S GENESIS</span>
+        <section id="hero" class="section-hero">
+            <div class="content-wrapper">
+                <div class="hero-greeting-block">
+                    <h1 class="hero-title font-accent">
+                        <span class="hero-pre">Hello, I'm</span>
+                        <span class="hero-name-emphasis display-name">Bhushan</span>
+                    </h1>
+
+                    <p class="hero-intro font-accent">
+                        <span>I design and engineer enterprise systems for a living.</span>
+                        <span class="block-sm">Bridging .NET, Java, and fluid modern web interfaces.</span>
+                    </p>
                 </div>
 
-                <div class="hero-grid">
-                    <div class="hero-content">
-                        <div class="hero-eyebrow mono-text">
-                            <span class="badge-core"><i class="fa-solid fa-cubes"></i> ENTERPRISE ARCHITECTURE</span>
-                            <span class="badge-role">FULL STACK & SENIOR UI CRAFTSMAN</span>
-                        </div>
-
-                        <h1 class="hero-headline">
-                            I bridge <span class="gradient-text gradient-enterprise">.NET & Java</span> backends with <span class="gradient-text gradient-fluid">fluid, modern UI</span> that scales without friction.
-                        </h1>
-
-                        <p class="hero-lead">
-                            Full Stack Engineer with 2+ years of enterprise production experience owning systems end-to-end. Equally fluent in high-concurrency <strong>ASP.NET Core / C#</strong> and <strong>Java Spring Boot</strong> microservices, married to responsive <strong>React.js</strong> and <strong>Node.js</strong> interfaces. I use AI daily to accelerate boilerplate, enforce strict test harnesses, and take uncompromising ownership of everything that hits production.
-                        </p>
-
-                        <!-- Telemetry Stats Bento -->
-                        <div class="hero-stats-bento">
-                            <div class="stat-card glass-panel" data-tilt>
-                                <div class="stat-num mono-text"><span class="counter-val" data-target="2">2</span>+</div>
-                                <div class="stat-label">Years Production Mastery</div>
-                                <div class="stat-sub">Enterprise .NET & Java Spring</div>
-                            </div>
-                            <div class="stat-card glass-panel" data-tilt>
-                                <div class="stat-num mono-text"><span class="counter-val" data-target="99">99</span>.9%</div>
-                                <div class="stat-label">Production Reliability</div>
-                                <div class="stat-sub">InfoQA & Thinkbridge scale</div>
-                            </div>
-                            <div class="stat-card glass-panel" data-tilt>
-                                <div class="stat-num mono-text"><span class="counter-val" data-target="4">4</span>x</div>
-                                <div class="stat-label">Shipping Velocity</div>
-                                <div class="stat-sub">AI Harness + CI/CD Pipelines</div>
-                            </div>
-                            <div class="stat-card glass-panel" data-tilt>
-                                <div class="stat-num mono-text">0 to 1</div>
-                                <div class="stat-label">End-to-End Ownership</div>
-                                <div class="stat-sub">Schema • Logic • UI • Deploy</div>
-                            </div>
-                        </div>
-
-                        <!-- Hero Actions -->
-                        <div class="hero-actions">
-                            <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="btn btn-primary glass-btn">
-                                <i class="fa-solid fa-file-arrow-down"></i>
-                                <span>Download Formal Resume</span>
-                                <span class="btn-shine"></span>
-                            </a>
-                            <a href="#dual-engine" class="btn btn-secondary glass-btn">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span>Explore Dual Engine</span>
-                            </a>
-                            <a href="#artifacts" class="btn btn-ghost">
-                                <span>Inspect Live Systems</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
+                <div class="hero-meta-row">
+                    <div class="hero-status-chip">
+                        <span class="pulse-indicator"></span>
+                        <span>Open for Full Stack Roles • .NET Core • Java Spring Boot • React.js</span>
                     </div>
 
-                    <!-- Interactive Live Dual-Engine Terminal HUD -->
-                    <div class="hero-terminal-wrapper">
-                        <div class="glass-terminal" data-tilt>
-                            <div class="terminal-topbar">
-                                <div class="terminal-dots">
-                                    <span class="dot dot-red"></span>
-                                    <span class="dot dot-amber"></span>
-                                    <span class="dot dot-green"></span>
-                                </div>
-                                <div class="terminal-title mono-text">engine-orchestrator.ts — 60 FPS</div>
-                                <div class="terminal-engine-switch">
-                                    <button class="engine-tab active" data-engine="dotnet">
-                                        <i class="fa-brands fa-microsoft"></i> .NET 8
-                                    </button>
-                                    <button class="engine-tab" data-engine="java">
-                                        <i class="fa-brands fa-java"></i> Java 21
-                                    </button>
-                                    <button class="engine-tab" data-engine="react">
-                                        <i class="fa-brands fa-react"></i> React 19
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Engine Pane: .NET -->
-                            <div class="terminal-body engine-pane active" id="pane-dotnet">
-                                <div class="code-line"><span class="c-comment">// Enterprise ASP.NET Core Web API Architecture</span></div>
-                                <div class="code-line"><span class="c-keyword">namespace</span> <span class="c-type">InfoQA.Core.EnterpriseServices</span>;</div>
-                                <div class="code-line">&nbsp;</div>
-                                <div class="code-line">[<span class="c-attr">ApiController</span>, <span class="c-attr">Route</span>(<span class="c-str">"api/v2/[controller]"</span>)]</div>
-                                <div class="code-line"><span class="c-keyword">public class</span> <span class="c-class">QualityAuditController</span> : <span class="c-type">ControllerBase</span></div>
-                                <div class="code-line">{</div>
-                                <div class="code-line">    <span class="c-keyword">private readonly</span> <span class="c-type">IWorkflowEngine</span> <span class="c-var">_engine</span>;</div>
-                                <div class="code-line">    <span class="c-keyword">private readonly</span> <span class="c-type">ISqlServerDbContext</span> <span class="c-var">_db</span>;</div>
-                                <div class="code-line">&nbsp;</div>
-                                <div class="code-line">    [<span class="c-attr">HttpPost</span>(<span class="c-str">"dispatch"</span>), <span class="c-attr">Authorize</span>(Roles = <span class="c-str">"Auditor,Lead"</span>)]</div>
-                                <div class="code-line">    <span class="c-keyword">public async</span> <span class="c-type">Task</span>&lt;<span class="c-type">IActionResult</span>&gt; <span class="c-func">DispatchAuditBatch</span>([<span class="c-attr">FromBody</span>] <span class="c-type">BatchRequest</span> req)</div>
-                                <div class="code-line">    {</div>
-                                <div class="code-line">        <span class="c-keyword">var</span> result = <span class="c-keyword">await</span> <span class="c-var">_engine</span>.<span class="c-func">ExecuteWithRollbackAsync</span>(req, <span class="c-var">_db</span>);</div>
-                                <div class="code-line">        <span class="c-keyword">return</span> <span class="c-func">Ok</span>(<span class="c-keyword">new</span> { Status = <span class="c-str">"Synchronized"</span>, LatencyMs = 18.4, AuditHash = result.Hash });</div>
-                                <div class="code-line">    }</div>
-                                <div class="code-line">}</div>
-                            </div>
-
-                            <!-- Engine Pane: Java -->
-                            <div class="terminal-body engine-pane" id="pane-java">
-                                <div class="code-line"><span class="c-comment">// Java Spring Boot Microservice & JPA Architecture</span></div>
-                                <div class="code-line"><span class="c-keyword">package</span> <span class="c-type">com.bhushan.microservices.telemetry</span>;</div>
-                                <div class="code-line">&nbsp;</div>
-                                <div class="code-line">@<span class="c-attr">RestController</span></div>
-                                <div class="code-line">@<span class="c-attr">RequestMapping</span>(<span class="c-str">"/api/v1/telemetry"</span>)</div>
-                                <div class="code-line">@<span class="c-attr">RequiredArgsConstructor</span></div>
-                                <div class="code-line"><span class="c-keyword">public class</span> <span class="c-class">TelemetryStreamController</span> {</div>
-                                <div class="code-line">    <span class="c-keyword">private final</span> <span class="c-type">EnergyAuditService</span> <span class="c-var">auditService</span>;</div>
-                                <div class="code-line">    <span class="c-keyword">private final</span> <span class="c-type">MeterRepository</span> <span class="c-var">meterRepo</span>;</div>
-                                <div class="code-line">&nbsp;</div>
-                                <div class="code-line">    @<span class="c-attr">PostMapping</span>(<span class="c-str">"/calculate-tariff"</span>)</div>
-                                <div class="code-line">    @<span class="c-attr">Transactional</span>(isolation = Isolation.READ_COMMITTED)</div>
-                                <div class="code-line">    <span class="c-keyword">public</span> <span class="c-type">ResponseEntity</span>&lt;<span class="c-type">TariffDTO</span>&gt; <span class="c-func">computeSlab</span>(@<span class="c-attr">Valid</span> @<span class="c-attr">RequestBody</span> <span class="c-type">ConsumptionEvent</span> e) {</div>
-                                <div class="code-line">        <span class="c-type">TariffDTO</span> bill = <span class="c-var">auditService</span>.<span class="c-func">computeLiveTariff</span>(e);</div>
-                                <div class="code-line">        <span class="c-keyword">return</span> <span class="c-type">ResponseEntity</span>.<span class="c-func">ok</span>(bill);</div>
-                                <div class="code-line">    }</div>
-                                <div class="code-line">}</div>
-                            </div>
-
-                            <!-- Engine Pane: React / UI -->
-                            <div class="terminal-body engine-pane" id="pane-react">
-                                <div class="code-line"><span class="c-comment">// Fluid React 19 + TypeScript Glassmorphic Engine</span></div>
-                                <div class="code-line"><span class="c-keyword">import</span> { <span class="c-type">useMemo</span>, <span class="c-type">useCallback</span> } <span class="c-keyword">from</span> <span class="c-str">'react'</span>;</div>
-                                <div class="code-line"><span class="c-keyword">import</span> { <span class="c-type">motion</span>, <span class="c-type">AnimatePresence</span> } <span class="c-keyword">from</span> <span class="c-str">'framer-motion'</span>;</div>
-                                <div class="code-line">&nbsp;</div>
-                                <div class="code-line"><span class="c-keyword">export const</span> <span class="c-func">FluidGlassConsole</span> = ({ <span class="c-var">metrics</span>, <span class="c-var">onRefresh</span> }: <span class="c-type">ConsoleProps</span>) => {</div>
-                                <div class="code-line">    <span class="c-keyword">const</span> streamData = <span class="c-func">useMemo</span>(() => <span class="c-func">normalizeMetrics</span>(<span class="c-var">metrics</span>), [<span class="c-var">metrics</span>]);</div>
-                                <div class="code-line">&nbsp;</div>
-                                <div class="code-line">    <span class="c-keyword">return</span> (</div>
-                                <div class="code-line">        &lt;<span class="c-type">motion.div</span> <span class="c-attr">className</span>=<span class="c-str">"glass-specular-panel"</span> <span class="c-attr">whileHover</span>={{ scale: 1.015 }}&gt;</div>
-                                <div class="code-line">            &lt;<span class="c-type">DynamicTelemetryGraph</span> <span class="c-attr">data</span>={streamData} <span class="c-attr">refreshRate</span>={60} /&gt;</div>
-                                <div class="code-line">            &lt;<span class="c-type">RealTimeAuditFeed</span> <span class="c-attr">latency</span>=<span class="c-str">"14ms"</span> <span class="c-attr">status</span>=<span class="c-str">"HEALTHY"</span> /&gt;</div>
-                                <div class="code-line">        &lt;/<span class="c-type">motion.div</span>&gt;</div>
-                                <div class="code-line">    );</div>
-                                <div class="code-line">};</div>
-                            </div>
-
-                            <div class="terminal-statusbar mono-text">
-                                <span class="status-pill"><span class="pulse-green"></span> CLR & JVM CONCURRENT</span>
-                                <span class="status-metrics">Memory: 42MB • EventLoop: 0.12ms</span>
-                                <span class="status-target">TARGET: PROD-PUNE</span>
-                            </div>
-                        </div>
+                    <div class="hero-actions-group">
+                        <a href="#work" class="btn-primary-sand">
+                            <span>Explore Selected Works</span>
+                            <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                                <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                            </svg>
+                        </a>
+                        <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="btn-ghost-sand">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Download Resume PDF</span>
+                        </a>
                     </div>
                 </div>
+
+                <div class="hero-divider-line"></div>
             </div>
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 02 // THE DUAL ENGINE ARCHITECTURE
+             ABOUT & PHILOSOPHY (JASPREETSINGH STYLE EDITORIAL)
         ══════════════════════════════════════════════════════════════════ -->
-        <section id="dual-engine" class="chapter-section">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 02</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">THE DUAL ENGINE ARCHITECTURE</span>
+        <section id="about" class="section-about">
+            <div class="content-wrapper">
+                <div class="about-grid">
+                    <div class="about-headings-col">
+                        <h2 class="about-display font-accent">
+                            Engineer, Craftsman<br>
+                            <span class="about-sub-block">by <span class="text-coral">profession</span></span>
+                        </h2>
+
+                        <h2 class="about-display font-accent mt-about-gap">
+                            Polymath &amp; Builder<br>
+                            <span class="about-sub-block">by <span class="text-coral">ambition</span></span>
+                        </h2>
+
+                        <!-- Philosophical Bilingual Stanza -->
+                        <div class="quote-card">
+                            <p class="hindi-quote" lang="hi">
+                                सौ मिलीं ज़िंदगी से सौग़ातें<br>
+                                हम को आवारगी ही रास आई
+                            </p>
+                            <p class="english-translation">
+                                “Life offered a hundred gifts; building systems that endure and venturing into uncharted code felt like home.”
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-copy-col">
+                        <p class="lead-editorial">
+                            As a Full Stack Engineer with 2+ years of enterprise experience, I believe great software bridges mathematical rigor with human intuition. I guide features all the way from relational database schemas and concurrent backend engines to fluid, tactile user interfaces.
+                        </p>
+
+                        <p class="body-editorial">
+                            My core expertise bridges two of industry’s most powerful backends: <strong>.NET 8 (C#)</strong> and <strong>Java 21 (Spring Boot)</strong>. Rather than siloing myself in one technology, I leverage both alongside modern <strong>React.js</strong> and <strong>Node.js</strong> to deliver performant, resilient solutions that scale effortlessly under load.
+                        </p>
+
+                        <p class="body-editorial">
+                            I leverage AI tools daily to accelerate boilerplate and generate test harnesses, but I maintain uncompromising ownership over every commit that ships. From preventing SQL injection and optimizing queries in <strong>MySQL &amp; SQL Server</strong> to crafting 60fps micro-interactions, the buck stops with me.
+                        </p>
+
+                        <div class="about-quick-metrics">
+                            <div class="q-metric">
+                                <span class="q-num font-accent">2+</span>
+                                <span class="q-label">Years Enterprise Production</span>
+                            </div>
+                            <div class="q-metric">
+                                <span class="q-num font-accent">0-1</span>
+                                <span class="q-label">End-to-End Feature Ownership</span>
+                            </div>
+                            <div class="q-metric">
+                                <span class="q-num font-accent">4x</span>
+                                <span class="q-label">Shipping Velocity via AI Protocols</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="section-heading-block">
-                    <h2 class="section-title">
-                        Why choose between <span class="gradient-text gradient-enterprise">.NET & Java</span> when you can master both?
+                <div class="section-divider-line"></div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             DUAL ENGINE ARCHITECTURE (BACKEND MASTERY)
+        ══════════════════════════════════════════════════════════════════ -->
+        <section id="dual-engine" class="section-dual-engine">
+            <div class="content-wrapper">
+                <div class="section-header-block">
+                    <h2 class="section-display font-accent">
+                        The Dual <span class="text-coral">engine</span>
                     </h2>
-                    <p class="section-subtitle">
-                        Many developers specialize strictly in one silo. I bridge Microsoft’s enterprise C#/.NET stack and the Java Spring enterprise ecosystem, marrying both to modern React/Node interfaces with database precision.
+                    <p class="section-tagline">
+                        Microsoft enterprise architecture meets the Java Spring ecosystem — united by modern React interfaces.
                     </p>
                 </div>
 
-                <div class="dual-engine-cards">
+                <div class="engine-duo-grid">
                     <!-- Engine 1: .NET 8 / C# -->
-                    <div class="engine-column glass-card" data-tilt>
-                        <div class="engine-card-header">
-                            <div class="engine-icon dotnet-icon">
-                                <i class="fa-brands fa-microsoft"></i>
-                            </div>
-                            <div class="engine-meta">
-                                <div class="engine-badge mono-text">MICROSOFT ECOSYSTEM</div>
-                                <h3 class="engine-title">.NET 8 & ASP.NET Core</h3>
-                            </div>
+                    <div class="engine-box">
+                        <div class="engine-box-top">
+                            <span class="engine-mono-tag font-mono">ENGINE 01 // MICROSOFT ENTERPRISE</span>
+                            <h3 class="engine-heading font-accent">.NET 8 &amp; C# Core</h3>
                         </div>
-                        <p class="engine-desc">
-                            Enterprise-grade Web APIs, strongly typed C# domain architectures, secure authentication, and seamless SQL Server data warehousing.
+                        <p class="engine-paragraph">
+                            High-throughput Web APIs, type-safe domain logic, Entity Framework Core migrations, and mission-critical SQL Server data pipelines.
                         </p>
-                        <ul class="engine-feature-list">
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>C# & ASP.NET Core Web API:</strong> High-throughput REST & gRPC endpoints</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Entity Framework Core:</strong> LINQ optimizations, migrations & multi-tenancy</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>SQL Server & T-SQL:</strong> Complex stored procedures, index tuning & execution plans</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Azure DevOps & IIS:</strong> Continuous integration and enterprise deployment</li>
-                        </ul>
-                        <div class="engine-footer-tag mono-text">
-                            <span>STACK: C# • .NET 8 • EF CORE • SQL SERVER</span>
+                        <div class="engine-pills">
+                            <span class="tag-pill">C# 12</span>
+                            <span class="tag-pill">ASP.NET Core Web API</span>
+                            <span class="tag-pill">Entity Framework Core</span>
+                            <span class="tag-pill">SQL Server (T-SQL)</span>
+                            <span class="tag-pill">LINQ Optimization</span>
+                            <span class="tag-pill">Role-Based RBAC</span>
                         </div>
                     </div>
 
                     <!-- Engine 2: Java Spring Boot -->
-                    <div class="engine-column glass-card" data-tilt>
-                        <div class="engine-card-header">
-                            <div class="engine-icon java-icon">
-                                <i class="fa-brands fa-java"></i>
-                            </div>
-                            <div class="engine-meta">
-                                <div class="engine-badge mono-text">ENTERPRISE JAVA ECOSYSTEM</div>
-                                <h3 class="engine-title">Java 21 & Spring Boot</h3>
-                            </div>
+                    <div class="engine-box">
+                        <div class="engine-box-top">
+                            <span class="engine-mono-tag font-mono">ENGINE 02 // ENTERPRISE JAVA</span>
+                            <h3 class="engine-heading font-accent">Java 21 &amp; Spring Boot</h3>
                         </div>
-                        <p class="engine-desc">
-                            Distributed microservice topologies, robust Spring Security configurations, JPA/Hibernate persistence, and rock-solid MySQL transactional models.
+                        <p class="engine-paragraph">
+                            Scalable microservice architectures, Spring Data JPA / Hibernate transactional boundaries, Spring Security, and normalized MySQL schemas.
                         </p>
-                        <ul class="engine-feature-list">
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Spring Boot 3 & Java 21:</strong> Modern virtual threads, dependency injection & MVC</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Spring Data JPA & Hibernate:</strong> Transaction management & query caching</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>MySQL & Distributed Cache:</strong> Normalized relational schemas & ACID compliance</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Microservice Patterns:</strong> API Gateways, resilience handlers & JWT auth</li>
-                        </ul>
-                        <div class="engine-footer-tag mono-text">
-                            <span>STACK: JAVA 21 • SPRING BOOT • JPA • MYSQL</span>
+                        <div class="engine-pills">
+                            <span class="tag-pill">Java 21</span>
+                            <span class="tag-pill">Spring Boot 3</span>
+                            <span class="tag-pill">Spring Data JPA</span>
+                            <span class="tag-pill">Hibernate</span>
+                            <span class="tag-pill">MySQL Engine</span>
+                            <span class="tag-pill">RESTful Microservices</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Unifying UI Layer Banner -->
-                <div class="unifying-layer-banner glass-panel" data-tilt>
-                    <div class="banner-badge mono-text">THE UNIFYING INTERACTION LAYER</div>
-                    <div class="banner-content">
-                        <div class="banner-text">
-                            <h4 class="banner-title">Modern React.js + TypeScript + Node.js</h4>
-                            <p class="banner-p">
-                                Both backends deliver JSON data at scale. The frontend must feel like pure fluid glass: instant optimistic updates, smooth 60fps micro-animations, accessible WCAG standards, and seamless responsive design across desktop, tablet, and mobile.
-                            </p>
-                        </div>
-                        <div class="banner-tags">
-                            <span class="skill-pill">React 19</span>
-                            <span class="skill-pill">Node.js</span>
-                            <span class="skill-pill">TypeScript</span>
-                            <span class="skill-pill">Tailwind / CSS Glass</span>
-                            <span class="skill-pill">Node-RED Logic</span>
-                            <span class="skill-pill">WebSockets</span>
-                        </div>
+                <!-- Unifying Interaction Layer -->
+                <div class="unifying-box">
+                    <div class="unifying-left">
+                        <span class="engine-mono-tag font-mono">UNIFYING FRONTEND CRAFTSMANSHIP</span>
+                        <h4 class="unifying-heading font-accent">Fluid React.js &amp; Node.js Experience</h4>
+                        <p class="unifying-desc">
+                            Backends provide resilient data; frontend delivers fluid elegance. State management, debounced search filters, responsive ergonomics, and accessible HTML5 semantics.
+                        </p>
+                    </div>
+                    <div class="unifying-chips">
+                        <span class="tag-pill">React 19</span>
+                        <span class="tag-pill">Node.js</span>
+                        <span class="tag-pill">TypeScript</span>
+                        <span class="tag-pill">Tailwind CSS</span>
+                        <span class="tag-pill">REST &amp; WebSockets</span>
+                        <span class="tag-pill">Vercel &amp; AWS</span>
                     </div>
                 </div>
+
+                <div class="section-divider-line"></div>
             </div>
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 03 // THE ENGINEERING MATRIX (SKILLS BENTO)
+             SELECTED WORKS (FLAGSHIP PROJECTS)
         ══════════════════════════════════════════════════════════════════ -->
-        <section id="matrix" class="chapter-section">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 03</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">THE ENGINEERING MATRIX</span>
-                </div>
-
-                <div class="section-heading-block">
-                    <h2 class="section-title">
-                        Holistic stack mastery organized by <span class="gradient-text gradient-fluid">production tier</span>.
+        <section id="work" class="section-works">
+            <div class="content-wrapper">
+                <div class="section-header-block">
+                    <h2 class="section-display font-accent">
+                        Selected <span class="text-coral">works</span>
                     </h2>
-                    <p class="section-subtitle">
-                        Every layer of the modern application lifecycle, from relational database schemas to fluid user interfaces and cloud telemetry.
+                    <p class="section-tagline">
+                        Production systems, live utility platforms, and end-to-end enterprise case studies.
                     </p>
                 </div>
 
-                <div class="bento-grid">
-                    <!-- Bento 1: Enterprise Backend Systems -->
-                    <div class="bento-card bento-span-2 glass-card" data-tilt>
-                        <div class="bento-header">
-                            <div class="bento-icon icon-backend"><i class="fa-solid fa-server"></i></div>
-                            <div>
-                                <span class="bento-category mono-text">TIER 01 // CORE BACKEND</span>
-                                <h3 class="bento-title">Enterprise Backend Systems</h3>
+                <div class="works-list">
+                    <!-- Project 01: Electricity Bill App (FLAGSHIP LIVE DEMO) -->
+                    <article class="work-item flagship-item">
+                        <div class="work-item-index font-mono">01 // LIVE PRODUCTION</div>
+                        <div class="work-item-main">
+                            <div class="work-title-row">
+                                <h3 class="work-title font-accent">
+                                    <a href="https://e-bill-app.vercel.app" target="_blank" rel="noopener" class="work-link">
+                                        Electricity Bill Calculation &amp; Analytics
+                                        <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="22" height="22">
+                                            <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                        </svg>
+                                    </a>
+                                </h3>
+                                <span class="work-badge-live">LIVE APP</span>
                             </div>
-                        </div>
-                        <p class="bento-desc">
-                            High-concurrency API engineering, transactional data boundaries, secure identity access management, and distributed microservices.
-                        </p>
-                        <div class="bento-chips">
-                            <span class="b-chip"><i class="fa-brands fa-microsoft"></i> C# / .NET 8</span>
-                            <span class="b-chip"><i class="fa-solid fa-code"></i> ASP.NET Core Web API</span>
-                            <span class="b-chip"><i class="fa-brands fa-java"></i> Java 21 / 17</span>
-                            <span class="b-chip"><i class="fa-solid fa-leaf"></i> Spring Boot & MVC</span>
-                            <span class="b-chip"><i class="fa-brands fa-node-js"></i> Node.js & Express</span>
-                            <span class="b-chip"><i class="fa-solid fa-network-wired"></i> RESTful Architecture</span>
-                            <span class="b-chip"><i class="fa-solid fa-shield-halved"></i> JWT & Role-Based RBAC</span>
-                            <span class="b-chip"><i class="fa-solid fa-diagram-project"></i> Node-RED Logic Flows</span>
-                        </div>
-                    </div>
 
-                    <!-- Bento 2: Frontend & UI Craftsmanship -->
-                    <div class="bento-card bento-span-2 glass-card" data-tilt>
-                        <div class="bento-header">
-                            <div class="bento-icon icon-frontend"><i class="fa-solid fa-laptop-code"></i></div>
-                            <div>
-                                <span class="bento-category mono-text">TIER 02 // UI CRAFTSMANSHIP</span>
-                                <h3 class="bento-title">Fluid Frontend & UI Engineering</h3>
-                            </div>
-                        </div>
-                        <p class="bento-desc">
-                            Building Apple-grade fluid web apps, interactive glassmorphism, responsive component architectures, state orchestration, and performance tuning.
-                        </p>
-                        <div class="bento-chips">
-                            <span class="b-chip"><i class="fa-brands fa-react"></i> React.js (Hooks & Context)</span>
-                            <span class="b-chip"><i class="fa-brands fa-js"></i> TypeScript & Modern ES6+</span>
-                            <span class="b-chip"><i class="fa-brands fa-angular"></i> Angular Basics</span>
-                            <span class="b-chip"><i class="fa-brands fa-css3-alt"></i> Modern CSS3 / Glassmorphic UI</span>
-                            <span class="b-chip"><i class="fa-brands fa-html5"></i> Semantic HTML5 & a11y</span>
-                            <span class="b-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> 60fps Micro-interactions</span>
-                            <span class="b-chip"><i class="fa-solid fa-mobile-screen"></i> Cross-Device Responsive Layouts</span>
-                        </div>
-                    </div>
-
-                    <!-- Bento 3: Databases & Storage Architecture -->
-                    <div class="bento-card bento-span-2 glass-card" data-tilt>
-                        <div class="bento-header">
-                            <div class="bento-icon icon-database"><i class="fa-solid fa-database"></i></div>
-                            <div>
-                                <span class="bento-category mono-text">TIER 03 // PERSISTENCE & DATA</span>
-                                <h3 class="bento-title">Databases & Data Modeling</h3>
-                            </div>
-                        </div>
-                        <p class="bento-desc">
-                            Schema normalization, indexing strategies, cross-database support (MySQL + SQL Server), and document storage.
-                        </p>
-                        <div class="bento-chips">
-                            <span class="b-chip"><i class="fa-solid fa-database"></i> Microsoft SQL Server (T-SQL)</span>
-                            <span class="b-chip"><i class="fa-solid fa-database"></i> MySQL Relational Engine</span>
-                            <span class="b-chip"><i class="fa-solid fa-leaf"></i> MongoDB NoSQL</span>
-                            <span class="b-chip"><i class="fa-solid fa-table"></i> Entity Framework Core</span>
-                            <span class="b-chip"><i class="fa-solid fa-table-cells"></i> Hibernate & Spring Data JPA</span>
-                            <span class="b-chip"><i class="fa-solid fa-bolt"></i> Query Optimization & Indexing</span>
-                        </div>
-                    </div>
-
-                    <!-- Bento 4: Cloud, DevOps & AI Tooling -->
-                    <div class="bento-card bento-span-2 glass-card" data-tilt>
-                        <div class="bento-header">
-                            <div class="bento-icon icon-devops"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                            <div>
-                                <span class="bento-category mono-text">TIER 04 // CLOUD & DEVOPS</span>
-                                <h3 class="bento-title">Cloud Infrastructure & AI Tooling</h3>
-                            </div>
-                        </div>
-                        <p class="bento-desc">
-                            Continuous delivery pipelines, AWS compute instances, Vercel edge deployment, and daily AI workflow orchestration.
-                        </p>
-                        <div class="bento-chips">
-                            <span class="b-chip"><i class="fa-brands fa-aws"></i> AWS EC2 & S3 Basics</span>
-                            <span class="b-chip"><i class="fa-solid fa-cloud"></i> Vercel Edge Cloud</span>
-                            <span class="b-chip"><i class="fa-brands fa-git-alt"></i> Git & GitHub Actions</span>
-                            <span class="b-chip"><i class="fa-solid fa-terminal"></i> PowerShell & Bash CLI</span>
-                            <span class="b-chip"><i class="fa-solid fa-robot"></i> AI Engineering (Gemini / Claude / Cursor)</span>
-                            <span class="b-chip"><i class="fa-solid fa-bug"></i> Unit & Integration Test Harnesses</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 04 // CHRONICLES OF PRODUCTION (EXPERIENCE)
-        ══════════════════════════════════════════════════════════════════ -->
-        <section id="chronicles" class="chapter-section">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 04</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">CHRONICLES OF PRODUCTION</span>
-                </div>
-
-                <div class="section-heading-block">
-                    <h2 class="section-title">
-                        Battle-tested track record in <span class="gradient-text gradient-enterprise">enterprise engineering</span>.
-                    </h2>
-                    <p class="section-subtitle">
-                        Real-world software delivery at Info Origin Inc and Thinkbridge — architecting critical features, optimizing SQL queries, and accelerating shipping cycles.
-                    </p>
-                </div>
-
-                <div class="timeline-container">
-                    <!-- Experience 1: Info Origin Inc -->
-                    <div class="timeline-item glass-card" data-tilt>
-                        <div class="timeline-marker">
-                            <div class="marker-core"></div>
-                            <div class="marker-line"></div>
-                        </div>
-                        <div class="timeline-body">
-                            <div class="timeline-header">
-                                <div>
-                                    <span class="timeline-badge mono-text">JUNE 2024 — PRESENT • PUNE, INDIA</span>
-                                    <h3 class="timeline-role">Software Engineer</h3>
-                                    <div class="timeline-company">Info Origin Inc.</div>
-                                </div>
-                                <div class="timeline-badge-live">
-                                    <span class="pulse-dot"></span> CURRENT ROLE
-                                </div>
-                            </div>
-                            <p class="timeline-summary">
-                                Built enterprise production features for the <strong>InfoQA Platform</strong> end-to-end: SQL schema design, dual-engine backend logic, and responsive React web interfaces.
+                            <p class="work-description">
+                                A high-performance real-time utility calculation application. Implements dynamic slab-tier tariff computation for residential, commercial, and industrial consumers, automatic duty calculations, and instant downloadable PDF statement exports.
                             </p>
-                            <ul class="timeline-bullets">
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>End-to-End Ownership:</strong> Designed normalized database schemas supporting both <strong>MySQL</strong> and <strong>SQL Server</strong>, implemented backend endpoints with validation, built React UI components, and debugged edge cases post-testing.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>Role-Based Access Control (RBAC):</strong> Engineered granular permission guards restricting auditor and manager views, eliminating data leakage across multi-tenant environments.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>Backend Architecture:</strong> Developed custom Node-RED and Node.js business logic micro-flows, reducing manual QA triage turnaround by <strong>35%</strong>.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>Production Fixes & Performance:</strong> Resolved latency bottlenecks in database queries with index tuning, accelerating batch audit reporting by <strong>2.8x</strong>.</span>
-                                </li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span class="tag">React.js</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">MySQL & SQL Server</span>
-                                <span class="tag">Node-RED</span>
-                                <span class="tag">REST APIs</span>
-                                <span class="tag">RBAC</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Experience 2: Thinkbridge -->
-                    <div class="timeline-item glass-card" data-tilt>
-                        <div class="timeline-marker">
-                            <div class="marker-core"></div>
-                        </div>
-                        <div class="timeline-body">
-                            <div class="timeline-header">
-                                <div>
-                                    <span class="timeline-badge mono-text">JANUARY 2024 — JUNE 2024 • PUNE, INDIA</span>
-                                    <h3 class="timeline-role">Software Engineer Intern</h3>
-                                    <div class="timeline-company">Thinkbridge Software</div>
-                                </div>
-                                <div class="timeline-badge-completed mono-text">COMPLETED</div>
+                            <div class="work-specs">
+                                <div class="spec-entry"><span class="spec-label">Stack:</span> React.js, Node.js, Tailwind CSS, Vercel Edge</div>
+                                <div class="spec-entry"><span class="spec-label">Live Link:</span> <a href="https://e-bill-app.vercel.app" target="_blank" rel="noopener" class="spec-url">e-bill-app.vercel.app ↗</a></div>
+                                <div class="spec-entry"><span class="spec-label">GitHub:</span> <a href="https://github.com/74927bhushan/electricity-bill-app" target="_blank" rel="noopener" class="spec-url">github.com/74927bhushan/electricity-bill-app ↗</a></div>
                             </div>
-                            <p class="timeline-summary">
-                                Implemented core full-stack features using <strong>.NET Core (C#)</strong>, <strong>Java Spring Boot</strong>, and modern frontend tools under senior mentor guidance.
-                            </p>
-                            <ul class="timeline-bullets">
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>Microservices & APIs:</strong> Authored and documented clean, reusable RESTful endpoints in both <strong>ASP.NET Core</strong> and <strong>Spring Boot</strong>.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>Database Query Tuning:</strong> Wrote complex SQL scripts, relational joins, and automated migration scripts with zero downtime during release cycles.</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span><strong>Frontend Integration:</strong> Connected interactive React component trees to backend endpoints, implementing client-side validation and debounced search filters.</span>
-                                </li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span class="tag">.NET Core / C#</span>
-                                <span class="tag">Java Spring Boot</span>
-                                <span class="tag">React.js</span>
-                                <span class="tag">SQL Server</span>
-                                <span class="tag">Git & CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 05 // MASTER ARTIFACTS & LIVE SYSTEMS (PROJECTS)
-        ══════════════════════════════════════════════════════════════════ -->
-        <section id="artifacts" class="chapter-section">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 05</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">MASTER ARTIFACTS & SYSTEMS</span>
-                </div>
-
-                <div class="section-heading-block">
-                    <h2 class="section-title">
-                        Production systems built with <span class="gradient-text gradient-fluid">end-to-end ownership</span>.
-                    </h2>
-                    <p class="section-subtitle">
-                        From live production utilities to enterprise QA engines and full-stack distributed portals.
-                    </p>
-                </div>
-
-                <div class="artifacts-grid">
-                    <!-- Project 1: Electricity Bill App (FLAGSHIP LIVE DEMO) -->
-                    <div class="artifact-card artifact-flagship glass-card" data-tilt>
-                        <div class="artifact-top-badge">
-                            <span class="badge-flagship"><i class="fa-solid fa-bolt"></i> FLAGSHIP LIVE DEMO</span>
-                            <span class="badge-live-dot"><span class="pulse-green"></span> 100% OPERATIONAL</span>
-                        </div>
-                        <div class="artifact-content">
-                            <h3 class="artifact-title">Electricity Bill Calculation & Tariff Analytics App</h3>
-                            <p class="artifact-desc">
-                                A high-performance real-time utility billing system with dynamic slab-tier tariff computation, multi-category tariff engines (residential, commercial, industrial), tax breakdowns, and instant PDF bill generation.
-                            </p>
-                            <div class="artifact-architecture">
-                                <div class="arch-item">
-                                    <span class="arch-label mono-text">FRONTEND:</span>
-                                    <span class="arch-val">React.js, Tailwind CSS, Responsive Glass Layout</span>
-                                </div>
-                                <div class="arch-item">
-                                    <span class="arch-label mono-text">BACKEND & LOGIC:</span>
-                                    <span class="arch-val">Node.js REST Services, Dynamic Tariff Computation Engine</span>
-                                </div>
-                                <div class="arch-item">
-                                    <span class="arch-label mono-text">DEPLOYMENT:</span>
-                                    <span class="arch-val">Vercel Edge Cloud, Zero Cold-Start Global CDN</span>
-                                </div>
-                            </div>
-                            <div class="artifact-links">
-                                <a href="https://e-bill-app.vercel.app" target="_blank" rel="noopener" class="btn btn-primary glass-btn">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <div class="work-actions">
+                                <a href="https://e-bill-app.vercel.app" target="_blank" rel="noopener" class="btn-primary-sand">
                                     <span>Launch Live App</span>
+                                    <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                                        <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                    </svg>
                                 </a>
-                                <a href="https://github.com/74927bhushan/electricity-bill-app" target="_blank" rel="noopener" class="btn btn-secondary glass-btn">
+                                <a href="https://github.com/74927bhushan/electricity-bill-app" target="_blank" rel="noopener" class="btn-ghost-sand">
                                     <i class="fa-brands fa-github"></i>
-                                    <span>View GitHub Source</span>
+                                    <span>Source Code</span>
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Project 2: InfoQA Platform Case Study -->
-                    <div class="artifact-card glass-card" data-tilt>
-                        <div class="artifact-top-badge">
-                            <span class="badge-tag mono-text">CASE STUDY // ENTERPRISE</span>
-                            <span class="badge-confidential"><i class="fa-solid fa-shield-halved"></i> SANITIZED SPEC</span>
-                        </div>
-                        <div class="artifact-content">
-                            <h3 class="artifact-title">InfoQA Enterprise Quality Platform</h3>
-                            <p class="artifact-desc">
-                                End-to-end feature ownership for an enterprise audit platform. Architected dual database compatibility across <strong>MySQL</strong> and <strong>SQL Server</strong>, implemented Node-RED logic pipelines, and built audit status tracking with strict Role-Based Access Control (RBAC).
-                            </p>
-                            <div class="artifact-highlights">
-                                <div><i class="fa-solid fa-check"></i> Dual DB support (MySQL + SQL Server)</div>
-                                <div><i class="fa-solid fa-check"></i> Strict RBAC permission enforcement</div>
-                                <div><i class="fa-solid fa-check"></i> 35% faster QA verification cycles</div>
+                    <!-- Project 02: InfoQA Platform Case Study -->
+                    <article class="work-item">
+                        <div class="work-item-index font-mono">02 // CASE STUDY</div>
+                        <div class="work-item-main">
+                            <div class="work-title-row">
+                                <h3 class="work-title font-accent">
+                                    InfoQA Enterprise Quality Platform
+                                </h3>
+                                <span class="work-badge-enterprise">ENTERPRISE CORE</span>
                             </div>
-                            <div class="artifact-tags">
-                                <span>React.js</span>
-                                <span>Node.js</span>
-                                <span>SQL Server</span>
-                                <span>MySQL</span>
-                                <span>Node-RED</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Project 3: Student Management ERP -->
-                    <div class="artifact-card glass-card" data-tilt>
-                        <div class="artifact-top-badge">
-                            <span class="badge-tag mono-text">ENTERPRISE SYSTEM</span>
-                            <span class="badge-stack mono-text">JAVA • SPRING • MYSQL</span>
-                        </div>
-                        <div class="artifact-content">
-                            <h3 class="artifact-title">Student Management ERP</h3>
-                            <p class="artifact-desc">
-                                Full-stack educational administrative ERP built with <strong>Java Spring Boot</strong> and <strong>MySQL</strong>. Automates student admissions, multi-semester grade tracking, attendance monitoring, and administrative reporting dashboards.
+                            <p class="work-description">
+                                Complete end-to-end feature ownership for an enterprise quality audit engine. Designed relational schemas supporting both <strong>MySQL</strong> and <strong>SQL Server</strong>, implemented custom Node-RED business logic flows, and built role-based access control (RBAC) preventing unauthorized data leakage across auditor views.
                             </p>
-                            <div class="artifact-highlights">
-                                <div><i class="fa-solid fa-check"></i> Hibernate JPA transactional data integrity</div>
-                                <div><i class="fa-solid fa-check"></i> Spring Security with BCrypt password hashing</div>
-                                <div><i class="fa-solid fa-check"></i> Automated transcript export to CSV/PDF</div>
-                            </div>
-                            <div class="artifact-tags">
-                                <span>Java 17</span>
-                                <span>Spring Boot</span>
-                                <span>Spring Data JPA</span>
-                                <span>MySQL</span>
-                                <span>Thymeleaf / React</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Project 4: Online Voting System -->
-                    <div class="artifact-card glass-card" data-tilt>
-                        <div class="artifact-top-badge">
-                            <span class="badge-tag mono-text">SECURITY ARCHITECTURE</span>
-                            <span class="badge-stack mono-text">.NET • C# • SQL SERVER</span>
+                            <div class="work-specs">
+                                <div class="spec-entry"><span class="spec-label">Stack:</span> React.js, Node.js, Node-RED, SQL Server, MySQL, RBAC</div>
+                                <div class="spec-entry"><span class="spec-label">Impact:</span> Reduced audit verification turnaround by 35% with zero schema downtime.</div>
+                            </div>
                         </div>
-                        <div class="artifact-content">
-                            <h3 class="artifact-title">Secure Voter Registration & Balloting</h3>
-                            <p class="artifact-desc">
-                                Tamper-resistant election portal built using <strong>ASP.NET Core (C#)</strong> and <strong>SQL Server</strong>. Implements cryptographic ballot hashing, one-vote enforcement, voter identity validation, and encrypted audit trails.
+                    </article>
+
+                    <!-- Project 03: Student Management ERP -->
+                    <article class="work-item">
+                        <div class="work-item-index font-mono">03 // JAVA ENTERPRISE</div>
+                        <div class="work-item-main">
+                            <div class="work-title-row">
+                                <h3 class="work-title font-accent">
+                                    Student Management ERP Portal
+                                </h3>
+                                <span class="work-badge-tech">JAVA 21 • SPRING BOOT</span>
+                            </div>
+
+                            <p class="work-description">
+                                Academic administration ERP built with <strong>Java 21 Spring Boot</strong> and <strong>MySQL</strong>. Automates student lifecycle events, course enrollments, grade calculations, and transcript distribution with Hibernate JPA transactional boundaries and Spring Security.
                             </p>
-                            <div class="artifact-highlights">
-                                <div><i class="fa-solid fa-check"></i> SHA-256 vote anonymization & double-vote prevention</div>
-                                <div><i class="fa-solid fa-check"></i> Entity Framework Core parameterized query defense</div>
-                                <div><i class="fa-solid fa-check"></i> Live real-time turnout analytics dashboard</div>
-                            </div>
-                            <div class="artifact-tags">
-                                <span>C#</span>
-                                <span>ASP.NET Core</span>
-                                <span>EF Core</span>
-                                <span>SQL Server</span>
-                                <span>Chart.js</span>
+
+                            <div class="work-specs">
+                                <div class="spec-entry"><span class="spec-label">Stack:</span> Java 21, Spring Boot 3, Spring Data JPA, Hibernate, MySQL</div>
+                                <div class="spec-entry"><span class="spec-label">Security:</span> BCrypt credential encryption, role-based admin endpoints.</div>
                             </div>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- Project 04: Online Voting System -->
+                    <article class="work-item">
+                        <div class="work-item-index font-mono">04 // .NET SECURITY</div>
+                        <div class="work-item-main">
+                            <div class="work-title-row">
+                                <h3 class="work-title font-accent">
+                                    Secure Balloting &amp; Voter Portal
+                                </h3>
+                                <span class="work-badge-tech">.NET 8 • C# • SQL SERVER</span>
+                            </div>
+
+                            <p class="work-description">
+                                Tamper-proof election management system built in <strong>ASP.NET Core</strong> and <strong>SQL Server</strong>. Implements cryptographic ballot hashing, double-voting prevention, and live analytical tally charts using Entity Framework Core.
+                            </p>
+
+                            <div class="work-specs">
+                                <div class="spec-entry"><span class="spec-label">Stack:</span> C#, .NET 8, ASP.NET Core, EF Core, SQL Server</div>
+                                <div class="spec-entry"><span class="spec-label">Architecture:</span> Parameterized query defense, SHA-256 ballot anonymity.</div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
+
+                <div class="section-divider-line"></div>
             </div>
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 06 // THE AI ENGINEERING PROTOCOL
+             PRODUCTION EXPERIENCE (CHRONICLES)
         ══════════════════════════════════════════════════════════════════ -->
-        <section id="protocol" class="chapter-section">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 06</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">THE AI ENGINEERING PROTOCOL</span>
-                </div>
-
-                <div class="section-heading-block">
-                    <h2 class="section-title">
-                        How a 10-year mindset leverages <span class="gradient-text gradient-ai">AI without compromising rigor</span>.
+        <section id="experience" class="section-experience">
+            <div class="content-wrapper">
+                <div class="section-header-block">
+                    <h2 class="section-display font-accent">
+                        Production <span class="text-coral">chronicles</span>
                     </h2>
-                    <p class="section-subtitle">
-                        AI does not replace engineering discipline; it amplifies it. Here is my structured 4-step protocol for shipping battle-ready production software at 4x speed.
+                    <p class="section-tagline">
+                        Demonstrated track record of delivering stable enterprise features in fast-paced software environments.
                     </p>
                 </div>
 
-                <div class="protocol-grid">
-                    <!-- Step 1 -->
-                    <div class="protocol-step glass-card" data-tilt>
-                        <div class="step-num mono-text">01</div>
-                        <h4 class="step-title">Architectural Specification First</h4>
-                        <p class="step-desc">
-                            Before writing or generating a single line of code, I define the database schema, API contracts, TypeScript interfaces, and error boundaries. AI receives exact domain parameters, eliminating hallucinated abstractions.
-                        </p>
+                <div class="timeline-stack">
+                    <!-- Experience 1: Info Origin Inc. -->
+                    <div class="exp-card">
+                        <div class="exp-top-bar">
+                            <div class="exp-period font-mono">JUNE 2024 — PRESENT • PUNE, INDIA</div>
+                            <div class="exp-tag-current"><span class="status-live-dot"></span> CURRENT ROLE</div>
+                        </div>
+                        <h3 class="exp-role font-accent">Software Engineer</h3>
+                        <div class="exp-company">Info Origin Inc.</div>
+
+                        <ul class="exp-list">
+                            <li>
+                                <strong>End-to-End Feature Ownership:</strong> Owned features from database design (MySQL &amp; SQL Server) through backend logic (Node.js &amp; Node-RED) to React UI components, handling bug fixes post-QA.
+                            </li>
+                            <li>
+                                <strong>Multi-Tenant Role-Based Access Control:</strong> Engineered granular authorization rules securing confidential audit records across organizational roles.
+                            </li>
+                            <li>
+                                <strong>Query Tuning &amp; Database Performance:</strong> Indexed critical SQL tables and optimized join queries, accelerating batch report generation by 2.8x.
+                            </li>
+                            <li>
+                                <strong>Quality &amp; Pipeline Automation:</strong> Built automated logic workflows that cut manual testing triage turnaround by 35%.
+                            </li>
+                        </ul>
+
+                        <div class="exp-tags">
+                            <span class="tag-pill">React.js</span>
+                            <span class="tag-pill">Node.js</span>
+                            <span class="tag-pill">MySQL</span>
+                            <span class="tag-pill">SQL Server</span>
+                            <span class="tag-pill">Node-RED</span>
+                            <span class="tag-pill">RBAC</span>
+                            <span class="tag-pill">REST APIs</span>
+                        </div>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div class="protocol-step glass-card" data-tilt>
-                        <div class="step-num mono-text">02</div>
-                        <h4 class="step-title">Rapid Boilerplate & Test Synthesis</h4>
-                        <p class="step-desc">
-                            I leverage LLM tools (Claude, Cursor, Gemini) to scaffold repetitive CRUD structures, generate mock fixtures, and construct exhaustive unit test suites covering edge cases and boundary conditions.
-                        </p>
-                    </div>
+                    <!-- Experience 2: Thinkbridge Software -->
+                    <div class="exp-card">
+                        <div class="exp-top-bar">
+                            <div class="exp-period font-mono">JANUARY 2024 — JUNE 2024 • PUNE, INDIA</div>
+                            <div class="exp-tag-done font-mono">INTERNSHIP</div>
+                        </div>
+                        <h3 class="exp-role font-accent">Software Engineer Intern</h3>
+                        <div class="exp-company">Thinkbridge Software</div>
 
-                    <!-- Step 3 -->
-                    <div class="protocol-step glass-card" data-tilt>
-                        <div class="step-num mono-text">03</div>
-                        <h4 class="step-title">Strict Human Code & Security Audit</h4>
-                        <p class="step-desc">
-                            Every generated function is manually audited for SQL injection vectors, memory leaks, unhandled async promises, redundant re-renders, and role-based authorization loopholes.
-                        </p>
-                    </div>
+                        <ul class="exp-list">
+                            <li>
+                                <strong>Dual Enterprise APIs:</strong> Built clean, documented RESTful services in both <strong>.NET Core (C#)</strong> and <strong>Java Spring Boot</strong>.
+                            </li>
+                            <li>
+                                <strong>Database Scripting:</strong> Wrote complex SQL queries, views, and schema migration scripts with zero data degradation during deployment.
+                            </li>
+                            <li>
+                                <strong>Frontend Integration:</strong> Integrated backend endpoints into responsive React components, incorporating debounced search filters and form validation.
+                            </li>
+                        </ul>
 
-                    <!-- Step 4 -->
-                    <div class="protocol-step glass-card" data-tilt>
-                        <div class="step-num mono-text">04</div>
-                        <h4 class="step-title">End-to-End Production Ownership</h4>
-                        <p class="step-desc">
-                            I personally verify the live build on staging, monitor telemetry latencies, check cross-browser responsiveness, and own ongoing fixes. If something breaks in production, I fix it immediately.
-                        </p>
+                        <div class="exp-tags">
+                            <span class="tag-pill">.NET Core / C#</span>
+                            <span class="tag-pill">Java Spring Boot</span>
+                            <span class="tag-pill">React.js</span>
+                            <span class="tag-pill">SQL Server</span>
+                            <span class="tag-pill">Git / CI/CD</span>
+                        </div>
                     </div>
                 </div>
+
+                <div class="section-divider-line"></div>
             </div>
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             CHAPTER 07 // THE TRANSMISSION HUB (CONTACT)
+             AI WORKFLOW & RIGOR SECTION
         ══════════════════════════════════════════════════════════════════ -->
-        <section id="transmission" class="chapter-section chapter-footer">
-            <div class="chapter-container">
-                <div class="chapter-tag-pill">
-                    <span class="tag-number mono-text">CHAPTER 07</span>
-                    <span class="tag-divider">/</span>
-                    <span class="tag-label">THE TRANSMISSION HUB</span>
+        <section id="ai-protocol" class="section-ai">
+            <div class="content-wrapper">
+                <div class="section-header-block">
+                    <h2 class="section-display font-accent">
+                        The AI <span class="text-coral">harness</span>
+                    </h2>
+                    <p class="section-tagline">
+                        How I use modern AI daily to ship at 4x speed without ever compromising code quality or security.
+                    </p>
                 </div>
 
-                <div class="transmission-card glass-panel" data-tilt>
-                    <div class="transmission-header">
-                        <div class="pulse-indicator">
-                            <span class="pulse-dot"></span>
-                            <span class="mono-text">NODE STATUS: LISTENING FOR OPPORTUNITIES</span>
-                        </div>
-                        <h2 class="transmission-headline">
-                            Ready to engineer <span class="gradient-text gradient-enterprise">mission-critical systems</span> together?
-                        </h2>
-                        <p class="transmission-sub">
-                            Available for Full Stack Engineer roles (.NET 8, Java Spring Boot, React, Node.js, SQL) in Pune, hybrid, or remote. Let's discuss how I can bring end-to-end velocity to your engineering team.
+                <div class="ai-cards-grid">
+                    <div class="ai-card">
+                        <div class="ai-step-num font-mono">01</div>
+                        <h4 class="ai-step-title font-accent">Schema &amp; API Contracts First</h4>
+                        <p class="ai-step-text">
+                            Strict boundaries are designed manually: SQL tables, entity relations, TypeScript interfaces, and validation rules. AI only operates within strictly defined domain bounds.
                         </p>
                     </div>
 
-                    <div class="contact-terminal-grid">
-                        <!-- Direct Email -->
-                        <div class="contact-channel glass-card">
-                            <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="channel-info">
-                                <div class="channel-label mono-text">DIRECT INBOX</div>
-                                <div class="channel-val mono-text">bhushanchoudhary7492@gmail.com</div>
-                            </div>
-                            <button class="copy-btn glass-btn" data-copy="bhushanchoudhary7492@gmail.com" title="Copy Email">
-                                <i class="fa-regular fa-copy"></i>
-                                <span>Copy</span>
-                            </button>
-                        </div>
-
-                        <!-- Direct Phone -->
-                        <div class="contact-channel glass-card">
-                            <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="channel-info">
-                                <div class="channel-label mono-text">DIRECT CELL / WHATSAPP</div>
-                                <div class="channel-val mono-text">+91 74927 23321</div>
-                            </div>
-                            <a href="tel:+917492723321" class="channel-action glass-btn" title="Call Direct">
-                                <i class="fa-solid fa-phone-flip"></i>
-                                <span>Call</span>
-                            </a>
-                        </div>
-
-                        <!-- LinkedIn -->
-                        <div class="contact-channel glass-card">
-                            <div class="channel-icon"><i class="fa-brands fa-linkedin"></i></div>
-                            <div class="channel-info">
-                                <div class="channel-label mono-text">PROFESSIONAL NETWORK</div>
-                                <div class="channel-val mono-text">linkedin.com/in/bhushan-choudhary</div>
-                            </div>
-                            <a href="https://linkedin.com/in/bhushan-choudhary-a83a54238" target="_blank" rel="noopener" class="channel-action glass-btn">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                <span>Connect</span>
-                            </a>
-                        </div>
-
-                        <!-- GitHub -->
-                        <div class="contact-channel glass-card">
-                            <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
-                            <div class="channel-info">
-                                <div class="channel-label mono-text">CODEBASE & REPOSITORIES</div>
-                                <div class="channel-val mono-text">github.com/74927bhushan</div>
-                            </div>
-                            <a href="https://github.com/74927bhushan" target="_blank" rel="noopener" class="channel-action glass-btn">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                <span>Inspect</span>
-                            </a>
-                        </div>
+                    <div class="ai-card">
+                        <div class="ai-step-num font-mono">02</div>
+                        <h4 class="ai-step-title font-accent">Rapid Boilerplate &amp; Test Generation</h4>
+                        <p class="ai-step-text">
+                            I leverage LLMs (Claude, Gemini, Cursor) to scaffold repetitive controllers, seed database fixtures, and generate comprehensive unit test scenarios.
+                        </p>
                     </div>
 
-                    <!-- Master Resume Download Callout -->
-                    <div class="resume-callout glass-panel">
-                        <div class="callout-left">
-                            <i class="fa-solid fa-file-pdf"></i>
-                            <div>
-                                <h4 class="callout-title">Bhushan Choudhary — Master Resume (PDF)</h4>
-                                <p class="callout-desc">Complete verified breakdown of .NET, Java, React, SQL, and enterprise experience.</p>
-                            </div>
-                        </div>
-                        <div class="callout-right">
-                            <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="btn btn-primary glass-btn">
-                                <i class="fa-solid fa-download"></i>
-                                <span>Download PDF</span>
-                            </a>
-                            <a href="resume.html" target="_blank" class="btn btn-secondary glass-btn">
-                                <i class="fa-solid fa-eye"></i>
-                                <span>Web View</span>
-                            </a>
-                        </div>
+                    <div class="ai-card">
+                        <div class="ai-step-num font-mono">03</div>
+                        <h4 class="ai-step-title font-accent">Manual Security &amp; Edge-Case Audit</h4>
+                        <p class="ai-step-text">
+                            Every generated snippet is audited for SQL injection vulnerability, re-render inefficiencies, memory leaks, and async exception handling before hitting git.
+                        </p>
                     </div>
 
-                    <div class="transmission-footer mono-text">
-                        <div>© 2026 BHUSHAN CHOUDHARY • ENGINEERED IN PUNE, MH</div>
-                        <div class="transmission-live-tag">
-                            <span class="pulse-green"></span>
-                            <span>DEPLOYED ON VERCEL EDGE // HOSTED AT BHUSHAN.XYZ</span>
-                        </div>
+                    <div class="ai-card">
+                        <div class="ai-step-num font-mono">04</div>
+                        <h4 class="ai-step-title font-accent">End-to-End Production Responsibility</h4>
+                        <p class="ai-step-text">
+                            I personally verify staging builds, monitor network telemetry latencies, check mobile ergonomics, and own post-launch stability.
+                        </p>
                     </div>
                 </div>
+
+                <div class="section-divider-line"></div>
             </div>
         </section>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             SAY HELLO / CONTACT (FOOTER IN JASPREETSINGH.XYZ STYLE)
+        ══════════════════════════════════════════════════════════════════ -->
+        <footer id="contact" class="section-footer">
+            <div class="content-wrapper">
+                <div class="footer-top-block">
+                    <h2 class="footer-display font-accent">
+                        Say <span class="text-coral">hello</span>
+                    </h2>
+                    <p class="footer-sub font-accent">
+                        Looking for a Full Stack Engineer who can own features end to end? Let's build something exceptional.
+                    </p>
+                </div>
+
+                <!-- Direct Interactive Channels -->
+                <div class="footer-channels">
+                    <div class="channel-card">
+                        <span class="channel-label font-mono">DIRECT INBOX</span>
+                        <a href="mailto:bhushanchoudhary7492@gmail.com" class="channel-main-link">
+                            bhushanchoudhary7492@gmail.com
+                        </a>
+                        <button class="copy-action-btn" data-copy="bhushanchoudhary7492@gmail.com">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy Email</span>
+                        </button>
+                    </div>
+
+                    <div class="channel-card">
+                        <span class="channel-label font-mono">CELL / WHATSAPP</span>
+                        <a href="tel:+917492723321" class="channel-main-link">
+                            +91 74927 23321
+                        </a>
+                        <a href="tel:+917492723321" class="channel-call-btn">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Call</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social & External Links -->
+                <div class="footer-links-row">
+                    <a href="https://linkedin.com/in/bhushan-choudhary-a83a54238" target="_blank" rel="noopener" class="footer-external-link">
+                        <span>LinkedIn</span>
+                        <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/74927bhushan" target="_blank" rel="noopener" class="footer-external-link">
+                        <span>GitHub</span>
+                        <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                        </svg>
+                    </a>
+
+                    <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="footer-external-link">
+                        <span>Resume PDF</span>
+                        <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-bottom-line"></div>
+
+                <div class="footer-colophon">
+                    <p class="colophon-designer">
+                        Designed &amp; developed by <span class="font-accent colophon-name">Bhushan Choudhary</span>
+                    </p>
+                    <p class="colophon-rights">
+                        © 2026 • Pune, MH • All rights reserved
+                    </p>
+                </div>
+            </div>
+        </footer>
 
     </main>
 
-    <!-- ── TOAST NOTIFICATION CONTAINER ── -->
+    <!-- ── TOAST NOTIFICATION ── -->
     <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
     <script src="script.js"></script>
