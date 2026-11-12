@@ -251,27 +251,32 @@ body.is-loaded .hero-divider-line {
 .header-container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 18px 32px;
+    padding: 14px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
     gap: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .brand-link {
     text-decoration: none;
     color: var(--color-sand);
+    white-space: nowrap;
 }
 
 .brand-name {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
     color: var(--color-sand);
     letter-spacing: 0.02em;
+    white-space: nowrap;
     transition: var(--transition-fast);
 }
 
@@ -285,21 +290,23 @@ body.is-loaded .hero-divider-line {
 }
 
 .brand-role {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 300;
     color: var(--color-muted-beige);
     letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 20px;
+    flex-shrink: 0;
 }
 
 .nav-link {
     text-decoration: none;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -314,7 +321,8 @@ body.is-loaded .hero-divider-line {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .cmd-pill-btn {
@@ -323,27 +331,29 @@ body.is-loaded .hero-divider-line {
     gap: 8px;
     padding: 6px 14px;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--color-sand-20);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     color: var(--color-sand);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     cursor: pointer;
+    white-space: nowrap;
     transition: var(--transition-fast);
 }
 
 .cmd-pill-btn:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: var(--color-sand-60);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.2);
     transform: translateY(-1px);
 }
 
 .cmd-icon {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--color-cyan);
 }
 
 .cmd-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--color-sand-85);
 }
 
@@ -352,7 +362,7 @@ body.is-loaded .hero-divider-line {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--color-sand-20);
     border-radius: 4px;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-family: var(--font-mono);
     color: var(--color-muted-beige);
 }
@@ -1526,12 +1536,14 @@ body.is-loaded .hero-divider-line {
     justify-content: center;
     padding: 120px 24px 24px;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
 }
 
 .cmd-palette-backdrop.open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -1672,6 +1684,13 @@ body.is-loaded .hero-divider-line {
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
+@media (max-width: 1100px) {
+    .brand-role,
+    .brand-divider {
+        display: none;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-split-grid {
         grid-template-columns: 1fr;
@@ -1710,6 +1729,10 @@ body.is-loaded .hero-divider-line {
     }
 
     .brand-role {
+        display: none;
+    }
+
+    .cmd-pill-btn .cmd-kbd {
         display: none;
     }
 

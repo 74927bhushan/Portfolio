@@ -342,7 +342,13 @@ function initCommandPalette() {
     }
 
     // Trigger on button click
-    if (trigger) trigger.addEventListener('click', openPalette);
+    if (trigger) {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openPalette();
+        });
+    }
     if (closeBtn) closeBtn.addEventListener('click', closePalette);
 
     // Click outside to dismiss
