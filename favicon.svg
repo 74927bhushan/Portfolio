@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#333333" />
+      <stop offset="100%" stop-color="#1a1a1a" />
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Squircle -->
+  <rect width="64" height="64" rx="18" fill="url(#bgGrad)" />
+  <rect width="62" height="62" x="1" y="1" rx="17" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" />
+  
+  <!-- Monogram BC (Bhushan Choudhary) -->
+  <text x="32" y="41" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" 
+        font-weight="900" 
+        font-size="25" 
+        fill="#f5f0eb" 
+        text-anchor="middle" 
+        letter-spacing="-1.5">
+    B<tspan fill="#e05344">C</tspan>
+  </text>
+  
+  <!-- Subtle accent dot -->
+  <circle cx="49" cy="40" r="2.5" fill="#e05344" />
+</svg>
