@@ -42,7 +42,9 @@ function initHomeLoader() {
         if (progress < 1) {
             requestAnimationFrame(updateLoader);
         } else {
-            setTimeout(completeLoader, 200);
+            const barWrap = loader.querySelector('.loader-bar-wrap');
+            if (barWrap) barWrap.classList.add('bar-fade');
+            setTimeout(completeLoader, 300);
         }
     }
 
@@ -52,6 +54,7 @@ function initHomeLoader() {
         if (!loader || loader.classList.contains('loader-complete')) return;
         loader.classList.add('loader-complete');
         document.body.classList.remove('is-loading');
+        document.body.classList.add('is-loaded');
 
         setTimeout(() => {
             loader.style.display = 'none';
