@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Bhushan Choudhary — Full Stack Engineer & UI Craftsman (.NET 8, Java Spring Boot, React.js, Node.js, SQL). Designing and building enterprise systems and fluid digital products that make complex things feel simple.">
+        content="Bhushan Choudhary — Senior Full Stack & UI Craftsman (.NET 8, Java Spring Boot, React.js, Node.js, SQL). Architecting scalable backends and crafting fluid digital interfaces.">
     <meta name="keywords"
         content="Bhushan Choudhary, Full Stack Engineer, .NET 8, Java Spring Boot, React.js, Node.js, Pune, Software Engineer, Portfolio">
     <meta name="author" content="Bhushan Choudhary">
@@ -16,11 +16,11 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
 
-    <!-- Google Fonts: Swanky and Moo Moo (Accent), Inter (Clean Editorial Body), JetBrains Mono (Code/Metrics) -->
+    <!-- Google Fonts: Syne (Architectural Display), Space Grotesk, Inter, JetBrains Mono, Swanky & Moo Moo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400;500&family=Swanky+and+Moo+Moo&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&family=Swanky+and+Moo+Moo&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -49,7 +49,7 @@
     <!-- ── INFINITE SKY & STARS CANVAS (PANNING UPWARDS ON SCROLL) ── -->
     <canvas id="skyCanvas" class="sky-canvas" aria-hidden="true"></canvas>
 
-    <!-- ── SITE HEADER ── -->
+    <!-- ── SITE HEADER WITH COMMAND PALETTE TRIGGER ── -->
     <header class="site-header" id="siteHeader">
         <div class="header-container">
             <div class="header-left">
@@ -69,6 +69,13 @@
             </nav>
 
             <div class="header-right">
+                <!-- ⌘K Command Palette Button -->
+                <button id="cmdTrigger" class="cmd-pill-btn" aria-label="Open Command Palette (Ctrl+K)" title="Press Ctrl + K to search">
+                    <i class="fa-solid fa-terminal cmd-icon"></i>
+                    <span class="cmd-label">Search</span>
+                    <kbd class="cmd-kbd">Ctrl K</kbd>
+                </button>
+
                 <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="resume-pill-btn">
                     <span>Resume</span>
                     <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
@@ -86,42 +93,110 @@
     <main class="page-main">
 
         <!-- ══════════════════════════════════════════════════════════════════
-             HERO SECTION (THE GREETING & MINIMALIST KINETIC NEBULA)
+             HERO SECTION (THE GREETING & 3D DUAL-CORE REACTOR)
         ══════════════════════════════════════════════════════════════════ -->
         <section id="hero" class="section-hero">
-            <!-- Interactive Kinetic Constellation Nebula Canvas -->
+            <!-- Interactive Kinetic Constellation Nebula Background -->
             <canvas id="nebulaCanvas" class="nebula-canvas"></canvas>
 
             <div class="content-wrapper hero-content-relative">
-                <div class="hero-greeting-block">
-                    <h1 class="hero-title font-accent">
-                        <span class="hero-pre">Hello, I'm</span>
-                        <span class="hero-name-emphasis display-name">Bhushan</span>
-                    </h1>
+                <div class="hero-split-grid">
+                    <!-- Left: Narrative & Credentials -->
+                    <div class="hero-left-col">
+                        <div class="hero-greeting-block">
+                            <div class="hero-badge-tag font-mono">
+                                <span class="pulse-indicator"></span>
+                                <span>DUAL_CORE_ENGINE // .NET 8 + JAVA 21 + REACT</span>
+                            </div>
 
-                    <p class="hero-intro font-accent">
-                        <span>I design and engineer enterprise systems for a living.</span>
-                        <span class="block-sm">Bridging .NET, Java, and fluid modern web interfaces.</span>
-                    </p>
-                </div>
+                            <h1 class="hero-title font-accent">
+                                <span class="hero-pre">Hello, I'm</span>
+                                <span class="hero-name-emphasis display-name">Bhushan</span>
+                            </h1>
 
-                <div class="hero-meta-row">
-                    <div class="hero-status-chip">
-                        <span class="pulse-indicator"></span>
-                        <span>Open for Full Stack Roles • .NET Core • Java Spring Boot • React.js</span>
+                            <p class="hero-intro font-accent">
+                                <span>I design and engineer enterprise systems for a living.</span>
+                                <span class="block-sm">Bridging .NET, Java, and fluid modern web interfaces.</span>
+                            </p>
+                        </div>
+
+                        <div class="hero-meta-row">
+                            <div class="hero-status-chip">
+                                <span class="status-live-dot"></span>
+                                <span>Open for Full Stack Roles • Pune, MH (Hybrid / Remote)</span>
+                            </div>
+
+                            <div class="hero-actions-group">
+                                <a href="#work" class="btn-primary-sand">
+                                    <span>Explore Selected Works</span>
+                                    <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
+                                        <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                    </svg>
+                                </a>
+                                <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="btn-ghost-sand">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                    <span>Download Resume PDF</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="hero-actions-group">
-                        <a href="#work" class="btn-primary-sand">
-                            <span>Explore Selected Works</span>
-                            <svg class="motion-arrow" fill="none" viewBox="0 0 24 24" width="16" height="16">
-                                <path d="M7 17 17 7m0 0H8m9 0v9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
-                            </svg>
-                        </a>
-                        <a href="Bhushan_Choudhary_Resume.pdf" download="Bhushan_Choudhary_Resume.pdf" class="btn-ghost-sand">
-                            <i class="fa-solid fa-file-arrow-down"></i>
-                            <span>Download Resume PDF</span>
-                        </a>
+                    <!-- Right: The 3D Dual Core Reactor Interactive Module -->
+                    <div class="hero-right-col">
+                        <div class="reactor-module glass-reactor-card" id="reactorModule">
+                            <div class="reactor-header">
+                                <div class="reactor-title-block">
+                                    <span class="reactor-kicker font-mono">SYSTEM VISUALIZER</span>
+                                    <h3 class="reactor-heading font-display">Dual Core Reactor</h3>
+                                </div>
+                                <div class="reactor-controls">
+                                    <button class="core-tab active" data-core="dotnet">
+                                        <i class="fa-brands fa-microsoft"></i> .NET 8
+                                    </button>
+                                    <button class="core-tab" data-core="java">
+                                        <i class="fa-brands fa-java"></i> Java 21
+                                    </button>
+                                    <button class="core-tab" data-core="react">
+                                        <i class="fa-brands fa-react"></i> React 19
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 3D Reactor Canvas -->
+                            <div class="reactor-canvas-wrap">
+                                <canvas id="reactorCanvas" class="reactor-canvas"></canvas>
+                                <div class="reactor-hint font-mono">
+                                    <i class="fa-solid fa-arrows-up-down-left-right"></i> DRAG TO ROTATE 3D CORE
+                                </div>
+                            </div>
+
+                            <!-- Live Telemetry Readout Deck -->
+                            <div class="reactor-telemetry-deck font-mono">
+                                <!-- Telemetry: .NET -->
+                                <div class="telemetry-pane active" id="telemetry-dotnet">
+                                    <div class="t-metric"><span class="t-label">RUNTIME:</span> <span class="t-val t-purple">.NET 8 CLR / C# 12</span></div>
+                                    <div class="t-metric"><span class="t-label">ORM:</span> <span class="t-val">EF Core + SQL Server</span></div>
+                                    <div class="t-metric"><span class="t-label">JIT ENGINE:</span> <span class="t-val t-cyan">Tier-1 Dynamic PGO</span></div>
+                                    <div class="t-metric"><span class="t-label">GC PAUSE:</span> <span class="t-val t-green">&lt; 0.6ms (Non-blocking)</span></div>
+                                </div>
+
+                                <!-- Telemetry: Java -->
+                                <div class="telemetry-pane" id="telemetry-java">
+                                    <div class="t-metric"><span class="t-label">RUNTIME:</span> <span class="t-val t-amber">OpenJDK 21 / Spring Boot 3</span></div>
+                                    <div class="t-metric"><span class="t-label">PERSISTENCE:</span> <span class="t-val">Spring Data JPA / MySQL</span></div>
+                                    <div class="t-metric"><span class="t-label">CONCURRENCY:</span> <span class="t-val t-cyan">Loom Virtual Threads</span></div>
+                                    <div class="t-metric"><span class="t-label">COLLECTOR:</span> <span class="t-val t-green">ZGC Sub-millisecond</span></div>
+                                </div>
+
+                                <!-- Telemetry: React / UI -->
+                                <div class="telemetry-pane" id="telemetry-react">
+                                    <div class="t-metric"><span class="t-label">UI LAYER:</span> <span class="t-val t-cyan">React 19 Concurrent Fiber</span></div>
+                                    <div class="t-metric"><span class="t-label">ENGINE:</span> <span class="t-val">Node.js + REST Logic</span></div>
+                                    <div class="t-metric"><span class="t-label">REFRESH RATE:</span> <span class="t-val t-green">60 FPS Hardware Comp</span></div>
+                                    <div class="t-metric"><span class="t-label">HYDRATION:</span> <span class="t-val t-purple">Instant Optimistic Update</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -130,7 +205,7 @@
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             ABOUT & PHILOSOPHY (JASPREETSINGH STYLE EDITORIAL)
+             ABOUT & PHILOSOPHY
         ══════════════════════════════════════════════════════════════════ -->
         <section id="about" class="section-about">
             <div class="content-wrapper">
@@ -182,7 +257,7 @@
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             DUAL ENGINE ARCHITECTURE (BACKEND MASTERY)
+             DUAL ENGINE ARCHITECTURE
         ══════════════════════════════════════════════════════════════════ -->
         <section id="dual-engine" class="section-dual-engine">
             <div class="content-wrapper">
@@ -259,7 +334,7 @@
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             SELECTED WORKS (FLAGSHIP PROJECTS)
+             SELECTED WORKS (WITH INTERACTIVE ARCHITECTURE INSPECTOR)
         ══════════════════════════════════════════════════════════════════ -->
         <section id="work" class="section-works">
             <div class="content-wrapper">
@@ -268,7 +343,7 @@
                         Selected <span class="text-coral">works</span>
                     </h2>
                     <p class="section-tagline">
-                        Production systems, live utility platforms, and end-to-end enterprise case studies.
+                        Production systems, live utility platforms, and interactive architectural case studies.
                     </p>
                 </div>
 
@@ -289,9 +364,33 @@
                                 <span class="work-badge-live">LIVE APP</span>
                             </div>
 
-                            <p class="work-description">
-                                A high-performance real-time utility calculation application. Implements dynamic slab-tier tariff computation for residential, commercial, and industrial consumers, automatic duty calculations, and instant downloadable PDF statement exports.
-                            </p>
+                            <!-- Interactive Inspector Tabs -->
+                            <div class="inspect-nav font-mono">
+                                <button class="inspect-tab active" data-target="ebill-overview">Overview</button>
+                                <button class="inspect-tab" data-target="ebill-schema">Architecture &amp; Flow</button>
+                                <button class="inspect-tab" data-target="ebill-metrics">Impact</button>
+                            </div>
+
+                            <div class="inspect-content-box">
+                                <div class="inspect-panel active" id="ebill-overview">
+                                    <p class="work-description">
+                                        A high-performance real-time utility calculation application. Implements dynamic slab-tier tariff computation for residential, commercial, and industrial consumers, automatic duty calculations, and instant downloadable PDF statement exports.
+                                    </p>
+                                </div>
+                                <div class="inspect-panel" id="ebill-schema">
+                                    <div class="schema-code font-mono">
+                                        <div><span class="t-cyan">[TIER ENGINE]</span> Slab computation rule: Residential [0-100 kWh: ₹3.44, 101-300 kWh: ₹7.34, >300: ₹10.36]</div>
+                                        <div><span class="t-purple">[STATE]</span> React Context + useReducer with real-time optimistic debounced input</div>
+                                        <div><span class="t-green">[EXPORT]</span> Client-side PDF generation with zero server-side rendering latency</div>
+                                    </div>
+                                </div>
+                                <div class="inspect-panel" id="ebill-metrics">
+                                    <div class="schema-code font-mono">
+                                        <div><span class="t-green">PERFORMANCE:</span> 100% Lighthouse Performance Score • Sub-10ms calculation cycle</div>
+                                        <div><span class="t-cyan">DEPLOYMENT:</span> Vercel Edge CDN with zero cold-starts worldwide</div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="work-specs">
                                 <div class="spec-entry"><span class="spec-label">Stack:</span> React.js, Node.js, Tailwind CSS, Vercel Edge</div>
@@ -325,9 +424,25 @@
                                 <span class="work-badge-enterprise">ENTERPRISE CORE</span>
                             </div>
 
-                            <p class="work-description">
-                                Complete end-to-end feature ownership for an enterprise quality audit engine. Designed relational schemas supporting both <strong>MySQL</strong> and <strong>SQL Server</strong>, implemented custom Node-RED business logic flows, and built role-based access control (RBAC) preventing unauthorized data leakage across auditor views.
-                            </p>
+                            <div class="inspect-nav font-mono">
+                                <button class="inspect-tab active" data-target="infoqa-overview">Overview</button>
+                                <button class="inspect-tab" data-target="infoqa-schema">Dual-DB &amp; RBAC Flow</button>
+                            </div>
+
+                            <div class="inspect-content-box">
+                                <div class="inspect-panel active" id="infoqa-overview">
+                                    <p class="work-description">
+                                        Complete end-to-end feature ownership for an enterprise quality audit engine. Designed relational schemas supporting both <strong>MySQL</strong> and <strong>SQL Server</strong>, implemented custom Node-RED business logic flows, and built role-based access control (RBAC) preventing unauthorized data leakage across auditor views.
+                                    </p>
+                                </div>
+                                <div class="inspect-panel" id="infoqa-schema">
+                                    <div class="schema-code font-mono">
+                                        <div><span class="t-purple">[DUAL DB]</span> Parameterized cross-dialect compatibility layer (T-SQL + MySQL)</div>
+                                        <div><span class="t-cyan">[RBAC GUARD]</span> Granular permissions: Admin, Auditor, Reviewer with JWT claim verification</div>
+                                        <div><span class="t-green">[NODE-RED]</span> Event-driven micro-flow pipelines dispatching audit reports automatically</div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="work-specs">
                                 <div class="spec-entry"><span class="spec-label">Stack:</span> React.js, Node.js, Node-RED, SQL Server, MySQL, RBAC</div>
@@ -523,7 +638,7 @@
         </section>
 
         <!-- ══════════════════════════════════════════════════════════════════
-             SAY HELLO / CONTACT (FOOTER IN JASPREETSINGH.XYZ STYLE)
+             SAY HELLO / CONTACT
         ══════════════════════════════════════════════════════════════════ -->
         <footer id="contact" class="section-footer">
             <div class="content-wrapper">
@@ -600,7 +715,91 @@
 
     </main>
 
-    <!-- ── TOAST NOTIFICATION ── -->
+    <!-- ── COMMAND PALETTE MODAL (CTRL + K) ── -->
+    <div id="cmdPalette" class="cmd-palette-backdrop" aria-hidden="true">
+        <div class="cmd-palette-modal glass-cmd-panel" role="dialog" aria-modal="true" aria-label="Command Palette">
+            <div class="cmd-search-row">
+                <i class="fa-solid fa-magnifying-glass cmd-search-icon"></i>
+                <input type="text" id="cmdInput" class="cmd-search-input" placeholder="Type a command or jump to section..." autocomplete="off" spellcheck="false">
+                <kbd class="cmd-esc-badge" id="cmdCloseBtn">ESC</kbd>
+            </div>
+
+            <div class="cmd-list-wrap">
+                <div class="cmd-group-label font-mono">⚡ QUICK ACTIONS &amp; JUMPS</div>
+                <div class="cmd-item" data-action="link" data-url="https://e-bill-app.vercel.app">
+                    <i class="fa-solid fa-bolt cmd-item-icon t-amber"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">Launch Electricity Bill App</span>
+                        <span class="cmd-item-desc">Flagship Live Production utility on Vercel</span>
+                    </div>
+                    <span class="cmd-item-key">ENTER ↗</span>
+                </div>
+
+                <div class="cmd-item" data-action="scroll" data-target="#work">
+                    <i class="fa-solid fa-layer-group cmd-item-icon t-cyan"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">View Selected Works</span>
+                        <span class="cmd-item-desc">Electricity Bill App, InfoQA Platform, Student ERP, Voting Portal</span>
+                    </div>
+                    <span class="cmd-item-key">JUMP</span>
+                </div>
+
+                <div class="cmd-item" data-action="scroll" data-target="#dual-engine">
+                    <i class="fa-solid fa-microchip cmd-item-icon t-purple"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">Inspect Dual Engine Architecture</span>
+                        <span class="cmd-item-desc">.NET 8 C# Enterprise alongside Java 21 Spring Boot</span>
+                    </div>
+                    <span class="cmd-item-key">JUMP</span>
+                </div>
+
+                <div class="cmd-item" data-action="scroll" data-target="#experience">
+                    <i class="fa-solid fa-briefcase cmd-item-icon t-green"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">View Chronicles &amp; Experience</span>
+                        <span class="cmd-item-desc">Software Engineer at Info Origin &amp; Thinkbridge</span>
+                    </div>
+                    <span class="cmd-item-key">JUMP</span>
+                </div>
+
+                <div class="cmd-group-label font-mono mt-cmd-group">📄 DOCUMENTS &amp; COMMS</div>
+                <div class="cmd-item" data-action="download" data-url="Bhushan_Choudhary_Resume.pdf">
+                    <i class="fa-solid fa-file-pdf cmd-item-icon t-coral"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">Download Master Resume (PDF)</span>
+                        <span class="cmd-item-desc">Full breakdown of .NET, Java, React, SQL &amp; production history</span>
+                    </div>
+                    <span class="cmd-item-key">DOWNLOAD</span>
+                </div>
+
+                <div class="cmd-item" data-action="copy" data-copy="choudhary.bhushan31@gmail.com">
+                    <i class="fa-regular fa-envelope cmd-item-icon t-cyan"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">Copy Email Address</span>
+                        <span class="cmd-item-desc">choudhary.bhushan31@gmail.com</span>
+                    </div>
+                    <span class="cmd-item-key">COPY</span>
+                </div>
+
+                <div class="cmd-item" data-action="copy" data-copy="+919359240149">
+                    <i class="fa-solid fa-phone cmd-item-icon t-green"></i>
+                    <div class="cmd-item-info">
+                        <span class="cmd-item-title">Copy Phone / WhatsApp</span>
+                        <span class="cmd-item-desc">+91 93592 40149</span>
+                    </div>
+                    <span class="cmd-item-key">COPY</span>
+                </div>
+            </div>
+
+            <div class="cmd-footer font-mono">
+                <span>Navigation: <kbd class="cmd-kbd-sm">↑</kbd> <kbd class="cmd-kbd-sm">↓</kbd></span>
+                <span>Select: <kbd class="cmd-kbd-sm">↵</kbd></span>
+                <span>Dismiss: <kbd class="cmd-kbd-sm">ESC</kbd></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── TOAST NOTIFICATION CONTAINER ── -->
     <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
     <script src="script.js"></script>
