@@ -86,15 +86,12 @@
     <main class="page-main">
 
         <!-- ══════════════════════════════════════════════════════════════════
-             HERO SECTION (THE GREETING & MOVING GRASS HILLTOP)
+             HERO SECTION (THE GREETING & PROCEDURAL TWILIGHT HILLTOP)
         ══════════════════════════════════════════════════════════════════ -->
         <section id="hero" class="section-hero">
-            <!-- Sunset Hilltop Backdrop & Real-Time Moving Grass -->
+            <!-- Pure Procedural Twilight Scenery & Real-Time Moving Grass -->
             <div class="hero-scenery-backdrop" id="heroBackdrop">
-                <div class="scenery-image-wrap">
-                    <img src="assets/sunset-hilltop.jpg" alt="Hilltop Sunset Landscape" class="scenery-img">
-                    <div class="scenery-overlay-vignette"></div>
-                </div>
+                <canvas id="landscapeCanvas" class="landscape-canvas"></canvas>
                 <canvas id="grassCanvas" class="grass-canvas"></canvas>
             </div>
 

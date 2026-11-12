@@ -440,27 +440,12 @@ body.is-loaded .hero-divider-line {
     will-change: transform, opacity;
 }
 
-.scenery-image-wrap {
+.landscape-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-}
-
-.scenery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
-    opacity: 0.65;
-    filter: contrast(1.1) saturate(1.15);
-}
-
-.scenery-overlay-vignette {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 90% 70% at 75% 55%, transparent 20%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.95) 100%),
-                linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, transparent 25%, transparent 55%, rgba(0, 0, 0, 0.98) 100%);
+    z-index: 1;
 }
 
 .hero-content-relative {
@@ -473,8 +458,8 @@ body.is-loaded .hero-divider-line {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 190px;
-    z-index: 4;
+    height: 200px;
+    z-index: 3;
     pointer-events: auto;
 }
 

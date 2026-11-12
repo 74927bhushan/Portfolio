@@ -7,6 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initHomeLoader();
+    initLandscapeCanvas();
     initMovingGrassCanvas();
     initCosmicSkyCanvas();
     initScrollParallax();
@@ -72,7 +73,157 @@ function initHomeLoader() {
 }
 
 /* ==========================================================================
-   2. PROCEDURAL MOVING GRASS SIMULATION (LIKE LIVE VIDEO)
+   2. PROCEDURAL TWILIGHT MOUNTAIN & HORIZON SCENERY
+   Clean, sharp vector mountains, warm setting sun, and valley lights
+   ========================================================================== */
+function initLandscapeCanvas() {
+    const canvas = document.getElementById('landscapeCanvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = 0;
+    let height = 0;
+    let dpr = window.devicePixelRatio || 1;
+    let valleyLights = [];
+
+    function resize() {
+        const parent = canvas.parentElement;
+        width = parent.offsetWidth;
+        height = parent.offsetHeight;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+        generateValleyLights();
+    }
+
+    function generateValleyLights() {
+        valleyLights = [];
+        const lightCount = 75;
+        const valleyBaseY = height * 0.72;
+
+        for (let i = 0; i < lightCount; i++) {
+            valleyLights.push({
+                x: width * 0.35 + Math.random() * width * 0.6,
+                y: valleyBaseY + (Math.random() - 0.5) * (height * 0.08),
+                radius: 0.6 + Math.random() * 1.4,
+                alpha: 0.3 + Math.random() * 0.7,
+                twinkleSpeed: 0.8 + Math.random() * 2.5,
+                phase: Math.random() * Math.PI * 2,
+                color: Math.random() > 0.3 ? '#fef08a' : '#fed7aa'
+            });
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    let startTime = performance.now();
+
+    function render(currentTime) {
+        const time = (currentTime - startTime) * 0.001;
+        ctx.clearRect(0, 0, width, height);
+
+        // 1. Sky Gradient: Deep Midnight Indigo down to Sunset Ember & Apricot
+        const skyGrad = ctx.createLinearGradient(0, 0, 0, height);
+        skyGrad.addColorStop(0.0, '#060713');
+        skyGrad.addColorStop(0.35, '#121124');
+        skyGrad.addColorStop(0.58, '#26182c');
+        skyGrad.addColorStop(0.72, '#50232f');
+        skyGrad.addColorStop(0.84, '#8c3a33');
+        skyGrad.addColorStop(0.92, '#c45e3d');
+        skyGrad.addColorStop(0.97, '#e88950');
+        skyGrad.addColorStop(1.0, '#f9b578');
+
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, width, height);
+
+        // 2. The Setting Sun & Atmospheric Bloom
+        const sunX = width * 0.72;
+        const sunY = height * 0.60;
+        const sunRadius = Math.max(16, width * 0.018);
+
+        // Outer atmospheric bloom
+        const bloomGrad = ctx.createRadialGradient(sunX, sunY, sunRadius * 0.5, sunX, sunY, sunRadius * 9);
+        bloomGrad.addColorStop(0.0, 'rgba(254, 215, 170, 0.45)');
+        bloomGrad.addColorStop(0.3, 'rgba(249, 115, 22, 0.22)');
+        bloomGrad.addColorStop(0.65, 'rgba(225, 29, 72, 0.08)');
+        bloomGrad.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = bloomGrad;
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, sunRadius * 9, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Sun disc
+        const sunDisc = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, sunRadius);
+        sunDisc.addColorStop(0.0, '#fffbeb');
+        sunDisc.addColorStop(0.7, '#fef08a');
+        sunDisc.addColorStop(1.0, '#fdba74');
+        ctx.fillStyle = sunDisc;
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, sunRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 3. Far Mountain Ridge (Soft Hazy Purple Silhouette)
+        ctx.fillStyle = '#1c172a';
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.68);
+        ctx.bezierCurveTo(width * 0.15, height * 0.62, width * 0.3, height * 0.66, width * 0.45, height * 0.63);
+        ctx.bezierCurveTo(width * 0.6, height * 0.60, width * 0.75, height * 0.65, width * 0.9, height * 0.61);
+        ctx.lineTo(width, height * 0.64);
+        ctx.lineTo(width, height);
+        ctx.lineTo(0, height);
+        ctx.closePath();
+        ctx.fill();
+
+        // 4. Mid Mountain Ridge (Darker Rolling Silhouettes)
+        ctx.fillStyle = '#100f1c';
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.72);
+        ctx.bezierCurveTo(width * 0.2, height * 0.67, width * 0.35, height * 0.73, width * 0.55, height * 0.69);
+        ctx.bezierCurveTo(width * 0.7, height * 0.66, width * 0.85, height * 0.71, width, height * 0.67);
+        ctx.lineTo(width, height);
+        ctx.lineTo(0, height);
+        ctx.closePath();
+        ctx.fill();
+
+        // 5. Flickering Valley / City Lights at dusk
+        for (let i = 0; i < valleyLights.length; i++) {
+            const l = valleyLights[i];
+            const twinkle = 0.4 + 0.6 * Math.sin(time * l.twinkleSpeed + l.phase);
+            ctx.fillStyle = l.color;
+            ctx.globalAlpha = l.alpha * twinkle;
+            ctx.beginPath();
+            ctx.arc(l.x, l.y, l.radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        ctx.globalAlpha = 1.0;
+
+        // 6. Foreground Hilltop Ridge (Deep Silhouette where Grass Roots)
+        ctx.fillStyle = '#05060a';
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.84);
+        ctx.bezierCurveTo(width * 0.3, height * 0.80, width * 0.65, height * 0.85, width, height * 0.79);
+        ctx.lineTo(width, height);
+        ctx.lineTo(0, height);
+        ctx.closePath();
+        ctx.fill();
+
+        // 7. Radial Vignette for Content Readability
+        const vignette = ctx.createRadialGradient(width * 0.3, height * 0.4, width * 0.1, width * 0.5, height * 0.5, width * 0.75);
+        vignette.addColorStop(0.0, 'rgba(0, 0, 0, 0.45)');
+        vignette.addColorStop(0.65, 'rgba(0, 0, 0, 0.75)');
+        vignette.addColorStop(1.0, 'rgba(0, 0, 0, 0.95)');
+        ctx.fillStyle = vignette;
+        ctx.fillRect(0, 0, width, height);
+
+        requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+}
+
+/* ==========================================================================
+   3. PROCEDURAL MOVING GRASS SIMULATION (LIKE LIVE VIDEO)
    Physics: Multistage harmonic wind oscillation, gust waves, and mouse deflection
    ========================================================================== */
 function initMovingGrassCanvas() {
